@@ -1,0 +1,30 @@
+{
+  "name": "nutshell-chital",
+  "version": "1.0.0",
+  "description": "Clown College",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production --module-bind js=babel-loader",
+    "deploy": "npm run build && firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nss-evening-cohort-12/nutshell-chital.git"
+  },
+  "keywords": [],
+  "author": "Joshua Medlen, Austin Phy, Gwynne Meeks, Olamide Olajide",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nss-evening-cohort-12/nutshell-chital/issues"
+  },
+  "homepage": "https://github.com/nss-evening-cohort-12/nutshell-chital#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.1",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "firebase": "^7.16.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}
