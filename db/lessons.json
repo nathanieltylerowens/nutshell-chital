@@ -1,50 +1,42 @@
 {
   "lesson1": {
-    "id": "",
-    "name": "",
-    "materialsProvided": "",
-    "hours": ""
+    "name": "Face creating 101",
+    "materialsProvided": "YES",
+    "hours": "1hr 30mins"
   },
   "lesson2": {
-    "id": "",
-    "name": "",
-    "materialsProvided": "",
-    "hours": ""
+    "name": "Ballon tying",
+    "materialsProvided": "YES",
+    "hours": "45mins"
   },
   "lesson3": {
-    "id": "",
-    "name": "",
-    "materialsProvided": "",
-    "hours": ""
+    "name": "Street Magic",
+    "materialsProvided": "NO",
+    "hours": "30mins"
   },
   "lesson4": {
-    "id": "",
-    "name": "",
-    "materialsProvided": "",
-    "hours": ""
+    "name": "Juggling",
+    "materialsProvided": "YES",
+    "hours": "45mins"
   },
   "lesson5": {
-    "id": "",
-    "name": "",
-    "materialsProvided": "",
-    "hours": ""
+    "name": "Stand up Routines",
+    "materialsProvided": "NO",
+    "hours": "1hr"
   },
   "lesson6": {
-    "id": "",
-    "name": "",
-    "materialsProvided": "",
-    "hours": ""
+    "name": "Creating Clown Persona",
+    "materialsProvided": "NO",
+    "hours": "2hrs"
   },
   "lesson7": {
-    "id": "",
-    "name": "",
-    "materialsProvided": "",
-    "hours": ""
+    "name": "Clown history",
+    "materialsProvided": "NO",
+    "hours": "45mins"
   },
   "lesson8": {
-    "id": "",
-    "name": "",
-    "materialsProvided": "",
-    "hours": ""
+    "name": "Prop work",
+    "materialsProvided": "YES",
+    "hours": "45mins"
   }
 }
