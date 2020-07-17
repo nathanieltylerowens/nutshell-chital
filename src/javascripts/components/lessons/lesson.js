@@ -9,9 +9,30 @@ import lessonData from '../../helpers/data/lessonsData';
 const lessonMaker = () => {
   lessonData.getLessons()
     .then((lessons) => {
-      let domString 
+      lessons.forEach((lesson) => {
+        let domString = `
+        <div class="card" style="width: 18rem;" id="${lesson.id}>
+          <div class="card-body">
+          <h5>${lesson.name}</h5>
+          <p>${lesson.hours}</p>
+      `;
+
+        if (lesson.materialsProvided === true) {
+          domString += `
+              <p>"YES"<p>
+            </div>
+          </div>
+          `;
+        } else {
+          domString += `
+              <p>"NO"</p>
+            </div>
+          </div>
+          `;
+        }
+      });
     })
-    .catch((err) => console.error('get lessons broke *sad panda*', err))
+    .catch((err) => console.error('get lessons broke *sad panda*', err));
 };
 
 export default { lessonMaker };
