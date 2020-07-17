@@ -1,0 +1,32 @@
+{
+"student1": {
+     "studentName": "Amelia Butler",
+     "major": "Jester",
+     "imageUrl": "https://vignette.wikia.nocookie.net/clownopedia/images/1/1c/I-female_clown.jpg/revision/latest?cb=20170830100351"
+   },
+"student2": {
+     "studentName": "Gale Henry",
+     "major": "Vaudville",
+     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Gale_Henry.jpg/150px-Gale_Henry.jpg"
+   },
+"student3": {
+     "studentName": "Lucile Ball",
+     "major": "Slapstick",
+     "imageUrl": "https://media1.popsugar-assets.com/files/thumbor/C3E_nYkMKZzfzUkHh9kjoCMfKMs/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2017/08/16/847/n/1922398/b0d18fe359949b0193fdd6.18030752_edit_img_cover_file_16360412_1502907996/i/Lucille-Ball-Photos.jpg"
+   },
+"student4": {
+     "studentName": "Charlie Chaplin",
+     "major": "Slapstick",
+     "imageUrl": "https://m.media-amazon.com/images/M/MV5BNDcwMDc0ODAzOF5BMl5BanBnXkFtZTgwNTY2OTI1MDE@._V1_SY1000_CR0,0,646,1000_AL_.jpg"
+   },
+"student5": {
+     "studentName": "Lecile Harris",
+     "major": "Rodeo",
+     "imageUrl": "https://vignette.wikia.nocookie.net/clownopedia/images/4/40/Rodeoclown-1-.jpg/revision/latest/scale-to-width-down/180?cb=20140119051538"
+   },
+"student6": {
+     "studentName": "Emmett Kelly",
+     "major": "Sad Clowning",
+     "imageUrl": "https://www.amazon.com/images/I/81CuK04gyeL._AC_SL1500_.jpg"
+   }
+}
