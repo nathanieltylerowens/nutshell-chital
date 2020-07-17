@@ -1,0 +1,6 @@
+{
+    "students": "studentId",
+    "teachers": "teacherId",
+    "classes": "classId",
+    "lessons": "lessonId"
+}
