@@ -5,17 +5,14 @@
   </div>
 </div> */
 import lessonData from '../../helpers/data/lessonsData';
+import utils from '../../helpers/utils';
+import lessonPrint from './lessonMaker';
 
 const lessonMaker = () => {
   lessonData.getLessons()
     .then((lessons) => {
       lessons.forEach((lesson) => {
-        let domString = `
-        <div class="card" style="width: 18rem;" id="${lesson.id}>
-          <div class="card-body">
-          <h5>${lesson.name}</h5>
-          <p>${lesson.hours}</p>
-      `;
+        let domString = lessonPrint.lessonBuilder(lesson);
 
         if (lesson.materialsProvided === true) {
           domString += `
@@ -30,6 +27,7 @@ const lessonMaker = () => {
           </div>
           `;
         }
+        utils.printToDom('#lessons-container', domString);
       });
     })
     .catch((err) => console.error('get lessons broke *sad panda*', err));
