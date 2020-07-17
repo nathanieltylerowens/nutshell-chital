@@ -1,0 +1,32 @@
+{
+    "class1": {
+      "name": "From Pennywise to Gacy: Rehabilitating the Clown in Modern Culture",
+      "imageUrl": "../src/assets/class-scary.jpg",
+      "schedule": "M W R"
+    },
+    "class2": {
+      "name": "Clown Safety: No Laughing Matter",
+      "imageUrl": "../src/assets/class-safety.jpg",
+      "schedule": "T R"
+    },
+    "class3": {
+      "name": "Clown Math",
+      "imageUrl": "../src/assets/class-math.jpg",
+      "schedule": "M W F"
+    },
+    "class4": {
+      "name": "Rodeo Clowns: No Bull",
+      "imageUrl": "../src/assets/class-rodeo.jpg",
+      "schedule": "M T R"
+    },
+    "class5": {
+      "name": "Pie Throwing for Beginners",
+      "imageUrl": "../src/assets/class-pie.jpg",
+      "schedule": "T R"
+    },
+    "class6": {
+      "name": "Remedial Unicycling",
+      "imageUrl": "../src/assets/class-unicycle.jpg",
+      "schedule": "M W F"
+    }
+  }
