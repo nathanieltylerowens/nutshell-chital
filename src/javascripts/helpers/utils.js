@@ -21,4 +21,6 @@ const printToDom = (selector, text) => {
   $(selector).html(text);
 };
 
-export default { readData, printToDom };
+const addLesson = (newLessonObj) => axios.post(`${baseUrl}/lessons.json`, newLessonObj);
+
+export default { readData, printToDom, addLesson };

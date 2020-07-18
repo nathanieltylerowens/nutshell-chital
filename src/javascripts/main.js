@@ -8,6 +8,7 @@ import navbar from './components/navbar/navbar';
 import 'bootstrap';
 import '../stylings/main.scss';
 
+import addForm from './components/lessons/addLesson/addLessonForm';
 import lessons from './components/lessons/lesson';
 
 const init = () => {
@@ -15,8 +16,9 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   auth.logoutButton();
-  lessons.lessonMaker();
   navbar.filterClicks();
+  addForm.buildLessonForm();
+  lessons.lessonEventListeners();
 };
 
 init();
