@@ -16,7 +16,7 @@ const lessonMaker = () => {
       lessons.forEach((lesson) => {
         domString += lessonsMakers.lessonBuilder(lesson);
       });
-      utils.printToDom('#lessons-container', domString);
+      utils.printToDom('#cards-container', domString);
     })
     .catch((err) => console.error('get lessons broke *sad panda*', err));
 };
