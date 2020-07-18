@@ -1,7 +1,13 @@
+import axios from 'axios';
+import apiKeys from '../../helpers/apiKeys.json';
 import utils from '../../helpers/utils';
 import lessonsMakers from './lessonMaker';
 
 const getLessons = () => utils.readData('lessons');
+
+const baseUrl = apiKeys.firebaseConfig.databaseURL;
+
+const addLesson = (newLessonObj) => axios.post(`${baseUrl}/lessons.json`, newLessonObj);
 
 const addLessonEvent = (e) => {
   e.preventDefault();
@@ -12,7 +18,7 @@ const addLessonEvent = (e) => {
     materialsProvided: $('#lesson-materials').prop('checked'),
   };
 
-  utils.addLesson(newLesson)
+  addLesson(newLesson)
     .then(() => {
     // eslint-disable-next-line no-use-before-define
       lessonMaker();
