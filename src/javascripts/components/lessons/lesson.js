@@ -6,27 +6,13 @@
 </div> */
 import lessonData from '../../helpers/data/lessonsData';
 import utils from '../../helpers/utils';
-import lessonPrint from './lessonMaker';
+import lessonsMakers from './lessonMaker';
 
 const lessonMaker = () => {
   lessonData.getLessons()
     .then((lessons) => {
       lessons.forEach((lesson) => {
-        let domString = lessonPrint.lessonBuilder(lesson);
-
-        if (lesson.materialsProvided === true) {
-          domString += `
-              <p>"YES"<p>
-            </div>
-          </div>
-          `;
-        } else {
-          domString += `
-              <p>"NO"</p>
-            </div>
-          </div>
-          `;
-        }
+        const domString = lessonsMakers.lessonBuilder(lesson);
         utils.printToDom('#lessons-container', domString);
       });
     })

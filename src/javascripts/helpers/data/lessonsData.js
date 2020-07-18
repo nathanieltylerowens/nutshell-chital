@@ -3,7 +3,7 @@ import apiKeys from '../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
-const getLessons = () => new Promise((reject, resolve) => {
+const getLessons = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/lessons.json`)
     .then((response) => {
       const lessonsObjects = response.data;
