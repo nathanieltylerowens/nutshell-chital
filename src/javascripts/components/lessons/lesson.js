@@ -8,11 +8,15 @@ const getLessons = () => utils.readData('lessons');
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
 const addLesson = (newLessonObj) => axios.post(`${baseUrl}/lessons.json`, newLessonObj);
-const deleteLesson = (lessonId) => axios.delete(`${baseUrl}/lessons.json`, lessonId);
+const deleteLesson = (lessonId) => axios.delete(`${baseUrl}/lessons/${lessonId}.json`, lessonId);
 
 const removeLesson = (e) => {
-  deleteLesson(lessonId);
-  e.target.closest('.card').id;
+  deleteLesson(e.target.closest('.card').id)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      lessonMaker();
+    })
+    .catch((err) => console.error('could not remove lesson', err));
 };
 
 const addLessonEvent = (e) => {
@@ -48,6 +52,7 @@ const lessonMaker = () => {
 
 const lessonEventListeners = () => {
   $('body').on('click', '#submit-lesson', addLessonEvent);
+  $('body').on('click', '#delete-lesson', removeLesson);
 };
 
-export default { lessonMaker, lessonEventListeners };
+export default { lessonMaker, lessonEventListeners, removeLesson };
