@@ -8,8 +8,8 @@ const buildStudents = () => {
       let domString = '';
       students.forEach((eachStudent) => {
         domString += `
-      <div class="card" style="width: 18rem;">
-        <img src="${eachStudent.imageUrl}" class="card-img-top" alt="...">
+      <div class="card students-card" style="width: 18rem;">
+        <img src="${eachStudent.imageUrl}" class="card-img-top students-card-img">
         <div class="card-body">
         <h1 class="card-title">${eachStudent.studentName}</h1>
         <p class="card-text">${eachStudent.major}</p>
