@@ -5,6 +5,7 @@ import auth from './components/auth/auth';
 import authData from './helpers/data/authData';
 import buildClasses from './components/classes/buildClasses/buildClasses';
 import buildStudents from './components/students/buildStudent/buildStudent';
+import buildTeachers from './components/teachers/buildTeacher/buildTeachers';
 
 import 'bootstrap';
 import '../stylings/main.scss';
@@ -18,6 +19,7 @@ const init = () => {
   auth.logoutButton();
   buildClasses.buildClasses();
   buildStudents.buildStudents();
+  buildTeachers.buildTeachers();
   lessons.lessonMaker();
 };
 
