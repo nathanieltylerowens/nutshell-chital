@@ -10,6 +10,7 @@ import 'bootstrap';
 import '../stylings/main.scss';
 
 import lessons from './components/lessons/lesson';
+import addForm from './components/lessons/addLesson/addLessonForm';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseConfig);
@@ -19,6 +20,7 @@ const init = () => {
   buildClasses.buildClasses();
   buildStudents.buildStudents();
   lessons.lessonMaker();
+  addForm.buildLessonForm();
 };
 
 init();
