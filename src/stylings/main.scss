@@ -6,6 +6,12 @@ body {
     background-color: #0B3456;
 }
 
+.default-main {
+    margin-top: 85px;
+    width: 100%;
+    height:669px;
+}
+
 .navbar {
     background-color: #F2EFE9;
     height: 85px;
@@ -15,7 +21,7 @@ body {
     height: 70px;
 }
 
-.classes-container {
+.cards-container {
     display: flex;
     margin-top: 90px;
     flex-flow: row wrap;

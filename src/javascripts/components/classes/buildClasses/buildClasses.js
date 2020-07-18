@@ -21,7 +21,7 @@ const buildClasses = () => {
 </div>
 `;
       });
-      utils.printToDom('#classes-container', domString);
+      utils.printToDom('#cards-container', domString);
     })
     .catch((err) => console.error('error retrieving class list', err));
 };

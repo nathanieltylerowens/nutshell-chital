@@ -29,7 +29,7 @@ const lessonMaker = () => {
         domString += lessonsMakers.lessonBuilder(lesson);
       });
       domString += '<div id="new-lesson"><div>';
-      utils.printToDom('#lessons-container', domString);
+      utils.printToDom('#cards-container', domString);
     })
     .catch((err) => console.error('get lessons broke *sad panda*', err));
 };

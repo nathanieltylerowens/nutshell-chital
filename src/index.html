@@ -10,20 +10,18 @@
         <a class="navbar-brand" href="#">
 <img src="./assets/bozoU-logo-long.jpg" class="nav-logo">
         </a>
-        <button type="button" class="btn btn-dark">Students</button>
-        <button type="button" class="btn btn-dark">Teachers</button>
-        <button type="button" class="btn btn-dark">Classes</button>
-        <button type="button" class="btn btn-dark">Lessons</button>
+        <button type="button" class="btn btn-dark filterButton" id="studentsFilter" value="students">Students</button>
+        <button type="button" class="btn btn-dark filterButton" id="teachersFilter" value="teachers">Teachers</button>
+        <button type="button" class="btn btn-dark filterButton" id="classesFilter" value="classes">Classes</button>
+        <button type="button" class="btn btn-dark filterButton" id="lessonsFilter" value="lessons">Lessons</button>
         <button type="button" class="btn btn-dark"><i class="fas fa-plus-square"></i> Add</button>
         <button type="button" class="btn btn-warning" id="google-auth-in">Sign In</button>
         <button type="button" class="btn btn-danger hide" id="google-auth-out">Sign Out</button>
         </div>
       </nav>
-      <div id="students-container" class="students-container"></div>
-      <div id="classes-container" class="classes-container hidden"></div>
-      <div id="lessons-container" class="classes-container"></div>
-      <div id="teachers-container"></div>
-      <div id="global-add-form"></div>
-      <div id="global-edit-form"></div>
+      <img class= "default-main" id="default-main" src='./assets//default-main.jpg'>
+      <div id="cards-container" class="cards-container hidden"></div>
+      <div id='global-add-form'></div>
+      <div id='global-edit-form'></div>
 </body>
 </html>
