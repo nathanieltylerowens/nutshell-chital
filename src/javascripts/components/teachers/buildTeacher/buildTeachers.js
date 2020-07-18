@@ -17,7 +17,7 @@ const buildTeachers = () => {
       </div>
       `;
       });
-      utils.printToDom('#teachers-container', domString);
+      utils.printToDom('#cards-container', domString);
     })
     .catch((err) => console.error('error getting teachers', err));
 };

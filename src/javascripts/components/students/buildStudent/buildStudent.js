@@ -21,7 +21,7 @@ const buildStudents = () => {
       </div>
       `;
       });
-      utils.printToDom('#students-container', domString);
+      utils.printToDom('#cards-container', domString);
     })
     .catch((err) => console.error('error getting students', err));
 };
