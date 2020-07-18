@@ -1,5 +1,3 @@
-import utils from '../../helpers/utils';
-
 const lessonBuilder = (lesson) => {
   let domString = `
         <div class="card lessonsCard" style="width: 18rem;" id="${lesson.id}">
@@ -21,7 +19,7 @@ const lessonBuilder = (lesson) => {
           </div>
           `;
   }
-  utils.printToDom('#lessons-container', domString);
+  return domString;
 };
 
 export default { lessonBuilder };

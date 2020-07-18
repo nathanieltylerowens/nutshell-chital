@@ -9,10 +9,10 @@ import utils from '../../helpers/utils';
 import lessonsMakers from './lessonMaker';
 
 const lessonMaker = () => {
-  lessonData.getLessons()
+  let domString = lessonData.getLessons()
     .then((lessons) => {
       lessons.forEach((lesson) => {
-        const domString = lessonsMakers.lessonBuilder(lesson);
+        domString += lessonsMakers.lessonBuilder(lesson);
         utils.printToDom('#lessons-container', domString);
       });
     })
