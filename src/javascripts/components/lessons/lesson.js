@@ -8,6 +8,12 @@ const getLessons = () => utils.readData('lessons');
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
 const addLesson = (newLessonObj) => axios.post(`${baseUrl}/lessons.json`, newLessonObj);
+const deleteLesson = (lessonId) => axios.delete(`${baseUrl}/lessons.json`, lessonId);
+
+const removeLesson = (e) => {
+  deleteLesson(lessonId);
+  e.target.closest('.card').id;
+};
 
 const addLessonEvent = (e) => {
   e.preventDefault();
