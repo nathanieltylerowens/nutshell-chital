@@ -17,6 +17,7 @@ const lessonBuilder = (lesson) => {
   }
 
   domString += `
+                <a href="#" id="delete-lesson"><i class="far fa-times-circle"></i></a>
               </div>
             </div>
     `;
