@@ -37,6 +37,28 @@ body {
     height: 60%;
 }
 
+.students-container {
+    display: flex;
+    margin-top: 100px;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.students-card {
+    background-color: #F2EFE9;
+    height: 400px;
+    width: 300px;
+    float: left;
+    margin: 5px;
+    overflow: scroll;
+}
+
+.students-card-img {
+    object-fit: cover;
+    width: 100%;
+    height: 60%;
+}
+
 ::-webkit-scrollbar {
   width: 15px;
 }
