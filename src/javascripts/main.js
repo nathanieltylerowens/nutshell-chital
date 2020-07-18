@@ -3,7 +3,6 @@ import apiKeys from './helpers/apiKeys.json';
 
 import auth from './components/auth/auth';
 import authData from './helpers/data/authData';
-import buildStudents from './components/students/buildStudent/buildStudent';
 import navbar from './components/navbar/navbar';
 
 import 'bootstrap';
@@ -16,7 +15,6 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   auth.logoutButton();
-  buildStudents.buildStudents();
   lessons.lessonMaker();
   navbar.filterClicks();
 };

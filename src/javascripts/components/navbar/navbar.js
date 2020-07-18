@@ -2,8 +2,17 @@ import utils from '../../helpers/utils';
 import buildClasses from '../classes/buildClasses/buildClasses';
 import buildStudent from '../students/buildStudent/buildStudent';
 import lesson from '../lessons/lesson';
+import buildTeachers from '../teachers/buildTeacher/buildTeachers';
+
+const defaultMain = () => {
+  const domString = '<img src="../../../assets/default-main.jpg">';
+  utils.printToDom('#cards-container', domString);
+};
 
 const buildCards = (e) => {
+  e.preventDefault();
+  $('#default-main').addClass('hidden');
+  $('#cards-container').removeClass('hidden');
   utils.readData(e.target.value);
   if (e.target.value === 'classes') {
     buildClasses.buildClasses();
@@ -11,8 +20,10 @@ const buildCards = (e) => {
     buildStudent.buildStudents();
   } else if (e.target.value === 'lessons') {
     lesson.lessonMaker();
+  } else if (e.target.value === 'teachers') {
+    buildTeachers.buildTeachers();
   } else {
-    console.warn('teachers');
+    defaultMain();
   }
 };
 
