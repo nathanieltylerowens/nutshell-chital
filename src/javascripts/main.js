@@ -9,6 +9,8 @@ import buildStudents from './components/students/buildStudent/buildStudent';
 import 'bootstrap';
 import '../stylings/main.scss';
 
+import lessons from './components/lessons/lesson';
+
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseConfig);
   authData.checkLoginStatus();
@@ -16,7 +18,7 @@ const init = () => {
   auth.logoutButton();
   buildClasses.buildClasses();
   buildStudents.buildStudents();
+  lessons.lessonMaker();
 };
 
 init();
-// hey
