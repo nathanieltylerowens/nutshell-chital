@@ -2,7 +2,7 @@ import utils from '../../../helpers/utils';
 
 const getStudents = () => utils.readData('students');
 
-const buildStudents = () => {
+const buildAuthStudents = () => {
   getStudents()
     .then((students) => {
       let domString = '';
@@ -13,17 +13,14 @@ const buildStudents = () => {
         <div class="card-body">
         <h2 class="card-title">${eachStudent.studentName}</h2>
         <h6 class="card-text">${eachStudent.major}</h6>
-        <div class="modifyButtons">
-        <a href="#"><i class="far fa-edit"></i></a>
-        <a href="#"><i class="far fa-times-circle"></i></a>
-        </div>
-        </div>
+
+      </div>
       </div>
       `;
       });
-      utils.printToDom('#cards-container', domString);
+      utils.printToDom('#students-container', domString);
     })
     .catch((err) => console.error('error getting students', err));
 };
 
-export default { buildStudents };
+export default { buildAuthStudents };
