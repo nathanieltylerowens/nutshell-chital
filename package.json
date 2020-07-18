@@ -20,15 +20,15 @@
   },
   "homepage": "https://github.com/nss-evening-cohort-12/nutshell-chital#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.1",
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
-    "firebase": "^7.16.0",
+    "firebase": "^7.16.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
+    "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
