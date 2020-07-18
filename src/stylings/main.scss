@@ -17,24 +17,30 @@ body {
 
 .classes-container {
     display: flex;
-    margin-top: 100px;
+    margin-top: 90px;
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
 
 .class-card {
     background-color: #F2EFE9;
-    height: 400px;
+    height: 500px;
     width: 300px;
     float: left;
     margin: 5px;
-    overflow: scroll;
+    text-align: center;
 }
 
 .class-card-img {
     object-fit: cover;
     width: 100%;
-    height: 60%;
+    height: 340px;
+    margin: 0;
+}
+
+.card-body {
+    overflow: scroll;
+    padding: 5px;
 }
 
 .students-container {
@@ -60,7 +66,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {

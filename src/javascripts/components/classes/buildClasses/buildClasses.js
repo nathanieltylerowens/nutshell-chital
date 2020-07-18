@@ -14,6 +14,10 @@ const buildClasses = () => {
     <h5 class="card-title">${eachClass.name}</h5>
     <p class="card-text">${eachClass.schedule}</p>
   </div>
+  <div class="modifyButtons">
+  <a href="#"><i class="far fa-edit"></i></a>
+  <a href="#"><i class="far fa-times-circle"></i></a>
+  </div>
 </div>
 `;
       });
