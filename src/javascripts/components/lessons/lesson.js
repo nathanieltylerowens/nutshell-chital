@@ -9,12 +9,13 @@ import utils from '../../helpers/utils';
 import lessonsMakers from './lessonMaker';
 
 const lessonMaker = () => {
-  let domString = lessonData.getLessons()
+  lessonData.getLessons()
     .then((lessons) => {
+      let domString = '';
       lessons.forEach((lesson) => {
         domString += lessonsMakers.lessonBuilder(lesson);
-        utils.printToDom('#lessons-container', domString);
       });
+      utils.printToDom('#lessons-container', domString);
     })
     .catch((err) => console.error('get lessons broke *sad panda*', err));
 };
