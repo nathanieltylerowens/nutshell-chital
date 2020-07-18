@@ -8,10 +8,10 @@ const buildClasses = () => {
       let domString = '';
       classes.forEach((eachClass) => {
         domString += `
-          <div class="card" style="width: 18rem;">
-  <img src="${eachClass.imageUrl}" class="card-img-top" alt="...">
+          <div class="card class-card" style="width: 18rem;">
+  <img src="${eachClass.imageUrl}" class="card-img-top class-card-img" alt="...">
   <div class="card-body">
-    <h1 class="card-title">${eachClass.name}</h1>
+    <h5 class="card-title">${eachClass.name}</h5>
     <p class="card-text">${eachClass.schedule}</p>
   </div>
 </div>
