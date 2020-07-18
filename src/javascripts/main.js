@@ -9,6 +9,7 @@ import 'bootstrap';
 import '../stylings/main.scss';
 
 import addForm from './components/lessons/addLesson/addLessonForm';
+import lessons from './components/lessons/lesson';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseConfig);
@@ -17,6 +18,7 @@ const init = () => {
   auth.logoutButton();
   navbar.filterClicks();
   addForm.buildLessonForm();
+  lessons.lessonEventListeners();
 };
 
 init();
