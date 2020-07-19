@@ -9,6 +9,12 @@ const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
 const addLesson = (newLessonObj) => axios.post(`${baseUrl}/lessons.json`, newLessonObj);
 const deleteLesson = (lessonId) => axios.delete(`${baseUrl}/lessons/${lessonId}.json`, lessonId);
+const editLesson = (lessonId, editedLesson) => axios.put(`${baseUrl}/mushrooms/${lessonId}.json`, editedLesson);
+
+const updateLesson = (e) => {
+  e.preventDefault();
+  const lessonId = 
+};
 
 const removeLesson = (e) => {
   deleteLesson(e.target.closest('.card').id)
