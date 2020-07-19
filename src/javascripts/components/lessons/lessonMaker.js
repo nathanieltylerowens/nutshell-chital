@@ -6,7 +6,7 @@ const lessonBuilder = (lesson) => {
               <p>${lesson.hours}</p>
         `;
 
-  if (lesson.materialsProvided === 'true') {
+  if (lesson.materialsProvided === true) {
     domString += `
                 <p>"YES"</p>
               `;
