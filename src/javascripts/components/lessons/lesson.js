@@ -10,7 +10,7 @@ const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
 const addLesson = (newLessonObj) => axios.post(`${baseUrl}/lessons.json`, newLessonObj);
 const deleteLesson = (lessonId) => axios.delete(`${baseUrl}/lessons/${lessonId}.json`, lessonId);
-const editLesson = (lessonId, editedLesson) => axios.put(`${baseUrl}/mushrooms/${lessonId}.json`, editedLesson);
+const editLesson = (lessonId, editedLesson) => axios.put(`${baseUrl}/lessons/${lessonId}.json`, editedLesson);
 
 const showEditForm = (e) => {
   const lesson = e.target.closest('.card').id;
@@ -30,6 +30,7 @@ const updateLesson = (e) => {
     .then(() => {
       // eslint-disable-next-line no-use-before-define
       lessonMaker();
+      utils.printToDom('#edited-lesson', '');
     })
     .catch((err) => console.error('could not edit lesson', err));
   console.error('does this work');
@@ -69,7 +70,10 @@ const lessonMaker = () => {
       lessons.forEach((lesson) => {
         domString += lessonsMakers.lessonBuilder(lesson);
       });
-      domString += '<div id="new-lesson"><div>';
+      domString += `
+      <div id="new-lesson"><div>
+      <div id="edited-lesson"><div>
+      `;
       utils.printToDom('#cards-container', domString);
     })
     .catch((err) => console.error('get lessons broke *sad panda*', err));
