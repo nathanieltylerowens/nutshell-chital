@@ -3,6 +3,7 @@
 
 import utils from '../../helpers/utils';
 import addClass from '../classes/addClass/addClass';
+import addStudents from '../students/addStudent/addStudentForm';
 
 const buildNone = () => {
   const domString = '<h2>Please select a category to add information</h2>';
@@ -12,6 +13,8 @@ const buildNone = () => {
 const buildSelected = () => {
   if (utils.dataSelector() === 'classes') {
     addClass.buildClassForm();
+  } else if (utils.dataSelector() === 'students') {
+    addStudents.buildAddStudentForm();
   } else {
     console.warn('no');
     buildNone();

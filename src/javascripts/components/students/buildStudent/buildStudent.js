@@ -18,7 +18,7 @@ const buildStudents = () => {
         <a href="#"><i class="far fa-times-circle"></i></a>
         </div>
         </div>
-      </div>
+        </div>
       `;
       });
       utils.printToDom('#cards-container', domString);
