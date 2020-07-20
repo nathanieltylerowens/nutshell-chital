@@ -11,6 +11,7 @@ import '../stylings/main.scss';
 import addForm from './components/lessons/addLesson/addLessonForm';
 import lessons from './components/lessons/lesson';
 import classes from './components/classes/class';
+import addClass from './components/classes/addClass/addClass';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseConfig);
@@ -21,6 +22,8 @@ const init = () => {
   addForm.buildLessonForm();
   lessons.lessonEventListeners();
   classes.classEventListeners();
+  addClass.buildClassForm();
+  addClass.addButtonClick();
 };
 
 init();
