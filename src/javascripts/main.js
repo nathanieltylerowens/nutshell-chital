@@ -13,6 +13,9 @@ import lessons from './components/lessons/lesson';
 import classes from './components/classes/class';
 import addButton from './components/navbar/addButton';
 
+import addTeacherForm from './components/teachers/addTeacher/addTeacherForm';
+import teachers from './components/teachers/teachers';
+
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseConfig);
   authData.checkLoginStatus();
@@ -21,6 +24,8 @@ const init = () => {
   navbar.filterClicks();
   addForm.buildLessonForm();
   lessons.lessonEventListeners();
+  addTeacherForm.buildTeacherForm();
+  teachers.teacherEventListeners();
   classes.classEventListeners();
   addButton.addButtonClick();
   addButton.buildAddForm();

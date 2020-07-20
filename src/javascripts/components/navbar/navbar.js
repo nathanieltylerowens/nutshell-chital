@@ -3,8 +3,8 @@ import utils from '../../helpers/utils';
 import buildClasses from '../classes/buildClasses/buildClasses';
 import buildStudent from '../students/buildStudent/buildStudent';
 import lesson from '../lessons/lesson';
-import buildTeachers from '../teachers/buildTeacher/buildTeachers';
 import addLesson from '../lessons/addLesson/addLessonForm';
+import teachers from '../teachers/teachers';
 import addButton from './addButton';
 
 const defaultMain = () => {
@@ -28,7 +28,7 @@ const buildCards = (e) => {
     addLesson.buildLessonForm();
     utils.selector('lessons');
   } else if (e.target.value === 'teachers') {
-    buildTeachers.buildTeachers();
+    teachers.teacherMaker();
     utils.selector('teachers');
   } else {
     defaultMain();
