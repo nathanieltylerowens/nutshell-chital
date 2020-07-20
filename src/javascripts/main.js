@@ -10,6 +10,7 @@ import '../stylings/main.scss';
 
 import addForm from './components/lessons/addLesson/addLessonForm';
 import lessons from './components/lessons/lesson';
+import classes from './components/classes/class';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseConfig);
@@ -19,6 +20,7 @@ const init = () => {
   navbar.filterClicks();
   addForm.buildLessonForm();
   lessons.lessonEventListeners();
+  classes.classEventListeners();
 };
 
 init();
