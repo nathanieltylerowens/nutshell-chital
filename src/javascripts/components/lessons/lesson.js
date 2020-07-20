@@ -1,5 +1,5 @@
 import axios from 'axios';
-import apiKeys from '../../helpers/apiKeys.json';
+import apiKeys from '../../helpers/data/apiKeys.json';
 import utils from '../../helpers/utils';
 import lessonsMakers from './lessonMaker';
 import lessonEdit from './editLesson/editLesson';
