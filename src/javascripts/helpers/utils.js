@@ -21,4 +21,14 @@ const printToDom = (selector, text) => {
   $(selector).html(text);
 };
 
-export default { readData, printToDom };
+let selectedData = '';
+
+const selector = (selected) => {
+  selectedData = selected;
+};
+
+const dataSelector = () => selectedData;
+
+export default {
+  readData, printToDom, dataSelector, selector,
+};
