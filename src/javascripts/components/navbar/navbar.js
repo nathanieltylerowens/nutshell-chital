@@ -2,8 +2,8 @@ import utils from '../../helpers/utils';
 import buildClasses from '../classes/buildClasses/buildClasses';
 import buildStudent from '../students/buildStudent/buildStudent';
 import lesson from '../lessons/lesson';
-import buildTeachers from '../teachers/buildTeacher/buildTeachers';
 import addLesson from '../lessons/addLesson/addLessonForm';
+import teachers from '../teachers/teachers';
 
 const defaultMain = () => {
   const domString = '<img src="../../../assets/default-main.jpg">';
@@ -23,7 +23,7 @@ const buildCards = (e) => {
     lesson.lessonMaker();
     addLesson.buildLessonForm();
   } else if (e.target.value === 'teachers') {
-    buildTeachers.buildTeachers();
+    teachers.teacherMaker();
   } else {
     defaultMain();
   }

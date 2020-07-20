@@ -8,6 +8,17 @@ const getTeachers = () => utils.readData('teachers');
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
 const addTeacher = (newTeacherObj) => axios.post(`${baseUrl}/teachers.json`, newTeacherObj);
+const deleteTeacher = (teacherId) => axios.delete(`${baseUrl}/teachers/${teacherId}.json`, teacherId);
+
+const removeTeacher = (e) => {
+  deleteTeacher(e.target.closest('.card').id)
+
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      teacherMaker();
+    })
+    .catch((err) => console.error('this isnt working', err));
+};
 
 const addTeacherEvent = (e) => {
   e.preventDefault();
@@ -44,6 +55,7 @@ const teacherMaker = () => {
 
 const teacherEventListeners = () => {
   $('body').on('click', '#submit-teacher', addTeacherEvent);
+  $('body').on('click', '#delete-teacher', removeTeacher);
 };
 
 export default { teacherEventListeners, teacherMaker };
