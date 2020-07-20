@@ -7,7 +7,7 @@ const getTeachers = () => utils.readData('teachers');
 
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
-const addTeacher = (newTeacherObj) => axios.post(`${baseUrl}/teacher.json`, newTeacherObj);
+const addTeacher = (newTeacherObj) => axios.post(`${baseUrl}/teachers.json`, newTeacherObj);
 
 const addTeacherEvent = (e) => {
   e.preventDefault();
@@ -43,7 +43,7 @@ const teacherMaker = () => {
 };
 
 const teacherEventListeners = () => {
-  $('body').on('click', '#submit-lesson', addTeacherEvent);
+  $('body').on('click', '#submit-teacher', addTeacherEvent);
 };
 
 export default { teacherEventListeners, teacherMaker };
