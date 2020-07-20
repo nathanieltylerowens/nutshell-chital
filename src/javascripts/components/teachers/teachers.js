@@ -1,5 +1,5 @@
 import axios from 'axios';
-import apiKeys from '../../helpers/data/apiKeys.json';
+import apiKeys from '../../helpers/apiKeys.json';
 import utils from '../../helpers/utils';
 import buildTeachers from './buildTeacher/buildTeachers';
 
@@ -21,7 +21,7 @@ const addTeacherEvent = (e) => {
   addTeacher(newTeacher)
     .then(() => {
       // eslint-disable-next-line no-use-before-define
-      buildTeachers();
+      teacherMaker();
       utils.printToDom('#new-teacher', '');
     })
     .catch((err) => console.error('get teachers didnt work', err));
