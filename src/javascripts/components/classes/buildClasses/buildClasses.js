@@ -1,5 +1,5 @@
 import utils from '../../../helpers/utils';
-import modButtons from '../../modButtons/modButtons';
+import authData from '../../../helpers/data/authData';
 
 const getClasses = () => utils.readData('classes');
 
@@ -20,7 +20,7 @@ const buildClasses = () => {
           `;
       });
       utils.printToDom('#cards-container', domString);
-      modButtons.printModButtons();
+      authData.checkLoginStatus();
     })
     .catch((err) => console.error('error retrieving class list', err));
 };
