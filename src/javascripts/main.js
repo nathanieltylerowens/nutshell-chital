@@ -10,6 +10,8 @@ import '../stylings/main.scss';
 
 import addForm from './components/lessons/addLesson/addLessonForm';
 import lessons from './components/lessons/lesson';
+import classes from './components/classes/class';
+import addButton from './components/navbar/addButton';
 
 import addTeacherForm from './components/teachers/addTeacher/addTeacherForm';
 import teachers from './components/teachers/teachers';
@@ -24,6 +26,9 @@ const init = () => {
   lessons.lessonEventListeners();
   addTeacherForm.buildTeacherForm();
   teachers.teacherEventListeners();
+  classes.classEventListeners();
+  addButton.addButtonClick();
+  addButton.buildAddForm();
 };
 
 init();
