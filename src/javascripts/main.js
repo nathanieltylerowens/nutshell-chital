@@ -11,6 +11,9 @@ import '../stylings/main.scss';
 import addForm from './components/lessons/addLesson/addLessonForm';
 import lessons from './components/lessons/lesson';
 
+import addTeacherForm from './components/teachers/addTeacher/addTeacherForm';
+import teachers from './components/teachers/teachers';
+
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseConfig);
   authData.checkLoginStatus();
@@ -19,6 +22,8 @@ const init = () => {
   navbar.filterClicks();
   addForm.buildLessonForm();
   lessons.lessonEventListeners();
+  addTeacherForm.buildTeacherForm();
+  teachers.teacherEventListeners();
 };
 
 init();
