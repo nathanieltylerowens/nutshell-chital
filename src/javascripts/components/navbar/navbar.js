@@ -36,8 +36,14 @@ const buildCards = (e) => {
   addButton.buildSelected();
 };
 
+const returnHome = () => {
+  $('#default-main').removeClass('hidden');
+  $('#cards-container').addClass('hidden');
+};
+
 const filterClicks = () => {
   $('.filterButton').click(buildCards);
+  $('body').on('click', '#return-home', returnHome);
 };
 
 export default { filterClicks };
