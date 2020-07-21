@@ -16,13 +16,10 @@ const buildSelected = () => {
   if (utils.dataSelector() === 'classes') {
     addClass.buildClassForm();
   } else if (utils.dataSelector() === 'students') {
-    buildNone();
     addStudents.buildAddStudentForm();
   } else if (utils.dataSelector() === 'lessons') {
-    buildNone();
     lessonForm.buildLessonForm();
   } else if (utils.dataSelector() === 'teachers') {
-    buildNone();
     teacherForm.buildTeacherForm();
   } else {
     console.warn('no');
