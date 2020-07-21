@@ -4,6 +4,8 @@
 import utils from '../../helpers/utils';
 import addClass from '../classes/addClass/addClass';
 import addStudents from '../students/addStudent/addStudentForm';
+import lessonForm from '../lessons/addLesson/addLessonForm';
+import teacherForm from '../teachers/addTeacher/addTeacherForm';
 
 const buildNone = () => {
   const domString = '<h2>Please select a category to add information</h2>';
@@ -14,7 +16,14 @@ const buildSelected = () => {
   if (utils.dataSelector() === 'classes') {
     addClass.buildClassForm();
   } else if (utils.dataSelector() === 'students') {
+    buildNone();
     addStudents.buildAddStudentForm();
+  } else if (utils.dataSelector() === 'lessons') {
+    buildNone();
+    lessonForm.buildLessonForm();
+  } else if (utils.dataSelector() === 'teachers') {
+    buildNone();
+    teacherForm.buildTeacherForm();
   } else {
     console.warn('no');
     buildNone();
@@ -26,6 +35,7 @@ const buildAddForm = () => {
 <form class = "add-form">
   <div class="form-row" id="selected-add">
   </div>
+  <div id='global-add-form' class=""></div>
 </form>
   `;
   utils.printToDom('#main-add-form', domString);
