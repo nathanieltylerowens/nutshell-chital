@@ -24,7 +24,7 @@ const buildTeacherForm = () => {
     <button type="submit" class="btn btn-primary" id="submit-teacher">Submit</button>
   </form>
   `;
-  utils.printToDom('#global-add-form', domString);
+  utils.printToDom('#selected-add', domString);
 };
 
 export default { buildTeacherForm };
