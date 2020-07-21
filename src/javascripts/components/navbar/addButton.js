@@ -16,13 +16,10 @@ const buildSelected = () => {
   if (utils.dataSelector() === 'classes') {
     addClass.buildClassForm();
   } else if (utils.dataSelector() === 'students') {
-    buildNone();
     addStudents.buildAddStudentForm();
   } else if (utils.dataSelector() === 'lessons') {
-    buildNone();
     lessonForm.buildLessonForm();
   } else if (utils.dataSelector() === 'teachers') {
-    buildNone();
     teacherForm.buildTeacherForm();
   } else {
     console.warn('no');
@@ -35,7 +32,7 @@ const buildAddForm = () => {
 <form class = "add-form">
   <div class="form-row" id="selected-add">
   </div>
-  <div id='global-add-form' class=""></div>
+  <div id="global-add-form" class=""></div>
 </form>
   `;
   utils.printToDom('#main-add-form', domString);
