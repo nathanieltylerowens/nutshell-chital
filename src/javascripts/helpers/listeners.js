@@ -1,21 +1,13 @@
 import authData from './data/authData';
 import staffList from '../components/staff/staffList';
-
-import buildVendors from '../components/vendor/vendorList';
 import displayClasses from '../components/classes/buildClasses/buildClasses';
-import vendorData from './data/vendor/vendorData';
 import displayVisitors from '../components/visitor/displayVisitor/visitor';
 import removeVisitor from '../components/visitor/deleteVisitor';
 import deleteClass from '../components/classes/deleteClass/deleteClass';
-import newVendor from '../components/vendor/newVendorForm';
-import editVendor from '../components/vendor/editVendorForm';
 import buildStudents from '../components/student/studentList';
 import studentData from './data/student/studentData';
-import displayVisitors from '../components/visitor/displayVisitor/visitor';
-import removeVisitor from '../components/visitor/deleteVisitor';
 import newStudent from '../components/student/newStudentForm';
 import editStudent from '../components/student/editStudentForm';
-
 import utils from './utils';
 import updateClass from '../components/classes/editClass/editClass';
 import homescreen from '../components/homescreen/homescreen';
@@ -119,10 +111,7 @@ const submitNewStudentForm = (e) => {
 };
 
 const createListeners = () => {
-  $('body').on('click', '#navbar-vendors', buildVendors.buildVendorList);
   $('body').on('click', '.rideLink', displayClasses.buildClassModule);
-  $('body').on('click', '.delete-vendor', deleteVendorEvent);
-  $('body').on('click', '.edit-vendor', editVendorEvent);
   $('body').on('click', '#navbar-students', buildStudents.buildStudentList);
   $('body').on('click', '.delete-student', deleteStudentEvent);
   $('body').on('click', '.edit-student', editStudentEvent);
