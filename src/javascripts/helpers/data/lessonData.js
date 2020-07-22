@@ -25,12 +25,12 @@ const addLesson = (newLessonObj) => axios.post(`${baseUrl}/lessons.json`, newLes
 
 const getLessonById = (lessonId) => axios.get(`${baseUrl}/lessons/${lessonId}.json`);
 
-// const updateLesson = (lessonId, editedVisitor) => axios.put(`${baseUrl}/lessons/${lessonId}.json`, editedVisitor);
+const updateLessonsData = (lessonId, editedLesson) => axios.put(`${baseUrl}/lessons/${lessonId}.json`, editedLesson);
 
 export default {
   getLessonData,
   deleteLesson,
   addLesson,
   getLessonById,
-  // updateLesson,
+  updateLessonsData,
 };

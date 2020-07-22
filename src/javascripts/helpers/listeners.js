@@ -3,8 +3,8 @@ import staffList from '../components/staff/staffList';
 import buildVendors from '../components/vendor/vendorList';
 import displayRides from '../components/ride/displayRides/displayRides';
 import vendorData from './data/vendor/vendorData';
-import displayVisitors from '../components/visitor/displayVisitor/visitor';
-import removeVisitor from '../components/visitor/deleteVisitor';
+import displayLessons from '../components/lessons/displayLessons/lesson';
+import removeLessons from '../components/lessons/deleteLessons/deleteLessons';
 import deleteRide from '../components/ride/deleteRide/deleteRide';
 import newVendor from '../components/vendor/newVendorForm';
 import editVendor from '../components/vendor/editVendorForm';
@@ -12,8 +12,8 @@ import utils from './utils';
 import updateRide from '../components/ride/updateRide/updateRide';
 import homescreen from '../components/homescreen/homescreen';
 import newStaff from '../components/staff/newStaff';
-import addVisitor from '../components/visitor/addVisitor/addVisitor';
-import updateVisitor from '../components/visitor/updateVisitor/updateVisitor';
+import addLesson from '../components/lessons/addLesson/addLesson';
+import updateLesson from '../components/lessons/editLesson/editLesson';
 import createRide from '../components/ride/createRide/createRide';
 
 const editVendorEvent = (e) => {
@@ -115,8 +115,8 @@ const createListeners = () => {
   $('body').on('click', '.rideLink', displayRides.buildRideModule);
   $('body').on('click', '.delete-vendor', deleteVendorEvent);
   $('body').on('click', '.edit-vendor', editVendorEvent);
-  $('body').on('click', '.visitorLink', displayVisitors.printVisitor);
-  $('body').on('click', '#remove-visitor', removeVisitor.deleteVisitor);
+  $('body').on('click', '.lessonLink', displayLessons.printLessons);
+  $('body').on('click', '#remove-lesson', removeLessons.deleteLesson);
   $('body').on('click', '.deleteRideIcon', deleteRide.deleteRide);
   $('body').on('click', '#navbar-staff', staffList.buildStaffModule);
   $('body').on('click', '#add-vendor', showNewVendorForm);
@@ -129,10 +129,10 @@ const createListeners = () => {
   $('body').on('click', '.navwhale', homescreen.buildHomeScreen);
   $('body').on('click', '.show-staff-form', newStaff.buildStaffForm);
   $('body').on('click', '.submit-staff-form', staffList.addStaff);
-  $('body').on('click', '#add-vis-form', addVisitor.showVisForm);
-  $('body').on('click', '#addVisitor', addVisitor.addVisitorEvent);
-  $('body').on('click', '.update-visitor', updateVisitor.updateVisEvent);
-  $('body').on('click', '#visitorUpdate', updateVisitor.updateVisitor);
+  $('body').on('click', '#add-lesson-form', addLesson.showLessonForm);
+  $('body').on('click', '#addLesson', addLesson.addLessonEvent);
+  $('body').on('click', '.update-lesson', updateLesson.updateLessonEvent);
+  $('body').on('click', '#lessonUpdate', updateLesson.updateLesson);
   $('body').on('click', '.rideEditBtn', updateRide.updateRideForm);
   $('body').on('click', '.updateSubmit', updateRide.updateRide);
   $('body').on('click', '.edit-staff', staffList.showEditStaffForm);
