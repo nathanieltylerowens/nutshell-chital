@@ -10,11 +10,11 @@ const checkLoginStatus = () => {
     if (user) {
       authDiv.addClass('hide');
       logoutButton.removeClass('hide');
-      $('.delete-vendor').removeClass('hide');
-      $('.edit-vendor').removeClass('hide');
-      $('#add-vendor').removeClass('hide');
-      $('#new-vendor-form').removeClass('hide');
-      $('#edit-vendor-form').removeClass('hide');
+      $('.delete-student').removeClass('hide');
+      $('.edit-student').removeClass('hide');
+      $('#add-student').removeClass('hide');
+      $('#new-student-form').removeClass('hide');
+      $('#edit-student-form').removeClass('hide');
       $('.delete-teacher').removeClass('hide');
       $('.show-teacher-form').removeClass('hide');
       $('#add-teacher-form').removeClass('hide');
@@ -29,12 +29,12 @@ const checkLoginStatus = () => {
     } else {
       logoutButton.addClass('hide');
       authDiv.removeClass('hide');
-      $('.delete-vendor').addClass('hide');
-      $('.edit-vendor').addClass('hide');
-      $('#add-vendor').addClass('hide');
-      $('#new-vendor-form').addClass('hide');
-      $('#edit-vendor-form').addClass('hide');
-      utils.printToDom('#new-vendor-form', '');
+      $('.delete-student').addClass('hide');
+      $('.edit-student').addClass('hide');
+      $('#add-student').addClass('hide');
+      $('#new-student-form').addClass('hide');
+      $('#edit-student-form').addClass('hide');
+      utils.printToDom('#new-student-form', '');
       $('.delete-teacher').addClass('hide');
       $('.show-teacher-form').addClass('hide');
       $('#add-teacher-form').addClass('hide');
