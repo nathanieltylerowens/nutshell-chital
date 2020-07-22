@@ -1,20 +1,17 @@
-import axios from 'axios';
-import apiKeys from '../../../helpers/apiKeys.json';
-
+import classData from '../../../helpers/data/classesData';
 import buildClasses from '../buildClasses/buildClasses';
-import modButtons from '../../modButtons/modButtons';
+import auth from '../../../helpers/data/authData';
 
-const baseUrl = apiKeys.firebaseConfig.databaseURL;
-
-const deleteClass = (classId) => axios.delete(`${baseUrl}/classes/${classId}.json`, classId);
-
-const removeClass = (e) => {
-  deleteClass(e.target.closest('.card').id)
+const deleteClass = (e) => {
+  if (!auth.isAuthenticated()) return;
+  const classId = e.target.closest('.card').id;
+  classData.deleteClass(classId)
     .then(() => {
-      modButtons.printModButtons();
-      buildClasses.buildClasses();
+      buildClasses.buildClassModule();
     })
-    .catch((err) => console.error('could not delete class', err));
+    .catch((err) => err);
 };
 
-export default { removeClass };
+export default {
+  deleteClass,
+};

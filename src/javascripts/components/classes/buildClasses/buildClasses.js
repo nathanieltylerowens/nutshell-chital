@@ -1,28 +1,58 @@
-import utils from '../../../helpers/utils';
 import authData from '../../../helpers/data/authData';
+import classData from '../../../helpers/data/classesData';
+import utils from '../../../helpers/utils';
+import './buildClasses.scss';
 
-const getClasses = () => utils.readData('classes');
-
-const buildClasses = () => {
-  getClasses()
+const buildClassModule = () => {
+  let domString = '';
+  classData.getClasses()
     .then((classes) => {
-      let domString = '';
-      classes.forEach((eachClass) => {
+      domString += `
+      <h2 class="homeH3 mt-2">Classes</h2>
+      <div class=classCreate>
+      <div class="classForm"></div>
+      <div class="classContainer mt-1">
+      `;
+      if (authData.isAuthenticated()) {
+        domString += '<button class="btn btn-primary createClassBtn">Create A Class<i class="fas fa-plus ml-1"></i></button>';
+      } else {
+        domString += '<button class="btn btn-primary createClassBtn hide">Create A Class<i class="fas fa-plus ml-1"></i></button>';
+      }
+      domString += `
+      </div>
+      <div class="classForm"></div>
+      <div class="classContainer mt-1">
+      `;
+      classes.forEach((singleClass) => {
         domString += `
-          <div class="card class-card" id="${eachClass.id}" style="width: 18rem;">
-          <img src="${eachClass.imageUrl}" class="card-img-top class-card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">${eachClass.name}</h5>
-            <p class="card-text">${eachClass.schedule}</p>
-          </div>
-          <div class="modifyButtons"></div>
-          </div>
-          `;
+        <div id=${singleClass.id} class="card classCard" style="width: 18rem;">
+        <img src="${singleClass.imageUrl}" class="card-img-top" alt="...">
+        <div class="card-img-overlay">`;
+        if (authData.isAuthenticated()) {
+          domString += '<i class="fas fa-times deleteClassIcon"></i>';
+        } else {
+          domString += '<i class="fas fa-times deleteClassIcon hide"></i>';
+        }
+        domString += `
+        <div class="card-title classTitle">`;
+        if (authData.isAuthenticated()) {
+          domString += '<i class="far fa-edit classEditBtn"></i>';
+        } else {
+          domString += '<i class="far fa-edit classEditBtn hide"></i>';
+        }
+        domString += ` <h5>${singleClass.name}</h5>`;
+        domString += `
+        </div>
+        </div>
+       
+        `;
       });
-      utils.printToDom('#cards-container', domString);
-      authData.checkLoginStatus();
+      domString += '</div>';
+      utils.printToDom('#content', domString);
     })
-    .catch((err) => console.error('error retrieving class list', err));
+    .catch((err) => console.error('bork', err));
 };
 
-export default { buildClasses };
+export default {
+  buildClassModule,
+};
