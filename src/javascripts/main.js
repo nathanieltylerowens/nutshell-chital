@@ -3,7 +3,7 @@ import apiKeys from './helpers/apiKeys.json';
 import auth from './components/auth/auth';
 import authData from './helpers/data/authData';
 import listeners from './helpers/listeners';
-// import homescreen from './components/homescreen/homescreen';
+import homescreen from './components/homescreen/homescreen';
 
 import '../stylings/main.scss';
 import 'bootstrap';
@@ -14,7 +14,7 @@ const init = () => {
   auth.loginButton();
   auth.logoutEvent();
   listeners.createListeners();
-  // homescreen.buildHomeScreen();
+  homescreen.buildHomeScreen();
 };
 
 init();

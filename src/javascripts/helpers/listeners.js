@@ -111,13 +111,13 @@ const submitNewStudentForm = (e) => {
 };
 
 const createListeners = () => {
-  $('body').on('click', '.rideLink', displayClasses.buildClassModule);
+  $('body').on('click', '.classLink', displayClasses.buildClassModule);
   $('body').on('click', '#navbar-students', buildStudents.buildStudentList);
   $('body').on('click', '.delete-student', deleteStudentEvent);
   $('body').on('click', '.edit-student', editStudentEvent);
   $('body').on('click', '.visitorLink', displayVisitors.printVisitor);
   $('body').on('click', '#remove-visitor', removeVisitor.deleteVisitor);
-  $('body').on('click', '.deleteRideIcon', deleteClass.deleteClass);
+  $('body').on('click', '.deleteClassIcon', deleteClass.deleteClass);
   $('body').on('click', '#navbar-teacher', teacherList.buildTeacherModule);
   $('body').on('click', '#add-student', showNewStudentForm);
   $('body').on('click', '#submit-new-student', submitNewStudentForm);
@@ -130,12 +130,12 @@ const createListeners = () => {
   $('body').on('click', '#addVisitor', addVisitor.addVisitorEvent);
   $('body').on('click', '.update-visitor', updateVisitor.updateVisEvent);
   $('body').on('click', '#visitorUpdate', updateVisitor.updateVisitor);
-  $('body').on('click', '.rideEditBtn', updateClass.updateClassForm);
+  $('body').on('click', '.classEditBtn', updateClass.updateClassForm);
   $('body').on('click', '.updateSubmit', updateClass.updateClass);
   $('body').on('click', '.edit-teacher', teacherList.showEditTeacherForm);
   $('body').on('click', '#update-teacher', teacherList.editTeacher);
   $('body').on('click', '.closeForm', updateClass.clearForm);
-  $('body').on('click', '.createRideBtn', addClass.showClassForm);
+  $('body').on('click', '.createClassBtn', addClass.showClassForm);
   $('body').on('change', '#coaster-image', addClass.imageInputWatcher);
 };
 
