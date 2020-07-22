@@ -10,8 +10,6 @@ const buildClassModule = () => {
       domString += `
       <h2 class="homeH3 mt-2">Classes</h2>
       <div class=classCreate>
-      <div class="classForm"></div>
-      <div class="classContainer mt-1">
       `;
       if (authData.isAuthenticated()) {
         domString += '<button class="btn btn-primary createClassBtn">Create A Class<i class="fas fa-plus ml-1"></i></button>';
@@ -34,6 +32,7 @@ const buildClassModule = () => {
           domString += '<i class="fas fa-times deleteClassIcon hide"></i>';
         }
         domString += `
+        </div>
         <div class="card-title classTitle">`;
         if (authData.isAuthenticated()) {
           domString += '<i class="far fa-edit classEditBtn"></i>';
@@ -44,7 +43,6 @@ const buildClassModule = () => {
         domString += `
         </div>
         </div>
-       
         `;
       });
       domString += '</div>';
