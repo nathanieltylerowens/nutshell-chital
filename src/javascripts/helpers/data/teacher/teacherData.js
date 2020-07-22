@@ -17,18 +17,18 @@ const getTeachers = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-const addStaff = (newStaffObj) => axios.post(`${baseUrl}/Staff.json`, newStaffObj);
+const addTeacher = (newTeacherObj) => axios.post(`${baseUrl}/teacher.json`, newTeacherObj);
 
-const deleteStaff = (teacherId) => axios.delete(`${baseUrl}/Staff/${teacherId}.json`);
+const deleteTeacher = (teacherId) => axios.delete(`${baseUrl}/teacher/${teacherId}.json`);
 
-const getStaffById = (id) => axios.get(`${baseUrl}/Staff/${id}.json`);
+const getTeacherById = (id) => axios.get(`${baseUrl}/teacher/${id}.json`);
 
-const updateStaff = (id, updateStaffObj) => axios.put(`${baseUrl}/Staff/${id}.json`, updateStaffObj);
+const updateTeacher = (id, updateTeacherObj) => axios.put(`${baseUrl}/teacher/${id}.json`, updateTeacherObj);
 
 export default {
   getTeachers,
-  deleteStaff,
-  addStaff,
-  getStaffById,
-  updateStaff,
+  addTeacher,
+  deleteTeacher,
+  getTeacherById,
+  updateTeacher,
 };

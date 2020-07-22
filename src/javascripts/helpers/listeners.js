@@ -1,5 +1,5 @@
 import authData from './data/authData';
-import staffList from '../components/staff/staffList';
+import teacherList from '../components/teachers/teacherList';
 import buildStudents from '../components/student/studentList';
 import displayRides from '../components/ride/displayRides/displayRides';
 import studentData from './data/student/studentData';
@@ -11,7 +11,7 @@ import editStudent from '../components/student/editStudentForm';
 import utils from './utils';
 import updateRide from '../components/ride/updateRide/updateRide';
 import homescreen from '../components/homescreen/homescreen';
-import newStaff from '../components/staff/newStaff';
+import newTeacher from '../components/teachers/newTeacher';
 import addVisitor from '../components/visitor/addVisitor/addVisitor';
 import updateVisitor from '../components/visitor/updateVisitor/updateVisitor';
 import createRide from '../components/ride/createRide/createRide';
