@@ -10,14 +10,14 @@ const checkLoginStatus = () => {
     if (user) {
       authDiv.addClass('hide');
       logoutButton.removeClass('hide');
-      $('.delete-vendor').removeClass('hide');
-      $('.edit-vendor').removeClass('hide');
-      $('#add-vendor').removeClass('hide');
-      $('#new-vendor-form').removeClass('hide');
-      $('#edit-vendor-form').removeClass('hide');
-      $('.delete-staff').removeClass('hide');
-      $('.show-staff-form').removeClass('hide');
-      $('#add-staff-form').removeClass('hide');
+      $('.delete-student').removeClass('hide');
+      $('.edit-student').removeClass('hide');
+      $('#add-student').removeClass('hide');
+      $('#new-student-form').removeClass('hide');
+      $('#edit-student-form').removeClass('hide');
+      $('.delete-teacher').removeClass('hide');
+      $('.show-teacher-form').removeClass('hide');
+      $('#add-teacher-form').removeClass('hide');
       $('#new-vis').removeClass('hide');
       $('.update-visitor').removeClass('hide');
       $('.remove-visitor').removeClass('hide');
@@ -29,24 +29,24 @@ const checkLoginStatus = () => {
     } else {
       logoutButton.addClass('hide');
       authDiv.removeClass('hide');
-      $('.delete-vendor').addClass('hide');
-      $('.edit-vendor').addClass('hide');
-      $('#add-vendor').addClass('hide');
-      $('#new-vendor-form').addClass('hide');
-      $('#edit-vendor-form').addClass('hide');
-      utils.printToDom('#new-vendor-form', '');
-      $('.delete-staff').addClass('hide');
-      $('.show-staff-form').addClass('hide');
-      $('#add-staff-form').addClass('hide');
+      $('.delete-student').addClass('hide');
+      $('.edit-student').addClass('hide');
+      $('#add-student').addClass('hide');
+      $('#new-student-form').addClass('hide');
+      $('#edit-student-form').addClass('hide');
+      utils.printToDom('#new-student-form', '');
+      $('.delete-teacher').addClass('hide');
+      $('.show-teacher-form').addClass('hide');
+      $('#add-teacher-form').addClass('hide');
       $('#new-vis').addClass('hide');
       $('.update-visitor').addClass('hide');
       $('.remove-visitor').addClass('hide');
-      $('#staff-form').addClass('hide');
-      $('.edit-staff').addClass('hide');
       $('.classEditBtn').addClass('hide');
       $('.deleteClassIcon').addClass('hide');
       $('.fixclassbtn').addClass('hide');
       $('.createClassBtn').addClass('hide');
+      $('#teacher-form').addClass('hide');
+      $('.edit-teacher').addClass('hide');
       $('#add-vis-form').addClass('hide');
     }
   });

@@ -1,61 +1,31 @@
-import axios from 'axios';
-import apiKeys from '../../helpers/apiKeys.json';
-import utils from '../../helpers/utils';
-import buildTeachers from './buildTeacher/buildTeachers';
+import authData from '../../helpers/data/authData';
 
-const getTeachers = () => utils.readData('teachers');
+const TeacherCardMaker = (teacher) => {
+  let domString = `
+    <div class="col-3">
+      <div class="teacher-card card border-0 rounded-1 bg-light text-dark mb-3" id=${teacher.id}>
+        <img src="${teacher.imageUrl}" class="card-img-top" alt="...">
+        <div class="card-header text-center">${teacher.name}</div>
+        <div class="card-body text-center">
+          <h5 class="card-title">This is a test</h5>`;
+  if (authData.isAuthenticated()) {
+    domString += `
+    <button class="btn btn-warning edit-teacher">Edit</button>
+    <button class="btn btn-danger delete-teacher">Delete</button>
+    `;
+  } else {
+    domString += `
+    <button class="btn btn-warning edit-teacher hide">Edit</button>
+    <button class="btn btn-danger delete-teacher hide">Delete</button>
+    `;
+  }
+  domString += `
+        </div>
+      </div>
+    </div>
+    `;
 
-const baseUrl = apiKeys.firebaseConfig.databaseURL;
-
-const addTeacher = (newTeacherObj) => axios.post(`${baseUrl}/teachers.json`, newTeacherObj);
-const deleteTeacher = (teacherId) => axios.delete(`${baseUrl}/teachers/${teacherId}.json`, teacherId);
-
-const removeTeacher = (e) => {
-  deleteTeacher(e.target.closest('.card').id)
-
-    .then(() => {
-      // eslint-disable-next-line no-use-before-define
-      teacherMaker();
-    })
-    .catch((err) => console.error('this isnt working', err));
+  return domString;
 };
 
-const addTeacherEvent = (e) => {
-  e.preventDefault();
-
-  const newTeacher = {
-    name: $('#name').val(),
-    imageUrl: $('#imageUrl').val(),
-    tenured: $('#tenured').prop('checked'),
-  };
-
-  addTeacher(newTeacher)
-    .then(() => {
-      // eslint-disable-next-line no-use-before-define
-      teacherMaker();
-      utils.printToDom('#new-teacher', '');
-    })
-    .catch((err) => console.error('get teachers didnt work', err));
-};
-
-const teacherMaker = () => {
-  getTeachers()
-    .then((teachers) => {
-      let domString = '';
-      teachers.forEach((teacher) => {
-        domString += buildTeachers.buildTeachers(teacher);
-      });
-      domString += `
-      <div id="new-teacher"><div>
-      `;
-      utils.printToDom('#cards-container', domString);
-    })
-    .catch((err) => console.error('get teachers broke', err));
-};
-
-const teacherEventListeners = () => {
-  $('body').on('click', '#submit-teacher', addTeacherEvent);
-  $('body').on('click', '#delete-teacher', removeTeacher);
-};
-
-export default { teacherEventListeners, teacherMaker };
+export default { TeacherCardMaker };
