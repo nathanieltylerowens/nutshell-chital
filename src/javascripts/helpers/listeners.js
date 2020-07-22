@@ -1,20 +1,26 @@
 import authData from './data/authData';
 import teacherList from '../components/teachers/teacherList';
+import buildVendors from '../components/vendor/vendorList';
+import displayClasses from '../components/classes/buildClasses/buildClasses';
+import vendorData from './data/vendor/vendorData';
+import displayVisitors from '../components/visitor/displayVisitor/visitor';
+import removeVisitor from '../components/visitor/deleteVisitor';
+import deleteClass from '../components/classes/deleteClass/deleteClass';
+import newVendor from '../components/vendor/newVendorForm';
+import editVendor from '../components/vendor/editVendorForm';
 import buildStudents from '../components/student/studentList';
-import displayRides from '../components/ride/displayRides/displayRides';
 import studentData from './data/student/studentData';
 import displayVisitors from '../components/visitor/displayVisitor/visitor';
 import removeVisitor from '../components/visitor/deleteVisitor';
-import deleteRide from '../components/ride/deleteRide/deleteRide';
 import newStudent from '../components/student/newStudentForm';
 import editStudent from '../components/student/editStudentForm';
 import utils from './utils';
-import updateRide from '../components/ride/updateRide/updateRide';
+import updateClass from '../components/classes/editClass/editClass';
 import homescreen from '../components/homescreen/homescreen';
 import newTeacher from '../components/teachers/newTeacher';
 import addVisitor from '../components/visitor/addVisitor/addVisitor';
 import updateVisitor from '../components/visitor/updateVisitor/updateVisitor';
-import createRide from '../components/ride/createRide/createRide';
+import addClass from '../components/classes/addClass/addClass';
 
 const editStudentEvent = (e) => {
   if (!authData.isAuthenticated()) {
@@ -111,13 +117,16 @@ const submitNewStudentForm = (e) => {
 };
 
 const createListeners = () => {
+  $('body').on('click', '#navbar-vendors', buildVendors.buildVendorList);
+  $('body').on('click', '.rideLink', displayClasses.buildClassModule);
+  $('body').on('click', '.delete-vendor', deleteVendorEvent);
+  $('body').on('click', '.edit-vendor', editVendorEvent);
   $('body').on('click', '#navbar-students', buildStudents.buildStudentList);
-  $('body').on('click', '.rideLink', displayRides.buildRideModule);
   $('body').on('click', '.delete-student', deleteStudentEvent);
   $('body').on('click', '.edit-student', editStudentEvent);
   $('body').on('click', '.visitorLink', displayVisitors.printVisitor);
   $('body').on('click', '#remove-visitor', removeVisitor.deleteVisitor);
-  $('body').on('click', '.deleteRideIcon', deleteRide.deleteRide);
+  $('body').on('click', '.deleteRideIcon', deleteClass.deleteClass);
   $('body').on('click', '#navbar-staff', staffList.buildStaffModule);
   $('body').on('click', '#add-student', showNewStudentForm);
   $('body').on('click', '#submit-new-student', submitNewStudentForm);
@@ -125,7 +134,6 @@ const createListeners = () => {
   $('body').on('click', '#navbar-staff', staffList.buildStaffModule);
   $('body').on('click', '.delete-staff', staffList.deleteStaff);
   $('body').on('click', '#navbar-staff', staffList.buildStaffModule);
-  $('body').on('click', '.fixridebtn', updateRide.fixRide);
   $('body').on('click', '.navwhale', homescreen.buildHomeScreen);
   $('body').on('click', '.show-staff-form', newStaff.buildStaffForm);
   $('body').on('click', '.submit-staff-form', staffList.addStaff);
@@ -133,13 +141,13 @@ const createListeners = () => {
   $('body').on('click', '#addVisitor', addVisitor.addVisitorEvent);
   $('body').on('click', '.update-visitor', updateVisitor.updateVisEvent);
   $('body').on('click', '#visitorUpdate', updateVisitor.updateVisitor);
-  $('body').on('click', '.rideEditBtn', updateRide.updateRideForm);
-  $('body').on('click', '.updateSubmit', updateRide.updateRide);
+  $('body').on('click', '.rideEditBtn', updateClass.updateClassForm);
+  $('body').on('click', '.updateSubmit', updateClass.updateClass);
   $('body').on('click', '.edit-staff', staffList.showEditStaffForm);
   $('body').on('click', '#update-staff', staffList.editStaff);
-  $('body').on('click', '.closeForm', updateRide.clearForm);
-  $('body').on('click', '.createRideBtn', createRide.showRideForm);
-  $('body').on('change', '#coaster-image', createRide.imageInputWatcher);
+  $('body').on('click', '.closeForm', updateClass.clearForm);
+  $('body').on('click', '.createRideBtn', addClass.showClassForm);
+  $('body').on('change', '#coaster-image', addClass.imageInputWatcher);
 };
 
 export default {
