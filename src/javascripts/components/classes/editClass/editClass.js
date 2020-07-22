@@ -6,7 +6,7 @@ import './editClass.scss';
 
 const updateClassForm = (e) => {
   const classId = e.target.closest('.card').id;
-  $('.createRideBtn').addClass('hide');
+  $('.createClassBtn').addClass('hide');
   classData.getClasses()
     .then((classes) => {
       const classById = classes.find((singleClass) => singleClass.id === classId);
@@ -39,18 +39,18 @@ const updateClassForm = (e) => {
 const updateClass = () => {
   if (!auth.isAuthenticated()) return;
   const classId = $('.updateSubmit').data('classid');
-  const updatedRideObj = {
+  const updatedClassObj = {
     name: $('#class-name').val(),
     schedule: $('#class-schedule').val(),
     imageUrl: $('#class-image').val(),
   };
-  classData.updateClass(classId, updatedRideObj)
+  classData.updateClass(classId, updatedClassObj)
     .then(() => buildClass.buildClassModule())
     .catch((err) => (err));
 };
 
 const clearForm = () => {
-  $('.createRideBtn').removeClass('hide');
+  $('.createClassBtn').removeClass('hide');
   const domString = '';
   utils.printToDom('.classForm', domString);
 };

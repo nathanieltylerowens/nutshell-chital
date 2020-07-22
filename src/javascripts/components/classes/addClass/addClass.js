@@ -32,12 +32,12 @@ function imageInputWatcher() {
 
 const showClassForm = () => {
   if (!auth.isAuthenticated()) return;
-  $('.createRideBtn').addClass('hide');
+  $('.createClassBtn').addClass('hide');
   const domString = `
   <div class="closeForm">
   <i class="fas fa-window-close closeForm mb-1"></i>
   </div>
-  <h5 class="homeH3 mb-0 text-left">Create Ride</h5>
+  <h5 class="homeH3 mb-0 text-left">Create Class</h5>
   <form id="new-class-form">
   <div class="form-group">
   <label for="new-class-name" class="mb-0">Name:</label>
