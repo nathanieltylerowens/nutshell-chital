@@ -3,7 +3,7 @@ import classData from '../../../helpers/data/classesData';
 import utils from '../../../helpers/utils';
 import './buildClasses.scss';
 
-const buildRideModule = () => {
+const buildClassModule = () => {
   let domString = '';
   classData.getClasses()
     .then((classes) => {
@@ -54,5 +54,5 @@ const buildRideModule = () => {
 };
 
 export default {
-  buildRideModule,
+  buildClassModule,
 };
