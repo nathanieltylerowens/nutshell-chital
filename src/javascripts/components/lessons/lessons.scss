@@ -1,0 +1,38 @@
+.lesson {
+  margin: 15px;
+  padding: 10px;
+}
+
+.lesson p {
+  font-size: 14pt;
+  margin: 10pt;
+}
+
+.lesson-container {
+  justify-content: space-evenly;
+}
+
+#new-lesson {
+  display: flex;
+  justify-content: center;
+}
+
+#new-lesson-form{
+  padding: 0;
+  margin: 0;
+}
+
+.lesson-card-buttons {
+  display: flex;
+  justify-content: center;
+}
+.lesson-card-buttons a {
+  margin: 2px;
+}
+
+#lesson-heading {
+font-family: 'Luckiest Guy', cursive;
+color: #f9ea1a;
+margin-top: 5px;
+}
+ 

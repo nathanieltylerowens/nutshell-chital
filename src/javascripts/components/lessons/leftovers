@@ -1,9 +1,3 @@
-import axios from 'axios';
-import apiKeys from '../../helpers/apiKeys.json';
-import utils from '../../helpers/utils';
-import lessonsMakers from './lessonMaker';
-import lessonEdit from './editLesson/editLesson';
-
 const getLessons = () => utils.readData('lessons');
 
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
@@ -87,3 +81,55 @@ const lessonEventListeners = () => {
 };
 
 export default { lessonMaker, lessonEventListeners };
+
+const lessonBuilder = (lesson) => {
+  let domString = `
+          <div class="card class-card" id="${lesson.id}">
+            <div class="card-body">
+              <h5>${lesson.name}</h5>
+              <p>${lesson.hours}</p>
+        `;
+
+  if (lesson.materialsProvided === true) {
+    domString += `
+                <p>"YES"</p>
+              `;
+  } else {
+    domString += `
+                <p>"NO"</p>
+          `;
+  }
+
+  domString += `
+                <a href="#" id="edit-lesson-form"><i class="far fa-edit"></i></a>
+                <a href="#" id="delete-lesson"><i class="far fa-times-circle"></i></a>
+              </div>
+            </div>
+    `;
+  return domString;
+};
+
+export default { lessonBuilder };
+
+const buildLessonForm = () => {
+  const domString = `
+  <form>
+    <div class="form-group">
+      <label for="lesson-name">Example label</label>
+      <input type="text" class="form-control" id="lesson-name" placeholder="lesson">
+    </div>
+    <div class="form-group">
+      <label for="lesson-hours">Another label</label>
+      <input type="text" class="form-control" id="lesson-hours" placeholder="Another input">
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="lesson-materials" value="true">
+        <label class="form-check-label" for="lesson-materials">
+          Example checkbox
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary" id="submit-lesson">Submit</button>
+  </form>
+  `;
+  utils.printToDom('#selected-add', domString);
+};

@@ -1,8 +1,8 @@
 import authData from './data/authData';
+import displayLessons from '../components/lessons/displayLessons/lesson';
+import removeLessons from '../components/lessons/deleteLessons/deleteLessons';
 import teacherList from '../components/teachers/teacherList';
 import displayClasses from '../components/classes/buildClasses/buildClasses';
-import displayVisitors from '../components/visitor/displayVisitor/visitor';
-import removeVisitor from '../components/visitor/deleteVisitor';
 import deleteClass from '../components/classes/deleteClass/deleteClass';
 import buildStudents from '../components/student/studentList';
 import studentData from './data/student/studentData';
@@ -11,9 +11,9 @@ import editStudent from '../components/student/editStudentForm';
 import utils from './utils';
 import updateClass from '../components/classes/editClass/editClass';
 import homescreen from '../components/homescreen/homescreen';
+import addLesson from '../components/lessons/addLesson/addLesson';
+import updateLesson from '../components/lessons/editLesson/editLesson';
 import newTeacher from '../components/teachers/newTeacher';
-import addVisitor from '../components/visitor/addVisitor/addVisitor';
-import updateVisitor from '../components/visitor/updateVisitor/updateVisitor';
 import addClass from '../components/classes/addClass/addClass';
 
 const editStudentEvent = (e) => {
@@ -111,12 +111,16 @@ const submitNewStudentForm = (e) => {
 };
 
 const createListeners = () => {
+  $('body').on('click', '.lessonLink', displayLessons.printLessons);
+  $('body').on('click', '#remove-lesson', removeLessons.deleteLesson);
+  $('body').on('click', '#add-lesson-form', addLesson.showLessonForm);
+  $('body').on('click', '#addLesson', addLesson.addLessonEvent);
+  $('body').on('click', '.update-lesson', updateLesson.updateLessonEvent);
+  $('body').on('click', '#lessonUpdate', updateLesson.updateLesson);
   $('body').on('click', '.classLink', displayClasses.buildClassModule);
   $('body').on('click', '#navbar-students', buildStudents.buildStudentList);
   $('body').on('click', '.delete-student', deleteStudentEvent);
   $('body').on('click', '.edit-student', editStudentEvent);
-  $('body').on('click', '.visitorLink', displayVisitors.printVisitor);
-  $('body').on('click', '#remove-visitor', removeVisitor.deleteVisitor);
   $('body').on('click', '.deleteClassIcon', deleteClass.deleteClass);
   $('body').on('click', '#navbar-teacher', teacherList.buildTeacherModule);
   $('body').on('click', '#add-student', showNewStudentForm);
@@ -126,10 +130,6 @@ const createListeners = () => {
   $('body').on('click', '.navwhale', homescreen.buildHomeScreen);
   $('body').on('click', '.show-teacher-form', newTeacher.buildTeacherForm);
   $('body').on('click', '.submit-teacher-form', teacherList.addTeacher);
-  $('body').on('click', '#add-vis-form', addVisitor.showVisForm);
-  $('body').on('click', '#addVisitor', addVisitor.addVisitorEvent);
-  $('body').on('click', '.update-visitor', updateVisitor.updateVisEvent);
-  $('body').on('click', '#visitorUpdate', updateVisitor.updateVisitor);
   $('body').on('click', '.classEditBtn', updateClass.updateClassForm);
   $('body').on('click', '.updateSubmit', updateClass.updateClass);
   $('body').on('click', '.edit-teacher', teacherList.showEditTeacherForm);
