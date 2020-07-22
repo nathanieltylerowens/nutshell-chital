@@ -1,13 +1,13 @@
 import authData from './data/authData';
 import staffList from '../components/staff/staffList';
-import buildVendors from '../components/vendor/vendorList';
+import buildStudents from '../components/student/studentList';
 import displayRides from '../components/ride/displayRides/displayRides';
-import vendorData from './data/vendor/vendorData';
+import studentData from './data/student/studentData';
 import displayVisitors from '../components/visitor/displayVisitor/visitor';
 import removeVisitor from '../components/visitor/deleteVisitor';
 import deleteRide from '../components/ride/deleteRide/deleteRide';
-import newVendor from '../components/vendor/newVendorForm';
-import editVendor from '../components/vendor/editVendorForm';
+import newStudent from '../components/student/newStudentForm';
+import editStudent from '../components/student/editStudentForm';
 import utils from './utils';
 import updateRide from '../components/ride/updateRide/updateRide';
 import homescreen from '../components/homescreen/homescreen';
@@ -16,75 +16,75 @@ import addVisitor from '../components/visitor/addVisitor/addVisitor';
 import updateVisitor from '../components/visitor/updateVisitor/updateVisitor';
 import createRide from '../components/ride/createRide/createRide';
 
-const editVendorEvent = (e) => {
+const editStudentEvent = (e) => {
   if (!authData.isAuthenticated()) {
     $('#myModal').modal('show');
     return;
   }
 
-  const vendorId = e.target.closest('.card').id;
-  vendorData.getVendorById(vendorId)
+  const studentId = e.target.closest('.card').id;
+  studentData.getStudentById(studentId)
     .then((response) => {
-      const vendorObj = response.data;
+      const studentObj = response.data;
 
       // Create the edit form in the DOM
-      editVendor.showEditVendorForm(vendorId, vendorObj);
+      editStudent.showEditStudentForm(studentId, studentObj);
 
       // Check if user is logged in and if so, remove 'hide' class
       authData.checkLoginStatus();
     })
-    .catch((err) => console.error('Could not retrieve Vendor', err));
+    .catch((err) => console.error('Could not retrieve Student', err));
 };
 
-const deleteVendorEvent = (e) => {
+const deleteStudentEvent = (e) => {
   if (!authData.isAuthenticated()) {
     $('#myModal').modal('show');
     return;
   }
-  const vendorId = e.target.closest('.card').id;
-  vendorData.deleteVendor(vendorId)
+  const studentId = e.target.closest('.card').id;
+  studentData.deleteStudent(studentId)
     .then(() => {
-      buildVendors.buildVendorList();
+      buildStudents.buildStudentList();
     })
-    .catch((err) => console.error('Could not delete vendor', err));
+    .catch((err) => console.error('Could not delete student', err));
 };
 
-const showNewVendorForm = () => {
+const showNewStudentForm = () => {
   if (!authData.isAuthenticated()) {
     $('#myModal').modal('show');
     return;
   }
-  newVendor.newVendorForm();
+  newStudent.newStudentForm();
   authData.checkLoginStatus();
 };
 
-const submitUpdateVendorForm = (e) => {
+const submitUpdateStudentForm = (e) => {
   e.preventDefault();
-  const fbVendorId = e.target.getAttribute('data-firebase-vendor-id');
+  const fbStudentId = e.target.getAttribute('data-firebase-student-id');
 
   const inputAddress = $('#inputAddress').val();
   const inputName = $('#inputName').val();
   const inputPhone = $('#inputPhone').val();
   const inputProduct = $('#inputProduct').val();
-  const vendorId = e.target.getAttribute('data-vendorId');
+  const studentId = e.target.getAttribute('data-studentId');
 
-  const newVendorObj = {
+  const newStudentObj = {
     address: inputAddress,
     name: inputName,
     phoneNumber: inputPhone,
     product: inputProduct,
-    vendorId,
+    studentId,
   };
 
-  vendorData.updateVendor(fbVendorId, newVendorObj)
+  studentData.updateStudent(fbStudentId, newStudentObj)
     .then(() => {
-      utils.printToDom('#vendor-form', '');
-      buildVendors.buildVendorList();
+      utils.printToDom('#student-form', '');
+      buildStudents.buildStudentList();
     })
-    .catch((err) => console.error('Could not update vendor', err));
+    .catch((err) => console.error('Could not update student', err));
 };
 
-const submitNewVendorForm = (e) => {
+const submitNewStudentForm = (e) => {
   e.preventDefault();
 
   // get values from form
@@ -92,36 +92,36 @@ const submitNewVendorForm = (e) => {
   const inputName = $('#inputName').val();
   const inputPhone = $('#inputPhone').val();
   const inputProduct = $('#inputProduct').val();
-  const vendorId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  const studentId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
-  const newVendorObj = {
+  const newStudentObj = {
     address: inputAddress,
     name: inputName,
     phoneNumber: inputPhone,
     product: inputProduct,
-    vendorId,
+    studentId,
   };
 
-  vendorData.addVendor(newVendorObj)
+  studentData.addStudent(newStudentObj)
     .then(() => {
-      utils.printToDom('#vendor-form', '');
-      buildVendors.buildVendorList();
+      utils.printToDom('#student-form', '');
+      buildStudents.buildStudentList();
     })
-    .catch((err) => console.error('Add Vendor failed', err));
+    .catch((err) => console.error('Add Student failed', err));
 };
 
 const createListeners = () => {
-  $('body').on('click', '#navbar-vendors', buildVendors.buildVendorList);
+  $('body').on('click', '#navbar-students', buildStudents.buildStudentList);
   $('body').on('click', '.rideLink', displayRides.buildRideModule);
-  $('body').on('click', '.delete-vendor', deleteVendorEvent);
-  $('body').on('click', '.edit-vendor', editVendorEvent);
+  $('body').on('click', '.delete-student', deleteStudentEvent);
+  $('body').on('click', '.edit-student', editStudentEvent);
   $('body').on('click', '.visitorLink', displayVisitors.printVisitor);
   $('body').on('click', '#remove-visitor', removeVisitor.deleteVisitor);
   $('body').on('click', '.deleteRideIcon', deleteRide.deleteRide);
   $('body').on('click', '#navbar-staff', staffList.buildStaffModule);
-  $('body').on('click', '#add-vendor', showNewVendorForm);
-  $('body').on('click', '#submit-new-vendor', submitNewVendorForm);
-  $('body').on('click', '#submit-update-vendor', submitUpdateVendorForm);
+  $('body').on('click', '#add-student', showNewStudentForm);
+  $('body').on('click', '#submit-new-student', submitNewStudentForm);
+  $('body').on('click', '#submit-update-student', submitUpdateStudentForm);
   $('body').on('click', '#navbar-staff', staffList.buildStaffModule);
   $('body').on('click', '.delete-staff', staffList.deleteStaff);
   $('body').on('click', '#navbar-staff', staffList.buildStaffModule);
