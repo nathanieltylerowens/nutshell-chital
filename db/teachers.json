@@ -1,32 +1,32 @@
 {
-  "Teacher1": {
+  "teacher01": {
     "name": "Grock",
     "imageUrl": "https://cdn.britannica.com/s:800x1000/56/79256-050-AA3AC49C/Grock-clown-dressing-room-Swiss-Circus-Medrano-1952.jpg",
-    "Tenured": "True"
+    "teacherId": "001"
   },
-  "Teacher2": {
+  "teacher02": {
     "name": "Oleg Popov",
     "imageUrl": "https://cdn.britannica.com/s:800x1000/94/196494-050-2D17D9B7/Oleg-Popov-2009.jpg",
-    "Tenured": "True"
+    "teacherId": "002"
   },
-  "Teacher3": {
+  "teacher03": {
     "name": "Emmett Kelly",
     "imageUrl": "https://cdn.britannica.com/s:800x1000/96/196496-050-018F0C2B/Emmett-Kelly-1947.jpg",
-    "Tenured": "True"
+    "teacherId": "003"
   },
-  "Teacher4": {
+  "teacher04": {
     "name": "Bozo the Clown",
     "imageUrl": "https://cdn.britannica.com/s:800x1000/95/196495-050-4790CC60/The-Bozo-Show-the-Clown-1960.jpg",
-    "Tenured": "False"
+    "teacherId": "004"
   },
-  "Teacher5": {
+  "teacher05": {
     "name": "Krusty the Clown",
     "imageUrl": "https://cdn.britannica.com/s:800x1000/22/196522-050-7BC3DA09/Krusty-the-Clown-TV-series-The-Simpsons.jpg",
-    "Tenured": "True"
+    "teacherId": "005"
   },
-  "Teacher6": {
+  "teacher06": {
     "name": "Felix Adler",
     "imageUrl": "https://travsd.files.wordpress.com/2013/06/6377443_126504994324.jpg",
-    "Tenured": "True"
+    "teacherId": "006"
   }
 }
