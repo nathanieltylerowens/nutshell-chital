@@ -4,8 +4,8 @@ import auth from '../../../helpers/data/authData';
 
 const deleteClass = (e) => {
   if (!auth.isAuthenticated()) return;
-  const rideId = e.target.closest('.card').id;
-  classData.deleteClass(rideId)
+  const classId = e.target.closest('.card').id;
+  classData.deleteClass(classId)
     .then(() => {
       buildClasses.buildClassModule();
     })

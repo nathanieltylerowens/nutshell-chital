@@ -8,37 +8,37 @@ const buildClassModule = () => {
   classData.getClasses()
     .then((classes) => {
       domString += `
-      <h2 class="homeH3 mt-2">Rides</h2>
-      <div class=rideCreate>
-      <div class="rideForm"></div>
-      <div class="rideContainer mt-1">
+      <h2 class="homeH3 mt-2">Classes</h2>
+      <div class=classCreate>
+      <div class="classForm"></div>
+      <div class="classContainer mt-1">
       `;
       if (authData.isAuthenticated()) {
-        domString += '<button class="btn btn-primary createRideBtn">Create A Ride<i class="fas fa-plus ml-1"></i></button>';
+        domString += '<button class="btn btn-primary createClassBtn">Create A Class<i class="fas fa-plus ml-1"></i></button>';
       } else {
-        domString += '<button class="btn btn-primary createRideBtn hide">Create A Ride<i class="fas fa-plus ml-1"></i></button>';
+        domString += '<button class="btn btn-primary createClassBtn hide">Create A Class<i class="fas fa-plus ml-1"></i></button>';
       }
       domString += `
       </div>
-      <div class="rideForm"></div>
-      <div class="rideContainer mt-1">
+      <div class="classForm"></div>
+      <div class="classContainer mt-1">
       `;
       classes.forEach((singleClass) => {
         domString += `
-        <div id=${singleClass.id} class="card rideCard" style="width: 18rem;">
+        <div id=${singleClass.id} class="card classCard" style="width: 18rem;">
         <img src="${singleClass.imageUrl}" class="card-img-top" alt="...">
         <div class="card-img-overlay">`;
         if (authData.isAuthenticated()) {
-          domString += '<i class="fas fa-times deleteRideIcon"></i>';
+          domString += '<i class="fas fa-times deleteClassIcon"></i>';
         } else {
-          domString += '<i class="fas fa-times deleteRideIcon hide"></i>';
+          domString += '<i class="fas fa-times deleteClassIcon hide"></i>';
         }
         domString += `
-        <div class="card-title rideTitle">`;
+        <div class="card-title classTitle">`;
         if (authData.isAuthenticated()) {
-          domString += '<i class="far fa-edit rideEditBtn"></i>';
+          domString += '<i class="far fa-edit classEditBtn"></i>';
         } else {
-          domString += '<i class="far fa-edit rideEditBtn hide"></i>';
+          domString += '<i class="far fa-edit classEditBtn hide"></i>';
         }
         domString += ` <h5>${singleClass.name}</h5>`;
         domString += `

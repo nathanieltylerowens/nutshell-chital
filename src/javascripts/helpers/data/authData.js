@@ -21,10 +21,10 @@ const checkLoginStatus = () => {
       $('#new-vis').removeClass('hide');
       $('.update-visitor').removeClass('hide');
       $('.remove-visitor').removeClass('hide');
-      $('.createRideBtn').removeClass('hide');
-      $('.rideEditBtn').removeClass('hide');
-      $('.deleteRideIcon').removeClass('hide');
-      $('.fixridebtn').removeClass('hide');
+      $('.createClassBtn').removeClass('hide');
+      $('.classEditBtn').removeClass('hide');
+      $('.deleteClassIcon').removeClass('hide');
+      $('.fixclassbtn').removeClass('hide');
       $('#add-vis-form').removeClass('hide');
     } else {
       logoutButton.addClass('hide');
@@ -43,10 +43,10 @@ const checkLoginStatus = () => {
       $('.remove-visitor').addClass('hide');
       $('#staff-form').addClass('hide');
       $('.edit-staff').addClass('hide');
-      $('.rideEditBtn').addClass('hide');
-      $('.deleteRideIcon').addClass('hide');
-      $('.fixridebtn').addClass('hide');
-      $('.createRideBtn').addClass('hide');
+      $('.classEditBtn').addClass('hide');
+      $('.deleteClassIcon').addClass('hide');
+      $('.fixclassbtn').addClass('hide');
+      $('.createClassBtn').addClass('hide');
       $('#add-vis-form').addClass('hide');
     }
   });

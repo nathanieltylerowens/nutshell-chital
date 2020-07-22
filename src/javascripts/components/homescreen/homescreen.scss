@@ -1,0 +1,30 @@
+  
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khula&display=swap');
+
+.homeContainer {
+  width: 70%;
+  margin: 20px auto;
+  text-align: center;
+
+  .homeH3 {
+    font-family: 'Luckiest Guy', cursive;
+    color: #f9ea1a;
+  }
+  .homeMessage {
+    font-family: 'Khula', sans-serif;
+    text-align: justify;
+    margin: 0 auto;
+    width: 50%;
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .homeContainer {
+    width:95%;
+  }
+  .homeMessage {
+    min-width: 90%;
+}
+}
