@@ -1,5 +1,5 @@
 import axios from 'axios';
-import apiKeys from '../apiKeys.json';
+import apiKeys from '../../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
@@ -8,9 +8,9 @@ const getTeachers = () => new Promise((resolve, reject) => {
     .then((response) => {
       const teacherObjects = response.data;
       const teachers = [];
-      Object.keys(teacherObjects).forEach((employeeId) => {
-        teacherObjects[employeeId].id = employeeId;
-        teachers.push(teacherObjects[employeeId]);
+      Object.keys(teacherObjects).forEach((teacherId) => {
+        teacherObjects[teacherId].id = teacherId;
+        teachers.push(teacherObjects[teacherId]);
       });
       resolve(teachers);
     })
@@ -19,7 +19,7 @@ const getTeachers = () => new Promise((resolve, reject) => {
 
 const addStaff = (newStaffObj) => axios.post(`${baseUrl}/Staff.json`, newStaffObj);
 
-const deleteStaff = (employeeId) => axios.delete(`${baseUrl}/Staff/${employeeId}.json`);
+const deleteStaff = (teacherId) => axios.delete(`${baseUrl}/Staff/${teacherId}.json`);
 
 const getStaffById = (id) => axios.get(`${baseUrl}/Staff/${id}.json`);
 
