@@ -111,7 +111,7 @@ const submitNewStudentForm = (e) => {
 };
 
 const createListeners = () => {
-  $('body').on('click', '.lessonLink', displayLessons.printLessons);
+  $('body').on('click', '#navbar-lesson', displayLessons.printLessons);
   $('body').on('click', '#remove-lesson', removeLessons.deleteLesson);
   $('body').on('click', '#add-lesson-form', addLesson.showLessonForm);
   $('body').on('click', '#addLesson', addLesson.addLessonEvent);
