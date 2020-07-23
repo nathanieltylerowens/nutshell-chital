@@ -4,7 +4,7 @@ import apiKeys from '../../apiKeys.json';
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
 const getStudents = () => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/student.json`)
+  axios.get(`${baseUrl}/students.json`)
     .then((response) => {
       const studentObjects = response.data;
       const students = [];
