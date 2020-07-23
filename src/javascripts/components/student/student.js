@@ -1,13 +1,16 @@
 import authData from '../../helpers/data/authData';
+import './student.scss';
 
 const studentCardMaker = (student) => {
   let domString = `
   <div class="col-3">
     <div class="card border-0 rounded-0 bg-light text-dark mb-3" id=${student.id}>
       <div class="card-header text-center">${student.studentName}</div>
+      <img class="card-img-top student-card-image m-auto" src="${student.imageUrl}" alt="Student Image">
       <div class="card-body text-center">
-        <h5 class="card-title">${student.major}</h5>
-        <p class="card-text">${student.imageUrl}</p>`;
+        <h5 class="card-title">${student.major}</h5>`;
+  // <p class="card-text">${student.imageUrl}</p>`;
+  // <img class="card-img-top" src="..." alt="Card image cap">
   if (authData.isAuthenticated()) {
     domString += '<button class="btn btn-warning edit-student mx-1">Edit</button>';
   } else {
