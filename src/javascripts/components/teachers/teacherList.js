@@ -51,7 +51,7 @@ const addTeacher = (e) => {
   const newTeacherObj = {
     firstName: $('#teacher-name').val(),
     imageUrl: $('#teacher-image').val(),
-    employeeId: $('#teacher-id').val(),
+    teacherId: $('#teacher-id').val(),
   };
 
   teacherData.addTeacher(newTeacherObj)
