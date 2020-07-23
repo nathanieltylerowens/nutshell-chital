@@ -6,21 +6,17 @@ const newStudentForm = () => {
   <h2>New Student</h2>
   <form class="hide" id="new-student-form">
     <div class="form-group">
-      <label for="inputAddress">Address</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+      <label for="inputImageUrl">Address</label>
+      <input type="text" class="form-control" id="inputImageUrl" placeholder="https://www.imgur.com">
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputName">Name</label>
+        <label for="inputName">Student Name</label>
         <input type="text" class="form-control" id="inputName">
       </div>
       <div class="form-group col-md-4">
-        <label for="inputPhone">Phone Number</label>
-        <input type="text" class="form-control" id="inputPhone">
-      </div>
-      <div class="form-group col-md-2">
-        <label for="inputProduct">Product</label>
-        <input type="text" class="form-control" id="inputProduct">
+        <label for="inputMajor">Major</label>
+        <input type="text" class="form-control" id="inputMajor">
       </div>
     </div>
     <button type="submit" class="btn btn-primary" id="submit-new-student">Submit New Student</button>
