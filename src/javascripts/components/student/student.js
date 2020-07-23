@@ -9,8 +9,6 @@ const studentCardMaker = (student) => {
       <img class="card-img-top student-card-image m-auto" src="${student.imageUrl}" alt="Student Image">
       <div class="card-body text-center">
         <h5 class="card-title">${student.major}</h5>`;
-  // <p class="card-text">${student.imageUrl}</p>`;
-  // <img class="card-img-top" src="..." alt="Card image cap">
   if (authData.isAuthenticated()) {
     domString += '<button class="btn btn-warning edit-student mx-1">Edit</button>';
   } else {
