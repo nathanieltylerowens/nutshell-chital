@@ -3,7 +3,7 @@ import apiKeys from '../../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
-const getstudents = () => new Promise((resolve, reject) => {
+const getStudents = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/student.json`)
     .then((response) => {
       const studentObjects = response.data;
@@ -32,7 +32,7 @@ const updatestudent = (id, updatestudentObj) => axios.put(`${baseUrl}/student/${
 export default {
   addstudent,
   deletestudent,
-  getstudents,
+  getStudents,
   getstudentById,
   updatestudent,
 };
