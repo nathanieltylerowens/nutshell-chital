@@ -1,32 +1,27 @@
 {
     "class1": {
-      "name": "From Pennywise to Gacy: Rehabilitating the Clown in Modern Culture",
-      "imageUrl": "https://i.imgur.com/kOaRssl.jpg",
+      "name": "Rehabilitating the Clown",
+      "imageUrl": "https://i.imgur.com/8RjA5Aq.jpg",
       "schedule": "M W R"
     },
     "class2": {
-      "name": "Clown Safety: No Laughing Matter",
-      "imageUrl": "https://i.imgur.com/odrCpoM.png",
+      "name": "Driving 101",
+      "imageUrl": "https://i.imgur.com/ncAJtkw.jpg",
       "schedule": "T R"
-    },
-    "class3": {
-      "name": "Clown Math",
-      "imageUrl": "https://i.imgur.com/hohVA1m.jpg",
-      "schedule": "M W F"
     },
     "class4": {
       "name": "Rodeo Clowns: No Bull",
-      "imageUrl": "https://i.imgur.com/AOj35E2.jpg",
+      "imageUrl": "https://i.imgur.com/vodYUrj.jpg",
       "schedule": "M T R"
     },
     "class5": {
-      "name": "Pie Throwing for Beginners",
-      "imageUrl": "https://i.imgur.com/qkr09A4.jpg",
+      "name": "Pie Throwing",
+      "imageUrl": "https://i.imgur.com/og3FuDp.jpg",
       "schedule": "T R"
     },
     "class6": {
       "name": "Remedial Unicycling",
-      "imageUrl": "https://i.imgur.com/X0XgP9r.jpg",
+      "imageUrl": "https://i.imgur.com/Kma2MoU.jpg",
       "schedule": "M W F"
     }
   }

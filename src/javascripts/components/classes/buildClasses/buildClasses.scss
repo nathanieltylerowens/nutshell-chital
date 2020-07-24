@@ -33,11 +33,6 @@
     text-align: center;
   }
 
-  .deleteClassIcon {
-    color: red;
-    cursor: pointer;
-  }
-  
   .descriptionP {
     color:white;
     align-self: flex-end;
@@ -48,9 +43,7 @@
 
 
 }
-.card-title {
-  z-index: 1;
-}
+
 .classEditBtn {
   color: #488fc3;
   cursor: pointer !important;
@@ -73,4 +66,13 @@
 
 .classCreate {
   text-align: center;
+}
+
+.classFooter {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.footerBold {
+  font-weight: bold;
 }
