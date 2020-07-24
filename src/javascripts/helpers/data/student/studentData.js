@@ -3,8 +3,8 @@ import apiKeys from '../../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
-const getstudents = () => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/student.json`)
+const getStudents = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/students.json`)
     .then((response) => {
       const studentObjects = response.data;
       const students = [];
@@ -21,18 +21,18 @@ const getstudents = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-const addstudent = (newstudentObj) => axios.post(`${baseUrl}/student.json`, newstudentObj);
+const addStudent = (newStudentObj) => axios.post(`${baseUrl}/students.json`, newStudentObj);
 
-const deletestudent = (studentId) => axios.delete(`${baseUrl}/student/${studentId}.json`);
+const deleteStudent = (studentId) => axios.delete(`${baseUrl}/students/${studentId}.json`);
 
-const getstudentById = (id) => axios.get(`${baseUrl}/student/${id}.json`);
+const getStudentById = (id) => axios.get(`${baseUrl}/students/${id}.json`);
 
-const updatestudent = (id, updatestudentObj) => axios.put(`${baseUrl}/student/${id}.json`, updatestudentObj);
+const updateStudent = (id, updateStudentObj) => axios.put(`${baseUrl}/students/${id}.json`, updateStudentObj);
 
 export default {
-  addstudent,
-  deletestudent,
-  getstudents,
-  getstudentById,
-  updatestudent,
+  addStudent,
+  deleteStudent,
+  getStudents,
+  getStudentById,
+  updateStudent,
 };
