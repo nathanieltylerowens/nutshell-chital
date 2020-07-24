@@ -48,7 +48,7 @@ const showClassForm = () => {
   <label class="custom-file-label" for="class-image" id="class-image-label">Upload Class Image</label>
   </div>
   <div class="form-group mb-0">
-  <label for="new-class-schedule" class="mb-0 mt-1">Description:</label>
+  <label for="new-class-schedule" class="mb-0 mt-1">Schedule:</label>
   <input type="text" class="form-control" id="new-class-schedule" placeholder="Schedule" required>
   </div>
   <button type="submit" class="btn btn-primary mt-2">Create</button>
