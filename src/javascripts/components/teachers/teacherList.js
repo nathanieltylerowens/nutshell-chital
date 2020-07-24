@@ -49,7 +49,7 @@ const addTeacher = (e) => {
   e.preventDefault();
 
   const newTeacherObj = {
-    firstName: $('#teacher-name').val(),
+    name: $('#teacher-name').val(),
     imageUrl: $('#teacher-image').val(),
     teacherId: $('#teacher-id').val(),
   };
@@ -72,7 +72,7 @@ const editTeacher = (e) => {
   const teacherId = e.target.closest('.teacher-updater').id;
 
   const updateTeacherObj = {
-    firstName: $('#edit-teacher-name').val(),
+    name: $('#edit-teacher-name').val(),
     imageUrl: $('#edit-teacher-image').val(),
   };
 

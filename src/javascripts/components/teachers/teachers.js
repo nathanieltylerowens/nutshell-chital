@@ -7,7 +7,7 @@ const TeacherCardMaker = (teacher) => {
         <img src="${teacher.imageUrl}" class="card-img-top" alt="...">
         <div class="card-header text-center">${teacher.name}</div>
         <div class="card-body text-center">
-          <h5 class="card-title">This is a test</h5>`;
+          `;
   if (authData.isAuthenticated()) {
     domString += `
     <button class="btn btn-warning edit-teacher">Edit</button>
