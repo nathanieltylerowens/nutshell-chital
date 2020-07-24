@@ -62,18 +62,14 @@ const submitUpdateStudentForm = (e) => {
   e.preventDefault();
   const fbStudentId = e.target.getAttribute('data-firebase-student-id');
 
-  const inputAddress = $('#inputAddress').val();
+  const inputImageUrl = $('#inputImageUrl').val();
   const inputName = $('#inputName').val();
-  const inputPhone = $('#inputPhone').val();
-  const inputProduct = $('#inputProduct').val();
-  const studentId = e.target.getAttribute('data-studentId');
+  const inputMajor = $('#inputMajor').val();
 
   const newStudentObj = {
-    address: inputAddress,
-    name: inputName,
-    phoneNumber: inputPhone,
-    product: inputProduct,
-    studentId,
+    imageUrl: inputImageUrl,
+    studentName: inputName,
+    major: inputMajor,
   };
 
   studentData.updateStudent(fbStudentId, newStudentObj)
@@ -88,18 +84,14 @@ const submitNewStudentForm = (e) => {
   e.preventDefault();
 
   // get values from form
-  const inputAddress = $('#inputAddress').val();
+  const inputImageUrl = $('#inputImageUrl').val();
   const inputName = $('#inputName').val();
-  const inputPhone = $('#inputPhone').val();
-  const inputProduct = $('#inputProduct').val();
-  const studentId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  const inputMajor = $('#inputMajor').val();
 
   const newStudentObj = {
-    address: inputAddress,
-    name: inputName,
-    phoneNumber: inputPhone,
-    product: inputProduct,
-    studentId,
+    imageUrl: inputImageUrl,
+    studentName: inputName,
+    major: inputMajor,
   };
 
   studentData.addStudent(newStudentObj)
@@ -136,7 +128,7 @@ const createListeners = () => {
   $('body').on('click', '#update-teacher', teacherList.editTeacher);
   $('body').on('click', '.closeForm', updateClass.clearForm);
   $('body').on('click', '.createClassBtn', addClass.showClassForm);
-  $('body').on('change', '#coaster-image', addClass.imageInputWatcher);
+  $('body').on('change', '#class-image', addClass.imageInputWatcher);
 };
 
 export default {

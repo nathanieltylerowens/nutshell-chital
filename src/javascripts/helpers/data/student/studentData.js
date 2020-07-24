@@ -21,18 +21,18 @@ const getStudents = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-const addstudent = (newstudentObj) => axios.post(`${baseUrl}/student.json`, newstudentObj);
+const addStudent = (newStudentObj) => axios.post(`${baseUrl}/students.json`, newStudentObj);
 
-const deletestudent = (studentId) => axios.delete(`${baseUrl}/student/${studentId}.json`);
+const deleteStudent = (studentId) => axios.delete(`${baseUrl}/students/${studentId}.json`);
 
-const getstudentById = (id) => axios.get(`${baseUrl}/student/${id}.json`);
+const getStudentById = (id) => axios.get(`${baseUrl}/students/${id}.json`);
 
-const updatestudent = (id, updatestudentObj) => axios.put(`${baseUrl}/student/${id}.json`, updatestudentObj);
+const updateStudent = (id, updateStudentObj) => axios.put(`${baseUrl}/students/${id}.json`, updateStudentObj);
 
 export default {
-  addstudent,
-  deletestudent,
+  addStudent,
+  deleteStudent,
   getStudents,
-  getstudentById,
-  updatestudent,
+  getStudentById,
+  updateStudent,
 };
