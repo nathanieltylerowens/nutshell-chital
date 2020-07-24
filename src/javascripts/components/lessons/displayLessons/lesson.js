@@ -32,17 +32,8 @@ const printLessons = () => {
           <div id="${lesson.id}" class="card lesson" style="width: 18rem;">
             <div class="lesson-card-body">
               <h4 class="lesson-card-title">${lesson.name}</h4>
-              <p class="gender">Length: ${lesson.hours}</p>
-              `;
-        if (lesson.materialsProvided === true) {
-          domString += `
-                            <p>"YES"</p>
-                          `;
-        } else {
-          domString += `
-                            <p>"NO"</p>
-                      `;
-        }
+              <p class="hours">Length: ${lesson.hours}</p>
+              <p class="materials">Materials Provided: "${lesson.materialsProvided}"</p>`;
         if (authData.isAuthenticated()) {
           domString += `
             <div class="lesson-card-buttons">
