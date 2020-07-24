@@ -115,7 +115,7 @@ const createListeners = () => {
   $('body').on('click', '#remove-lesson', removeLessons.deleteLesson);
   $('body').on('click', '#add-lesson-form', addLesson.showLessonForm);
   $('body').on('click', '#addLesson', addLesson.addLessonEvent);
-  $('body').on('click', '.update-lesson', updateLesson.updateLessonEvent);
+  $('body').on('click', '#update-lesson', updateLesson.updateLessonEvent);
   $('body').on('click', '#lessonUpdate', updateLesson.updateLesson);
   $('body').on('click', '.classLink', displayClasses.buildClassModule);
   $('body').on('click', '#navbar-students', buildStudents.buildStudentList);

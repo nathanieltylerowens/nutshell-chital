@@ -13,26 +13,29 @@ const showLessonForm = () => {
         <input type="text" class="form-control" id="lesson-name-val" placeholder="Name">
       </div>
       <div class="form-group col-sm-2">
-      <label for="lesson-hours">Another label</label>
-      <input type="text" class="form-control" id="lesson-hours-val" placeholder="How Long?">
-    </div>
-    <div class="form-check col-sm-2">
-        <input class="form-check-input" type="checkbox" id="lesson-materials-val" value="true">
-        <label class="form-check-label" for="lesson-materials">
-          Materials Needed
-        </label>
-      <button class="btn btn-primary" id="addLesson">Submit</button>
+        <label for="lesson-hours">Another label</label>
+        <input type="text" class="form-control" id="lesson-hours-val" placeholder="How Long?">
+      </div>
+      <div class="form-check col-sm-2">
+        <label >Materials Provided:</label>
+        <select class="form-control" id="lesson-materials-val">
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+    <button class="btn btn-primary" id="addLesson">Submit</button>
     </form>
     `;
   utils.printToDom('#new-lesson-form', domString);
 };
 
-const addLessonEvent = () => {
+const addLessonEvent = (e) => {
+  e.preventDefault();
   if (!auth.isAuthenticated()) return;
   const newLesson = {
-    name: $('#lesson-name-lesson').val(),
-    hours: $('#lesson-hours-val').val() * 1,
-    materials: $('#atten-val').val(),
+    name: $('#lesson-name-val').val(),
+    hours: $('#lesson-hours-val').val(),
+    materialsProvided: $('#lesson-materials-val').val(),
   };
   lessonData.addLesson(newLesson)
     .then(() => {
