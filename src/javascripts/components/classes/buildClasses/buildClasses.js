@@ -25,22 +25,27 @@ const buildClassModule = () => {
         domString += `
         <div id=${singleClass.id} class="card classCard" style="width: 18rem;">
         <img src="${singleClass.imageUrl}" class="card-img-top" alt="...">
-        <div class="card-img-overlay">`;
+        <div class="card-header lassTitle">
+        <h5 class="text-center">${singleClass.name}</h5>
+        </div>
+        <div class ="card-body text-center">
+        `;
         if (authData.isAuthenticated()) {
-          domString += '<i class="fas fa-times deleteClassIcon"></i>';
+          domString += '<button class="btn btn-warning classEditBtn">Edit</button>';
         } else {
-          domString += '<i class="fas fa-times deleteClassIcon hide"></i>';
+          domString += '<button class="btn btn-warning classEditBtn hide">Edit</button>';
+        }
+        domString += `
+        `;
+        if (authData.isAuthenticated()) {
+          domString += '<button class="btn btn-danger deleteClassIcon">Delete</button>';
+        } else {
+          domString += '<button class="btn btn-danger deleteClassIcon hide">Delete</button>';
         }
         domString += `
         </div>
-        <div class="card-title classTitle">`;
-        if (authData.isAuthenticated()) {
-          domString += '<i class="far fa-edit classEditBtn"></i>';
-        } else {
-          domString += '<i class="far fa-edit classEditBtn hide"></i>';
-        }
-        domString += ` <h5>${singleClass.name}</h5>`;
-        domString += `
+        <div class="card-footer classFooter">
+        <p class="text-center mb-0"><span class="footerBold">Schedule: </span>${singleClass.schedule}</p>
         </div>
         </div>
         `;

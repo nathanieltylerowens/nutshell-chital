@@ -25,7 +25,7 @@ const updateClassForm = (e) => {
         <input type="text" class="form-control" id="class-image" value="${classById.imageUrl}">
         </div>
         <div class="form-group mb-0">
-        <label for="class-schedule" class="mb-0 mt-1">Description:</label>
+        <label for="class-schedule" class="mb-0 mt-1">Schedule:</label>
         <input type="text" class="form-control" id="class-schedule" value="${classById.schedule}">
         </div>
         <button type="button" class="btn btn-primary updateSubmit mt-2" data-classid="${classById.id}">Update</button>
