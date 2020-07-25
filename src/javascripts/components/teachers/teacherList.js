@@ -4,6 +4,8 @@ import teacherMaker from './teachers';
 import utils from '../../helpers/utils';
 import editForm from './editTeacher';
 
+import './teachers.scss';
+
 const buildTeacherModule = () => {
   teacherData.getTeachers()
     .then((faculty) => {

@@ -4,15 +4,15 @@ const buildTeacherForm = () => {
   $('#teacher-form').removeClass('hide');
   const domString = `
   <form id="new-hire-form">
-    <div class="form-group">
+    <div class="form-group teacher-form">
       <label for="teacher-name">Name</label>
       <input type="text" class="form-control" id="teacher-name">
     </div>
-    <div class="form-group">
+    <div class="form-group teacher-form">
       <label for="teacher-image">Image URL</label>
       <input type="text" class="form-control" id="teacher-image">
     </div>
-    <div class="form-group">
+    <div class="form-group teacher-form">
     <label for="teacher-id">Teacher ID</label>
     <input type="text" class="form-control" id="teacher-id">
   </div>

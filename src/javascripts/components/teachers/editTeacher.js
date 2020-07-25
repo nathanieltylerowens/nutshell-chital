@@ -9,11 +9,11 @@ const buildEditForm = (teacherId) => {
       const domString = `
       <form class="teacher-updater" id="${teacherId}">
         <div class="form-group">
-          <label for="edit-teacher-name">Name</label>
+          <label class="teacher-form" for="edit-teacher-name">Name</label>
           <input type="text" class="form-control" id="edit-teacher-name" value="${teacher.name}">
         </div>
         <div class="form-group">
-          <label for="edit-teacher-image">Image URL</label>
+          <label class="teacher-form" for="edit-teacher-image">Image URL</label>
           <input type="text" class="form-control" id="edit-teacher-image" value="${teacher.imageUrl}">
         </div>
           <button type="submit" class="btn btn-primary" id="update-teacher">Submit</button>
