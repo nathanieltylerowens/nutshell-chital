@@ -8,7 +8,7 @@ const printLessons = () => {
     .then((lessons) => {
       let domString = `
       <div id="lesson-div">
-        <h2 class="text-center" id="lesson-heading">Lessons<h2>`;
+        <h2 class="text-center homeH3">Lessons<h2>`;
 
       if (authData.isAuthenticated()) {
         domString += `
