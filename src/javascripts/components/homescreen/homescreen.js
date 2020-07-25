@@ -5,8 +5,8 @@ import './homescreen.scss';
 const buildHomeScreen = () => {
   const domString = `
   <div class="homeContainer">
-  <img src="https://i.imgur.com/usA6q4Z.jpg"></img>
-  <h3 class="homeH3">Placeholder</h3>
+  <img class="homeImg" src="https://i.imgur.com/PxCmZsS.jpg"></img>
+  <h3 class="homeH3">Bozo University Admin Panel</h3>
   <div class="homeMessage">
   <p class="homeP">Placeholder</p>
   </div>
