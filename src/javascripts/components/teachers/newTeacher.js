@@ -1,6 +1,7 @@
 import utils from '../../helpers/utils';
 
 const buildTeacherForm = () => {
+  $('#teacher-form').removeClass('hide');
   const domString = `
   <form id="new-hire-form">
     <div class="form-group">
