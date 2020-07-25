@@ -1,42 +1,42 @@
 {
   "lesson1": {
     "name": "Face creating 101",
-    "materialsProvided": true,
+    "materialsProvided": "Yes",
     "hours": "1hr 30mins"
   },
   "lesson2": {
     "name": "Ballon tying",
-    "materialsProvided": true,
+    "materialsProvided": "Yes",
     "hours": "45mins"
   },
   "lesson3": {
     "name": "Street Magic",
-    "materialsProvided": false,
+    "materialsProvided": "No",
     "hours": "30mins"
   },
   "lesson4": {
     "name": "Juggling",
-    "materialsProvided": true,
+    "materialsProvided": "Yes",
     "hours": "45mins"
   },
   "lesson5": {
     "name": "Stand up Routines",
-    "materialsProvided": false,
+    "materialsProvided": "No",
     "hours": "1hr"
   },
   "lesson6": {
     "name": "Creating Clown Persona",
-    "materialsProvided": true,
+    "materialsProvided": "Yes",
     "hours": "2hrs"
   },
   "lesson7": {
     "name": "Clown history",
-    "materialsProvided": false,
+    "materialsProvided": "No",
     "hours": "45mins"
   },
   "lesson8": {
     "name": "Prop work",
-    "materialsProvided": true,
+    "materialsProvided": "Yes",
     "hours": "45mins"
   }
 }
