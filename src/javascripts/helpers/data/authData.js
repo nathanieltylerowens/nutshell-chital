@@ -26,6 +26,7 @@ const checkLoginStatus = () => {
       $('.deleteClassIcon').removeClass('hide');
       $('.fixclassbtn').removeClass('hide');
       $('#add-vis-form').removeClass('hide');
+      $('.edit-teacher').removeClass('hide');
     } else {
       logoutButton.addClass('hide');
       authDiv.removeClass('hide');

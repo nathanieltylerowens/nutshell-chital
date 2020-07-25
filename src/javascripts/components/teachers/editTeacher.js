@@ -2,6 +2,7 @@ import teacherData from '../../helpers/data/teacher/teacherData';
 import utils from '../../helpers/utils';
 
 const buildEditForm = (teacherId) => {
+  $('#teacher-form').removeClass('hide');
   teacherData.getTeacherById(teacherId)
     .then((response) => {
       const teacher = response.data;
