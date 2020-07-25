@@ -4,7 +4,7 @@ const TeacherCardMaker = (teacher) => {
   let domString = `
     <div class="col-3">
       <div class="teacher-card card border-0 rounded-1 bg-light text-dark mb-3" id=${teacher.id}>
-        <img src="${teacher.imageUrl}" class="card-img-top" alt="...">
+        <img src="${teacher.imageUrl}" class="card-img-top teacher-image" alt="...">
         <div class="card-header text-center">${teacher.name}</div>
         <div class="card-body text-center">
           `;

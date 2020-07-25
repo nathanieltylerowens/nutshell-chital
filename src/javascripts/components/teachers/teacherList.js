@@ -4,10 +4,14 @@ import teacherMaker from './teachers';
 import utils from '../../helpers/utils';
 import editForm from './editTeacher';
 
+import './teachers.scss';
+
 const buildTeacherModule = () => {
   teacherData.getTeachers()
     .then((faculty) => {
       let domString = `
+      <div></div>
+      <div>
         <h2 class="text-center homeH3 mt-2">Teachers</h2>
       `;
 
@@ -29,7 +33,7 @@ const buildTeacherModule = () => {
         domString += teacherMaker.TeacherCardMaker(teacher);
       });
 
-      domString += '</div>';
+      domString += '</div></div>';
 
       utils.printToDom('#content', domString);
     })
