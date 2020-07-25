@@ -18,9 +18,9 @@ const checkLoginStatus = () => {
       $('.delete-teacher').removeClass('hide');
       $('.show-teacher-form').removeClass('hide');
       $('#add-teacher-form').removeClass('hide');
-      $('#new-vis').removeClass('hide');
-      $('.update-visitor').removeClass('hide');
-      $('.remove-visitor').removeClass('hide');
+      $('#new-lesson').removeClass('hide');
+      $('.update-lesson').removeClass('hide');
+      $('.remove-lesson').removeClass('hide');
       $('.createClassBtn').removeClass('hide');
       $('.classEditBtn').removeClass('hide');
       $('.deleteClassIcon').removeClass('hide');
@@ -39,16 +39,16 @@ const checkLoginStatus = () => {
       $('.delete-teacher').addClass('hide');
       $('.show-teacher-form').addClass('hide');
       $('#add-teacher-form').addClass('hide');
-      $('#new-vis').addClass('hide');
-      $('.update-visitor').addClass('hide');
-      $('.remove-visitor').addClass('hide');
+      $('#new-lesson').addClass('hide');
+      $('.update-lesson').addClass('hide');
+      $('.remove-lesson').addClass('hide');
       $('.classEditBtn').addClass('hide');
       $('.deleteClassIcon').addClass('hide');
       $('.fixclassbtn').addClass('hide');
       $('.createClassBtn').addClass('hide');
       $('#teacher-form').addClass('hide');
       $('.edit-teacher').addClass('hide');
-      $('#add-vis-form').addClass('hide');
+      $('#add-lesson-form').addClass('hide');
     }
   });
 };
