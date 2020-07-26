@@ -1,4 +1,26 @@
 {
+    "classStudents": {
+        "classStudents1": {
+            "classesId": "class1",
+            "studentsId": "student1"
+        },
+        "classStudents2": {
+            "classesId": "class2",
+            "studentsId": "student2"
+        },
+        "classStudents3": {
+            "classesId": "class1",
+            "studentsId": "student3"
+        },
+        "classStudents4": {
+            "classesId": "class4",
+            "studentsId": "student4"
+        },
+        "classStudents5": {
+            "classesId": "class5",
+            "studentsId": "student5"
+        }
+    },
     "classes": {
         "class1": {
             "imageUrl": "https://i.imgur.com/8RjA5Aq.jpg",
