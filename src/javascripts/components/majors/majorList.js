@@ -33,18 +33,18 @@ const buildMajorList = () => {
     .then((majors) => {
       let domString = buildAuthRequiredModal();
       domString += `
+      <div class="formDiv hide"></div>
+      <div class="mainModule">
       <h2 class="text-center homeH3 mt-3">Clown College Majors</h2>`;
       if (authData.isAuthenticated()) {
         domString += `
         <div class="text-center">
           <button class="btn btn-primary" id="add-major">Add/Create a Major<i class="fas fa-plus ml-1"></i></button>
         </div>
-        <div id="major-form"></div>
         `;
       } else {
         domString += `
         <div class="text-center"><i class="fas fa-plus-circle fa-2x hide" id="add-major"></i></div>
-        <div id="major-form"></div>
         `;
       }
       domString += '<div class="d-flex flex-wrap mt-2">';
@@ -53,7 +53,10 @@ const buildMajorList = () => {
         domString += majorCardMaker.majorCardMaker(major);
       });
 
-      domString += '</div>';
+      domString += `
+      </div>
+      </div>
+      <div class="infoDiv hide"></div>`;
 
       utils.printToDom('#content', domString);
     })

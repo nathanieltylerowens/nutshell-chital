@@ -3,8 +3,13 @@ import utils from '../../helpers/utils';
 const showEditMajorForm = (fbMajorId, {
   name,
 }) => {
+  $('.formDiv').removeClass('hide');
+  utils.addFormGrid();
   const domString = `
   <div class="container">
+  <div class="closeButton">
+    <i class="fas fa-window-close closeForm mb-1"></i>
+  </div>
   <h2>Update Major</h2>
   <form class="hide" id="edit-major-form">
     <div class="form-row">
@@ -18,7 +23,7 @@ const showEditMajorForm = (fbMajorId, {
   </div>
   `;
 
-  utils.printToDom('#major-form', domString);
+  utils.printToDom('.formDiv', domString);
 };
 
 export default {
