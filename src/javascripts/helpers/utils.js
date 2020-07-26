@@ -31,7 +31,7 @@ const clearInfoDiv = () => {
     content.removeClass('threeColumns');
     content.addClass('twoColumnsForm');
   } else {
-    content.removeClass('twoColumnsDetails');
+    content.removeClass();
   }
 };
 
@@ -45,7 +45,7 @@ const clearFormDiv = () => {
     content.removeClass('threeColumns');
     content.addClass('twoColumnsDetails');
   } else {
-    content.removeClass('twoColumnsForm');
+    content.removeClass();
   }
 };
 
