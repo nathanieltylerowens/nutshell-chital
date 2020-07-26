@@ -3,6 +3,7 @@ import utils from '../../helpers/utils';
 import './homescreen.scss';
 
 const buildHomeScreen = () => {
+  utils.clearGridClasses();
   const domString = `
   <div class="homeContainer">
   <img class="homeImg" src="https://i.imgur.com/PxCmZsS.jpg"></img>

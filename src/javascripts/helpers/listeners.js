@@ -127,7 +127,7 @@ const createListeners = () => {
   $('body').on('click', '.updateSubmit', updateClass.updateClass);
   $('body').on('click', '.edit-teacher', teacherList.showEditTeacherForm);
   $('body').on('click', '#update-teacher', teacherList.editTeacher);
-  $('body').on('click', '.closeForm', updateClass.clearForm);
+  $('body').on('click', '.closeForm', utils.clearFormDiv);
   $('body').on('click', '.createClassBtn', addClass.showClassForm);
   $('body').on('change', '#class-image', addClass.imageInputWatcher);
   $('body').on('click', '.classInfoBtn', classInfo.showClassInfo);

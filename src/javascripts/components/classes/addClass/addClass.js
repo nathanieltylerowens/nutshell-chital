@@ -42,12 +42,13 @@ function imageInputWatcher() {
 const showClassForm = () => {
   if (!auth.isAuthenticated()) return;
   $('.createClassBtn').addClass('hide');
-  utils.gridCheckAdd();
+  $('.formDiv').removeClass('hide');
+  utils.addFormGrid();
   const domString = `
-  <div class="closeForm">
+  <div class="closeButton">
   <i class="fas fa-window-close closeForm mb-1"></i>
   </div>
-  <h5 class="homeH3 mb-0 text-left">Create Class</h5>
+  <h5 class="homeH3 mb-0 text-center">Create Class</h5>
   <form id="new-class-form">
   <div class="form-group mb-2">
   <label for="new-class-name" class="mb-0">Name:</label>
@@ -84,7 +85,7 @@ const showClassForm = () => {
   </div>
   </form>
 `;
-  utils.printToDom('.classForm', domString);
+  utils.printToDom('.formDiv', domString);
   $('#new-class-form').on('submit', addAClass);
 };
 

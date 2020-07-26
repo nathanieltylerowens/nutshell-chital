@@ -2,37 +2,60 @@ const printToDom = (selector, text) => {
   $(selector).html(text);
 };
 
-const gridCheckAdd = () => {
+const addFormGrid = () => {
   const content = $('#content');
-  if (content.hasClass('oneColumn')) {
-    content.removeClass('oneColumn');
-    content.addClass('twoColumns');
-  } else if (content.hasClass('twoColumns')) {
-    content.removeClass('twoColumns');
+  if (content.hasClass('twoColumnsDetails')) {
+    content.removeClass('twoColumnsDetails');
     content.addClass('threeColumns');
+  } else {
+    content.addClass('twoColumnsForm');
   }
 };
 
-const gridCheckDelete = () => {
+const addInfoGrid = () => {
   const content = $('#content');
-  if (content.hasClass('twoColumns')) {
-    content.removeClass('twoColumns');
-    content.addClass('oneColumn');
-  } else if (content.hasClass('threeColumns')) {
-    content.removeClass('threeColumns');
-    content.addClass('twoColumns');
+  if (content.hasClass('twoColumnsForm')) {
+    content.removeClass('twoColumnsForm');
+    content.addClass('threeColumns');
+  } else {
+    content.addClass('twoColumnsDetails');
   }
 };
 
 const clearInfoDiv = () => {
+  $('.infoDiv').addClass('hide');
+  const content = $('#content');
   const domString = '';
   printToDom('.infoDiv', domString);
-  gridCheckDelete();
+  if (content.hasClass('threeColumns')) {
+    content.removeClass('threeColumns');
+    content.addClass('twoColumnsForm');
+  } else {
+    content.removeClass('twoColumnsDetails');
+  }
 };
+
+const clearFormDiv = () => {
+  $('.createClassBtn').removeClass('hide');
+  $('.formDiv').addClass('hide');
+  const content = $('#content');
+  const domString = '';
+  printToDom('.formDiv', domString);
+  if (content.hasClass('threeColumns')) {
+    content.removeClass('threeColumns');
+    content.addClass('twoColumnsDetails');
+  } else {
+    content.removeClass('twoColumnsForm');
+  }
+};
+
+const clearGridClasses = () => $('#content').removeClass();
 
 export default {
   printToDom,
-  gridCheckAdd,
-  gridCheckDelete,
+  addFormGrid,
+  addInfoGrid,
   clearInfoDiv,
+  clearFormDiv,
+  clearGridClasses,
 };

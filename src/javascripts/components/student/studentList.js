@@ -28,6 +28,7 @@ const buildAuthRequiredModal = () => {
 };
 
 const buildStudentList = () => {
+  utils.clearGridClasses();
   studentData.getStudents()
     .then((students) => {
       let domString = buildAuthRequiredModal();

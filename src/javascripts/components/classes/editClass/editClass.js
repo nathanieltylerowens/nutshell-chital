@@ -15,16 +15,17 @@ const updateSchedule = () => {
 
 const updateClassForm = (e) => {
   const classId = e.target.closest('.card').id;
-  $('.createClassBtn').addClass('hide');
-  utils.gridCheckAdd();
+  $('.createClassBtn').removeClass('hide');
+  $('.formDiv').removeClass('hide');
+  utils.addFormGrid();
   classData.getClasses()
     .then((classes) => {
       const classById = classes.find((singleClass) => singleClass.id === classId);
       const domString = `
-        <div class="closeForm">
+        <div class="closeButton">
         <i class="fas fa-window-close closeForm mb-1"></i>
         </div>
-        <h5 class="homeH3 mb-0 text-left">Update Class</h5>
+        <h5 class="homeH3 mb-0 text-center">Update Class</h5>
         <form>
         <div class="form-group mb-0">
         <label for="class-name" class="mb-0">Name:</label>
@@ -58,7 +59,7 @@ const updateClassForm = (e) => {
         <button type="button" class="btn btn-primary updateSubmit mt-2" data-classid="${classById.id}">Update</button>
         </form>
   `;
-      utils.printToDom('.classForm', domString);
+      utils.printToDom('.formDiv', domString);
     })
     .catch((err) => (err));
 };
@@ -76,15 +77,7 @@ const updateClass = () => {
     .catch((err) => (err));
 };
 
-const clearForm = () => {
-  $('.createClassBtn').removeClass('hide');
-  utils.gridCheckDelete();
-  const domString = '';
-  utils.printToDom('.classForm', domString);
-};
-
 export default {
   updateClassForm,
   updateClass,
-  clearForm,
 };
