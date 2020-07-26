@@ -1,7 +1,12 @@
 import utils from '../../helpers/utils';
 
 const newMajorForm = () => {
+  $('.formDiv').removeClass('hide');
+  utils.addFormGrid();
   const domString = `
+  <div class="closeButton">
+    <i class="fas fa-window-close closeForm mb-1"></i>
+  </div>
   <div class="container">
   <h2>New Major</h2>
   <form class="hide" id="new-major-form">
@@ -16,7 +21,7 @@ const newMajorForm = () => {
   </div>
   `;
 
-  utils.printToDom('#major-form', domString);
+  utils.printToDom('.formDiv', domString);
 };
 
 export default {
