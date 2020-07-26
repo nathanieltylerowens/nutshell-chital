@@ -29,6 +29,7 @@ const checkLoginStatus = () => {
       $('.remove-lesson').removeClass('hide');
       $('.createClassBtn').removeClass('hide');
       $('.classEditBtn').removeClass('hide');
+      $('.classInfoBtn').removeClass('hide');
       $('.deleteClassIcon').removeClass('hide');
       $('.fixclassbtn').removeClass('hide');
       $('#add-vis-form').removeClass('hide');
@@ -55,6 +56,7 @@ const checkLoginStatus = () => {
       $('.update-lesson').addClass('hide');
       $('.remove-lesson').addClass('hide');
       $('.classEditBtn').addClass('hide');
+      $('.classInfoBtn').addClass('hide');
       $('.deleteClassIcon').addClass('hide');
       $('.fixclassbtn').addClass('hide');
       $('.createClassBtn').addClass('hide');
