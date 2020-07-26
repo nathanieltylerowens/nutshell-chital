@@ -16,6 +16,10 @@ import updateLesson from '../components/lessons/editLesson/editLesson';
 import newTeacher from '../components/teachers/newTeacher';
 import addClass from '../components/classes/addClass/addClass';
 import classInfo from '../components/classes/classDetails/classDetails';
+import buildMajors from '../components/majors/majorList';
+import majorData from './data/major/majorData';
+import editMajor from '../components/majors/editMajorForm';
+import newMajor from '../components/majors/newMajorForm';
 
 const editStudentEvent = (e) => {
   if (!authData.isAuthenticated()) {
@@ -103,6 +107,84 @@ const submitNewStudentForm = (e) => {
     .catch((err) => console.error('Add Student failed', err));
 };
 
+const editMajorEvent = (e) => {
+  if (!authData.isAuthenticated()) {
+    $('#myModal').modal('show');
+    return;
+  }
+
+  const majorId = e.target.closest('.card').id;
+  majorData.getMajorById(majorId)
+    .then((response) => {
+      const majorObj = response.data;
+
+      // Create the edit form in the DOM
+      editMajor.showEditMajorForm(majorId, majorObj);
+
+      // Check if user is logged in and if so, remove 'hide' class
+      authData.checkLoginStatus();
+    })
+    .catch((err) => console.error('Could not retrieve Major', err));
+};
+
+const deleteMajorEvent = (e) => {
+  if (!authData.isAuthenticated()) {
+    $('#myModal').modal('show');
+    return;
+  }
+  const majorId = e.target.closest('.card').id;
+  majorData.deleteMajor(majorId)
+    .then(() => {
+      buildMajors.buildMajorList();
+    })
+    .catch((err) => console.error('Could not delete major', err));
+};
+
+const showNewMajorForm = () => {
+  if (!authData.isAuthenticated()) {
+    $('#myModal').modal('show');
+    return;
+  }
+  newMajor.newMajorForm();
+  authData.checkLoginStatus();
+};
+
+const submitUpdateMajorForm = (e) => {
+  e.preventDefault();
+  const fbMajorId = e.target.getAttribute('data-firebase-major-id');
+
+  const inputName = $('#inputName').val();
+
+  const newMajorObj = {
+    name: inputName,
+  };
+
+  majorData.updateMajor(fbMajorId, newMajorObj)
+    .then(() => {
+      utils.printToDom('#major-form', '');
+      buildMajors.buildMajorList();
+    })
+    .catch((err) => console.error('Could not update major', err));
+};
+
+const submitNewMajorForm = (e) => {
+  e.preventDefault();
+
+  // get values from form
+  const inputName = $('#inputName').val();
+
+  const newMajorObj = {
+    name: inputName,
+  };
+
+  majorData.addMajor(newMajorObj)
+    .then(() => {
+      utils.printToDom('#major-form', '');
+      buildMajors.buildMajorList();
+    })
+    .catch((err) => console.error('Add Major failed', err));
+};
+
 const createListeners = () => {
   $('body').on('click', '#navbar-lesson', displayLessons.printLessons);
   $('body').on('click', '#remove-lesson', removeLessons.deleteLesson);
@@ -132,6 +214,12 @@ const createListeners = () => {
   $('body').on('change', '#class-image', addClass.imageInputWatcher);
   $('body').on('click', '.classInfoBtn', classInfo.showClassInfo);
   $('body').on('click', '.closeInfo', utils.clearInfoDiv);
+  $('body').on('click', '#navbar-majors', buildMajors.buildMajorList);
+  $('body').on('click', '#add-major', showNewMajorForm);
+  $('body').on('click', '.delete-major', deleteMajorEvent);
+  $('body').on('click', '.edit-major', editMajorEvent);
+  $('body').on('click', '#submit-new-major', submitNewMajorForm);
+  $('body').on('click', '#submit-update-major', submitUpdateMajorForm);
 };
 
 export default {

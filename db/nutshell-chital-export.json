@@ -1,0 +1,149 @@
+{
+    "classes": {
+        "class1": {
+            "imageUrl": "https://i.imgur.com/8RjA5Aq.jpg",
+            "name": "Rehabilitating the Clown",
+            "schedule": "M W R"
+        },
+        "class2": {
+            "imageUrl": "https://i.imgur.com/ncAJtkw.jpg",
+            "name": "Driving 101",
+            "schedule": "T R"
+        },
+        "class4": {
+            "imageUrl": "https://i.imgur.com/vodYUrj.jpg",
+            "name": "Rodeo Clowns: No Bull",
+            "schedule": "M T R"
+        },
+        "class5": {
+            "imageUrl": "https://i.imgur.com/og3FuDp.jpg",
+            "name": "Pie Throwing",
+            "schedule": "T R"
+        },
+        "class6": {
+            "imageUrl": "https://i.imgur.com/Kma2MoU.jpg",
+            "name": "Remedial Unicycling",
+            "schedule": "M W F"
+        }
+    },
+    "lessons": {
+        "lesson1": {
+            "hours": "1hr 30mins",
+            "materialsProvided": "Yes",
+            "name": "Face creating 101"
+        },
+        "lesson2": {
+            "hours": "45mins",
+            "materialsProvided": "Yes",
+            "name": "Ballon tying"
+        },
+        "lesson3": {
+            "hours": "30mins",
+            "materialsProvided": "No",
+            "name": "Street Magic"
+        },
+        "lesson4": {
+            "hours": "45mins",
+            "materialsProvided": "Yes",
+            "name": "Juggling"
+        },
+        "lesson5": {
+            "hours": "1hr",
+            "materialsProvided": "No",
+            "name": "Stand up Routines"
+        },
+        "lesson6": {
+            "hours": "2hrs",
+            "materialsProvided": "Yes",
+            "name": "Creating Clown Persona"
+        },
+        "lesson7": {
+            "hours": "45mins",
+            "materialsProvided": "No",
+            "name": "Clown history"
+        },
+        "lesson8": {
+            "hours": "45mins",
+            "materialsProvided": "Yes",
+            "name": "Prop work"
+        }
+    },
+    "majors": {
+        "major1": {
+            "name": "major1"
+        },
+        "major2": {
+            "name": "major2"
+        },
+        "major3": {
+            "name": "major3"
+        },
+        "major4": {
+            "name": "major4"
+        },
+        "major5": {
+            "name": "major5"
+        },
+        "major6": {
+            "name": "major6"
+        }
+    },
+    "students": {
+        "student1": {
+            "imageUrl": "https://vignette.wikia.nocookie.net/clownopedia/images/1/1c/I-female_clown.jpg/revision/latest?cb=20170830100351",
+            "major": "Jester",
+            "studentName": "Amelia Butler"
+        },
+        "student2": {
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Gale_Henry.jpg/150px-Gale_Henry.jpg",
+            "major": "Vaudville",
+            "studentName": "Gale Henry"
+        },
+        "student3": {
+            "imageUrl": "https://media1.popsugar-assets.com/files/thumbor/C3E_nYkMKZzfzUkHh9kjoCMfKMs/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2017/08/16/847/n/1922398/b0d18fe359949b0193fdd6.18030752_edit_img_cover_file_16360412_1502907996/i/Lucille-Ball-Photos.jpg",
+            "major": "Slapstick",
+            "studentName": "Lucile Ball"
+        },
+        "student4": {
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BNDcwMDc0ODAzOF5BMl5BanBnXkFtZTgwNTY2OTI1MDE@._V1_SY1000_CR0,0,646,1000_AL_.jpg",
+            "major": "Slapstick",
+            "studentName": "Charlie Chaplin"
+        },
+        "student5": {
+            "imageUrl": "https://vignette.wikia.nocookie.net/clownopedia/images/4/40/Rodeoclown-1-.jpg/revision/latest/scale-to-width-down/180?cb=20140119051538",
+            "major": "Rodeo",
+            "studentName": "Lecile Harris"
+        },
+        "student6": {
+            "imageUrl": "https://www.amazon.com/images/I/81CuK04gyeL._AC_SL1500_.jpg",
+            "major": "Sad Clowning",
+            "studentName": "Emmett Kelly"
+        }
+    },
+    "teachers": {
+        "teacher01": {
+            "imageUrl": "https://cdn.britannica.com/s:800x1000/56/79256-050-AA3AC49C/Grock-clown-dressing-room-Swiss-Circus-Medrano-1952.jpg",
+            "name": "Grock"
+        },
+        "teacher02": {
+            "imageUrl": "https://www3.pictures.zimbio.com/gi/Clown+Oleg+Popov+McDonald+Flagship+Restaurant+iCAX6rIJow9l.jpg",
+            "name": "Oleg Popov"
+        },
+        "teacher03": {
+            "imageUrl": "https://cdn.britannica.com/s:800x1000/96/196496-050-018F0C2B/Emmett-Kelly-1947.jpg",
+            "name": "Emmett Kelly"
+        },
+        "teacher04": {
+            "imageUrl": "https://cdn.britannica.com/s:800x1000/95/196495-050-4790CC60/The-Bozo-Show-the-Clown-1960.jpg",
+            "name": "Bozo the Clown"
+        },
+        "teacher05": {
+            "imageUrl": "https://memegenerator.net/img/images/11715527.jpg",
+            "name": "Krusty the Clown"
+        },
+        "teacher06": {
+            "imageUrl": "https://i.pinimg.com/originals/6d/18/53/6d1853f976c0e5fca9ade5b0289e3b9a.jpg",
+            "name": "Felix Adler"
+        }
+    }
+}
