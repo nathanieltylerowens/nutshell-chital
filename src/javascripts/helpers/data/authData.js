@@ -15,10 +15,12 @@ const checkLoginStatus = () => {
       $('.delete-major').removeClass('hide');
       $('.edit-major').removeClass('hide');
       $('#edit-major-form').removeClass('hide');
+      $('#major-form').removeClass('hide');
       $('#add-student').removeClass('hide');
       $('#new-student-form').removeClass('hide');
       $('#new-major-form').removeClass('hide');
       $('#edit-student-form').removeClass('hide');
+      $('#student-form').removeClass('hide');
       $('.delete-teacher').removeClass('hide');
       $('.show-teacher-form').removeClass('hide');
       $('#add-teacher-form').removeClass('hide');
@@ -39,10 +41,12 @@ const checkLoginStatus = () => {
       $('.delete-major').addClass('hide');
       $('.edit-major').addClass('hide');
       $('#edit-major-form').addClass('hide');
+      $('#major-form').addClass('hide');
       $('#add-student').addClass('hide');
       $('#new-student-form').addClass('hide');
       $('#new-major-form').addClass('hide');
       $('#edit-student-form').addClass('hide');
+      $('#student-form').addClass('hide');
       utils.printToDom('#new-student-form', '');
       $('.delete-teacher').addClass('hide');
       $('.show-teacher-form').addClass('hide');
