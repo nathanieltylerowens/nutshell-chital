@@ -1,4 +1,26 @@
 {
+    "classLessons": {
+        "classLessons1": {
+            "classesId": "class1",
+            "lessonsId": "lesson1"
+        },
+        "classLessons2": {
+            "classesId": "class2",
+            "lessonsId": "lesson2"
+        },
+        "classLessons3": {
+            "classesId": "class4",
+            "lessonsId": "lesson3"
+        },
+        "classLessons4": {
+            "classesId": "class6",
+            "lessonsId": "lesson8"
+        },
+        "classLessons5": {
+            "classesId": "class6",
+            "lessonsId": "lesson6"
+        }
+    },
     "classStudents": {
         "classStudents1": {
             "classesId": "class1",
@@ -19,6 +41,32 @@
         "classStudents5": {
             "classesId": "class5",
             "studentsId": "student5"
+        }
+    },
+    "classTeachers": {
+        "classTeachers1": {
+            "classesId": "class1",
+            "teachersId": "teacher01"
+        },
+        "classTeachers2": {
+            "classesId": "class2",
+            "teachersId": "teacher02"
+        },
+        "classTeachers3": {
+            "classesId": "class4",
+            "teachersId": "teacher03"
+        },
+        "classTeachers4": {
+            "classesId": "class4",
+            "teachersId": "teacher04"
+        },
+        "classTeachers5": {
+            "classesId": "class5",
+            "teachersId": "teacher05"
+        },
+        "classTeachers6": {
+            "classesId": "class6",
+            "teachersId": "teacher06"
         }
     },
     "classes": {
@@ -88,6 +136,28 @@
             "hours": "45mins",
             "materialsProvided": "Yes",
             "name": "Prop work"
+        }
+    },
+    "majorClasses": {
+        "majorClasses1": {
+            "classesId": "class1",
+            "majorsId": "major1"
+        },
+        "majorClasses2": {
+            "classesId": "class2",
+            "majorsId": "major2"
+        },
+        "majorClasses3": {
+            "classesId": "class4",
+            "majorsId": "major3"
+        },
+        "majorClasses4": {
+            "classesId": "class4",
+            "majorsId": "major4"
+        },
+        "majorClasses5": {
+            "classesId": "class5",
+            "majorsId": "major5"
         }
     },
     "majors": {
