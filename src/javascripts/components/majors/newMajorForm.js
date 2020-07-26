@@ -8,7 +8,7 @@ const newMajorForm = () => {
     <i class="fas fa-window-close closeForm mb-1"></i>
   </div>
   <div class="container">
-  <h2>New Major</h2>
+  <h5 class="homeH3">New Major</h5>
   <form class="hide" id="new-major-form">
     <div class="form-row">
       <div class="form-group col-md-6">
