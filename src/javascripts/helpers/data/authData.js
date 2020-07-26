@@ -17,6 +17,7 @@ const checkLoginStatus = () => {
       $('#edit-major-form').removeClass('hide');
       $('#major-form').removeClass('hide');
       $('#add-student').removeClass('hide');
+      $('#add-major').removeClass('hide');
       $('#new-student-form').removeClass('hide');
       $('#new-major-form').removeClass('hide');
       $('#edit-student-form').removeClass('hide');
@@ -44,6 +45,7 @@ const checkLoginStatus = () => {
       $('#edit-major-form').addClass('hide');
       $('#major-form').addClass('hide');
       $('#add-student').addClass('hide');
+      $('#add-major').addClass('hide');
       $('#new-student-form').addClass('hide');
       $('#new-major-form').addClass('hide');
       $('#edit-student-form').addClass('hide');
