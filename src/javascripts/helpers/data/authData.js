@@ -61,6 +61,9 @@ const checkLoginStatus = () => {
       $('#teacher-form').addClass('hide');
       $('.edit-teacher').addClass('hide');
       $('#add-lesson-form').addClass('hide');
+      $('.formDiv').addClass('hide');
+      $('.infoDiv').addClass('hide');
+      utils.clearGridClasses();
     }
   });
 };
