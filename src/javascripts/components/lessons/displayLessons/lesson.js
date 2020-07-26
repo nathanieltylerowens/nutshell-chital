@@ -4,6 +4,7 @@ import lessonData from '../../../helpers/data/lessonData';
 import utils from '../../../helpers/utils';
 
 const printLessons = () => {
+  utils.clearGridClasses();
   lessonData.getLessonData()
     .then((lessons) => {
       let domString = `

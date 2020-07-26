@@ -45,3 +45,21 @@ h1 {
 .navbar {
   background-color: #f2efe8 !important;
 }
+
+.twoColumnsForm {
+  display: grid;
+  grid-template-columns: 30vw 60vw;
+}
+
+.twoColumnsDetails {
+  display: grid;
+  grid-template-columns: 60vw 30vw;
+}
+.threeColumns {
+  display: grid;
+  grid-template-columns: 20vw 50vw 20vw;
+}
+
+#content {
+  justify-content: center;
+}

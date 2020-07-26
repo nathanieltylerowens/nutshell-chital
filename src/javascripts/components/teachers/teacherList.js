@@ -7,6 +7,7 @@ import editForm from './editTeacher';
 import './teachers.scss';
 
 const buildTeacherModule = () => {
+  utils.clearGridClasses();
   teacherData.getTeachers()
     .then((faculty) => {
       let domString = `

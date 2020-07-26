@@ -15,6 +15,7 @@ import addLesson from '../components/lessons/addLesson/addLesson';
 import updateLesson from '../components/lessons/editLesson/editLesson';
 import newTeacher from '../components/teachers/newTeacher';
 import addClass from '../components/classes/addClass/addClass';
+import classInfo from '../components/classes/classDetails/classDetails';
 
 const editStudentEvent = (e) => {
   if (!authData.isAuthenticated()) {
@@ -126,9 +127,11 @@ const createListeners = () => {
   $('body').on('click', '.updateSubmit', updateClass.updateClass);
   $('body').on('click', '.edit-teacher', teacherList.showEditTeacherForm);
   $('body').on('click', '#update-teacher', teacherList.editTeacher);
-  $('body').on('click', '.closeForm', updateClass.clearForm);
+  $('body').on('click', '.closeForm', utils.clearFormDiv);
   $('body').on('click', '.createClassBtn', addClass.showClassForm);
   $('body').on('change', '#class-image', addClass.imageInputWatcher);
+  $('body').on('click', '.classInfoBtn', classInfo.showClassInfo);
+  $('body').on('click', '.closeInfo', utils.clearInfoDiv);
 };
 
 export default {
