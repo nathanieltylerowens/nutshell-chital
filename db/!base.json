@@ -4,5 +4,8 @@
     "classes": "classId",
     "lessons": "lessonId",
     "majors": "majorId",
-    "classStudents": "classStudentsId"
+    "classStudents": "classStudentsId",
+    "classTeachers": "classTeachersId",
+    "classLessons": "classLessonsId",
+    "majorClasses": "majorClassesId"
 }
