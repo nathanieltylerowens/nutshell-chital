@@ -42,6 +42,7 @@ function imageInputWatcher() {
 const showClassForm = () => {
   if (!auth.isAuthenticated()) return;
   $('.createClassBtn').addClass('hide');
+  utils.gridCheckAdd();
   const domString = `
   <div class="closeForm">
   <i class="fas fa-window-close closeForm mb-1"></i>

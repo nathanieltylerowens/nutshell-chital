@@ -8,6 +8,8 @@ const buildClassModule = () => {
   classData.getClasses()
     .then((classes) => {
       domString += `
+      <div class="classForm"></div>
+      <div class="mainModule">
       <h2 class="homeH3 mt-2">Classes</h2>
       <div class=classCreate>
       `;
@@ -18,7 +20,6 @@ const buildClassModule = () => {
       }
       domString += `
       </div>
-      <div class="classForm"></div>
       <div class="classContainer mt-1">
       `;
       classes.forEach((singleClass) => {
@@ -30,6 +31,11 @@ const buildClassModule = () => {
         </div>
         <div class ="card-body text-center">
         `;
+        if (authData.isAuthenticated()) {
+          domString += '<button class="btn btn-primary classInfoBtn mr-1">Info</button>';
+        } else {
+          domString += '<button class="btn btn-primary classInfoBtn mr-1 hide">Info</button>';
+        }
         if (authData.isAuthenticated()) {
           domString += '<button class="btn btn-warning classEditBtn">Edit</button>';
         } else {
@@ -50,7 +56,10 @@ const buildClassModule = () => {
         </div>
         `;
       });
-      domString += '</div>';
+      domString += `
+      </div>
+      </div>
+      <div class="infoDiv"></div>`;
       utils.printToDom('#content', domString);
     })
     .catch((err) => console.error('bork', err));

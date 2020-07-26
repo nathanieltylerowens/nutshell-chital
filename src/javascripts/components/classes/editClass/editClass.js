@@ -16,6 +16,7 @@ const updateSchedule = () => {
 const updateClassForm = (e) => {
   const classId = e.target.closest('.card').id;
   $('.createClassBtn').addClass('hide');
+  utils.gridCheckAdd();
   classData.getClasses()
     .then((classes) => {
       const classById = classes.find((singleClass) => singleClass.id === classId);
@@ -77,6 +78,7 @@ const updateClass = () => {
 
 const clearForm = () => {
   $('.createClassBtn').removeClass('hide');
+  utils.gridCheckDelete();
   const domString = '';
   utils.printToDom('.classForm', domString);
 };
