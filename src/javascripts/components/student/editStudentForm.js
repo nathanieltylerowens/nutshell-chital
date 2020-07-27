@@ -7,7 +7,7 @@ const showEditStudentForm = (fbStudentId, {
 }) => {
   const domString = `
   <div class="container">
-  <h2>Update Student</h2>
+  <h5 class="homeH3">Update Student</h5>
   <form class="hide" id="edit-student-form">
     <div class="form-group">
       <label for="inputImageUrl">Address</label>

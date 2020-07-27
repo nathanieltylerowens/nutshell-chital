@@ -10,7 +10,7 @@ const showEditMajorForm = (fbMajorId, {
   <div class="closeButton">
     <i class="fas fa-window-close closeForm mb-1"></i>
   </div>
-  <h2>Update Major</h2>
+  <h5 class="homeH3">Update Major</h5>
   <form class="hide" id="edit-major-form">
     <div class="form-row">
       <div class="form-group col-md-6">
