@@ -1,0 +1,22 @@
+{
+  "majorClasses1": {
+    "majorsId": "major1",
+    "classesId": "class1"
+  },
+  "majorClasses2": {
+    "majorsId": "major2",
+    "classesId": "class2"
+  },
+  "majorClasses3": {
+    "majorsId": "major3",
+    "classesId": "class4"
+  },
+  "majorClasses4": {
+    "majorsId": "major4",
+    "classesId": "class4"
+  },
+  "majorClasses5": {
+    "majorsId": "major5",
+    "classesId": "class5"
+  }
+}

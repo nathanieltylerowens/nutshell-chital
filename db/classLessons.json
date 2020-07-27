@@ -1,0 +1,22 @@
+{
+  "classLessons1": {
+    "lessonsId": "lesson1",
+    "classesId": "class1"
+  },
+  "classLessons2": {
+    "lessonsId": "lesson2",
+    "classesId": "class2"
+  },
+  "classLessons3": {
+    "lessonsId": "lesson3",
+    "classesId": "class4"
+  },
+  "classLessons4": {
+    "lessonsId": "lesson8",
+    "classesId": "class6"
+  },
+  "classLessons5": {
+    "lessonsId": "lesson6",
+    "classesId": "class6"
+  }
+}
