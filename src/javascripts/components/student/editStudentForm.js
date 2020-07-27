@@ -5,8 +5,13 @@ const showEditStudentForm = (fbStudentId, {
   studentName,
   major,
 }) => {
+  $('.formDiv').removeClass('hide');
+  utils.addFormGrid();
   const domString = `
   <div class="container">
+  <div class="closeButton">
+    <i class="fas fa-window-close closeForm mb-1"></i>
+  </div>
   <h2>Update Student</h2>
   <form class="hide" id="edit-student-form">
     <div class="form-group">
@@ -28,7 +33,7 @@ const showEditStudentForm = (fbStudentId, {
   </div>
   `;
 
-  utils.printToDom('#student-form', domString);
+  utils.printToDom('.formDiv', domString);
 };
 
 export default {
