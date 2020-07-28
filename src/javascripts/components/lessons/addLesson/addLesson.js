@@ -1,6 +1,6 @@
 import './addLesson.scss';
 import utils from '../../../helpers/utils';
-import lessonData from '../../../helpers/data/lessonData';
+import lessonData from '../../../helpers/data/lesson/lessonData';
 import buildLessons from '../displayLessons/lesson';
 import auth from '../../../helpers/data/authData';
 

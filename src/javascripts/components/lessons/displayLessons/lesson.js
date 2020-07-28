@@ -1,11 +1,15 @@
 import '../lessons.scss';
 import authData from '../../../helpers/data/authData';
-import lessonData from '../../../helpers/data/lessonData';
+import lessonData from '../../../helpers/data/lesson/lessonData';
+// import lessonClassData from '../../../helpers/data/lesson/lessonClassData';
 import utils from '../../../helpers/utils';
 
 const printLessons = () => {
   utils.clearGridClasses();
   lessonData.getLessonData()
+  // lessonClassData.getLessonbyClass(lesson.classesId)
+  //   .then((response) => console.error('workd', response))
+  //   .catch((err) => console.error('display lessonclass broke', err))
     .then((lessons) => {
       let domString = `
       <div id="lesson-div">
