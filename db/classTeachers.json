@@ -1,0 +1,26 @@
+{
+  "classTeachers1": {
+    "teachersId": "teacher01",
+    "classesId": "class1"
+  },
+  "classTeachers2": {
+    "teachersId": "teacher02",
+    "classesId": "class2"
+  },
+  "classTeachers3": {
+    "teachersId": "teacher03",
+    "classesId": "class4"
+  },
+  "classTeachers4": {
+    "teachersId": "teacher04",
+    "classesId": "class4"
+  },
+  "classTeachers5": {
+    "teachersId": "teacher05",
+    "classesId": "class5"
+  },
+  "classTeachers6": {
+    "teachersId": "teacher06",
+    "classesId": "class6"
+  }
+}

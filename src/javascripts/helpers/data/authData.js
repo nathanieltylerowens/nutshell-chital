@@ -63,7 +63,6 @@ const checkLoginStatus = () => {
       $('.deleteClassIcon').addClass('hide');
       $('.fixclassbtn').addClass('hide');
       $('.createClassBtn').addClass('hide');
-      $('#teacher-form').addClass('hide');
       $('.edit-teacher').addClass('hide');
       $('#add-lesson-form').addClass('hide');
       $('.formDiv').addClass('hide');

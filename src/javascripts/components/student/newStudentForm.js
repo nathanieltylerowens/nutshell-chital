@@ -8,7 +8,7 @@ const newStudentForm = () => {
   <div class="closeButton">
     <i class="fas fa-window-close closeForm mb-1"></i>
   </div>
-  <h2>New Student</h2>
+  <h5 class="homeH3">New Student</h5>
   <form class="hide" id="new-student-form">
     <div class="form-group">
       <label for="inputImageUrl">Address</label>

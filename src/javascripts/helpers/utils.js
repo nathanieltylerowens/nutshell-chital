@@ -36,6 +36,7 @@ const clearInfoDiv = () => {
 };
 
 const clearFormDiv = () => {
+  $('.show-teacher-form').removeClass('hide');
   $('.createClassBtn').removeClass('hide');
   $('.formDiv').addClass('hide');
   const content = $('#content');

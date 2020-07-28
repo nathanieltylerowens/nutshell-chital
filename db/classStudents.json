@@ -1,0 +1,22 @@
+{
+  "classStudents1": {
+    "studentsId": "student1",
+    "classesId": "class1"
+  },
+  "classStudents2": {
+    "studentsId": "student2",
+    "classesId": "class2"
+  },
+  "classStudents3": {
+    "studentsId": "student3",
+    "classesId": "class1"
+  },
+  "classStudents4": {
+    "studentsId": "student4",
+    "classesId": "class4"
+  },
+  "classStudents5": {
+    "studentsId": "student5",
+    "classesId": "class5"
+  }
+}
