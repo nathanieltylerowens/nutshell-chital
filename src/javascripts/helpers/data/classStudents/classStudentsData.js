@@ -42,9 +42,11 @@ const getClassStudentsByStudentId = (studentId) => new Promise((resolve, reject)
 // update classStudents (U)
 
 // delete classStudents (D)
+const deleteClassStudents = (classStudentsId) => axios.delete(`${baseUrl}/classStudents/${classStudentsId}.json`);
 
 export default {
   addClassStudents,
+  deleteClassStudents,
   getClassStudents,
   getClassStudentsByStudentId,
 };
