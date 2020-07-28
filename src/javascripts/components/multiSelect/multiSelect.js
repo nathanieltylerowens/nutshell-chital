@@ -9,6 +9,12 @@ const getSelectedMultiSelect = () => {
   return addedClasses;
 };
 
+const getAvailableMultiSelect = () => {
+  const inputClasses = $('#undo_redo').children('option');
+  const availableClasses = $.map(inputClasses, (option) => option.value);
+  return availableClasses;
+};
+
 const createClassMultiSelect = (availableClasses, activeClasses) => {
   let selectDomString = `
   <div class="row">
@@ -54,5 +60,6 @@ const createClassMultiSelect = (availableClasses, activeClasses) => {
 
 export default {
   createClassMultiSelect,
+  getAvailableMultiSelect,
   getSelectedMultiSelect,
 };
