@@ -21,6 +21,7 @@ import majorData from './data/major/majorData';
 import editMajor from '../components/majors/editMajorForm';
 import newMajor from '../components/majors/newMajorForm';
 import multiSelect from '../components/multiSelect/multiSelect';
+import classStudents from '../components/classStudents/classStudents';
 
 const editStudentEvent = (e) => {
   if (!authData.isAuthenticated()) {
@@ -73,7 +74,8 @@ const submitUpdateStudentForm = (e) => {
   const inputMajor = $('#inputMajor').val();
   const addedClasses = multiSelect.getSelectedMultiSelect();
 
-  console.error(addedClasses);
+  console.error('StudentId: ', fbStudentId);
+  console.error('Classes Added: ', addedClasses);
 
   const newStudentObj = {
     imageUrl: inputImageUrl,
@@ -82,6 +84,9 @@ const submitUpdateStudentForm = (e) => {
   };
 
   studentData.updateStudent(fbStudentId, newStudentObj)
+    .then(() => {
+      classStudents.modifyClassStudents(fbStudentId, addedClasses);
+    })
     .then(() => {
       utils.printToDom('#student-form', '');
       buildStudents.buildStudentList();
