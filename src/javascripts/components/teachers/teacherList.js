@@ -11,20 +11,18 @@ const buildTeacherModule = () => {
   teacherData.getTeachers()
     .then((faculty) => {
       let domString = `
-      <div></div>
-      <div>
+      <div class="formDiv hide"></div>
+      <div class="mainModule">
         <h2 class="text-center homeH3 mt-2">Teachers</h2>
       `;
 
       if (authData.isAuthenticated()) {
         domString += `
         <div class="text-center mb-3"><button type="submit" class="btn btn-primary show-teacher-form">New Hire Form</button></div>
-        <div id="teacher-form"></div>
         `;
       } else {
         domString += `
         <div class="text-center mb-3"><button type="submit" class="btn btn-primary show-teacher-form hide">New Hire Form</button></div>
-        <div id="teacher-form"></div>
         `;
       }
 
@@ -61,7 +59,7 @@ const addTeacher = (e) => {
 
   teacherData.addTeacher(newTeacherObj)
     .then(() => {
-      utils.printToDom('#teacher-form', '');
+      utils.printToDom('.formDiv', '');
       buildTeacherModule();
     })
     .catch((err) => console.error('addTeacher failed', err));

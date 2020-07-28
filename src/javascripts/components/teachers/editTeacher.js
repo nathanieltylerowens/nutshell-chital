@@ -2,11 +2,16 @@ import teacherData from '../../helpers/data/teacher/teacherData';
 import utils from '../../helpers/utils';
 
 const buildEditForm = (teacherId) => {
-  $('#teacher-form').removeClass('hide');
+  $('.show-teacher-form').removeClass('hide');
+  $('.formDiv').removeClass('hide');
+  utils.addFormGrid();
   teacherData.getTeacherById(teacherId)
     .then((response) => {
       const teacher = response.data;
       const domString = `
+      <div class="closeButton">
+      <i class="fas fa-window-close closeForm mb-1"></i>
+      </div>
       <form class="teacher-updater" id="${teacherId}">
         <div class="form-group">
           <label class="teacher-form" for="edit-teacher-name">Name</label>
@@ -20,7 +25,7 @@ const buildEditForm = (teacherId) => {
       </form>
       `;
 
-      utils.printToDom('#teacher-form', domString);
+      utils.printToDom('.formDiv', domString);
     })
     .catch((err) => console.error(err));
 };
