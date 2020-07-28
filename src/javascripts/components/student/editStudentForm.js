@@ -1,8 +1,7 @@
+import authData from '../../helpers/data/authData';
 import classesData from '../../helpers/data/classesData';
 import multiSelect from '../multiSelect/multiSelect';
 import utils from '../../helpers/utils';
-
-import './editStudentForm.scss';
 
 const showEditStudentForm = (fbStudentId, {
   imageUrl,
@@ -13,7 +12,7 @@ const showEditStudentForm = (fbStudentId, {
   utils.addFormGrid();
 
   classesData.getClasses()
-    .then(() => {
+    .then((classes) => {
       let domString = `
   <div class="container">
   <div class="closeButton">
@@ -36,7 +35,7 @@ const showEditStudentForm = (fbStudentId, {
       </div>
     </div>`;
 
-      domString += multiSelect.createMultiSelect();
+      domString += multiSelect.createMultiSelect(classes);
 
       domString += `
     <button type="submit" class="btn btn-primary" id="submit-update-student" data-firebase-student-id="${fbStudentId}">Update Student</button>
@@ -45,6 +44,7 @@ const showEditStudentForm = (fbStudentId, {
   `;
 
       utils.printToDom('.formDiv', domString);
+      authData.checkLoginStatus();
     })
     .catch((err) => console.error('Could not get classes for showEditForm', err));
 };

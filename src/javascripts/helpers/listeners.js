@@ -71,6 +71,14 @@ const submitUpdateStudentForm = (e) => {
   const inputName = $('#inputName').val();
   const inputMajor = $('#inputMajor').val();
 
+  // inputClasses returns a collection of option values
+  // which were selected by the user (added to the right select box)
+  const inputClasses = $('#undo_redo_to').children('option');
+
+  // This pulls the inputClasses values (which are the class id's) and puts them in an array called 'addedClasses'
+  const addedClasses = $.map(inputClasses, (option) => option.value);
+  console.error(addedClasses);
+
   const newStudentObj = {
     imageUrl: inputImageUrl,
     studentName: inputName,
