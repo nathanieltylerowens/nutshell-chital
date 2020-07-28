@@ -21,21 +21,21 @@ const showEditStudentForm = (fbStudentId, {
   <h5 class="homeH3">Update Student</h5>
   <form id="edit-student-form">
     <div class="form-group">
-      <label for="inputImageUrl">Address</label>
+      <label for="inputImageUrl" class="homeH3">Image URL</label>
       <input type="text" class="form-control" id="inputImageUrl" value="${imageUrl}">
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputName">Name</label>
+        <label for="inputName" class="homeH3">Name</label>
         <input type="text" class="form-control" id="inputName" value="${studentName}">
       </div>
       <div class="form-group col-md-4">
-        <label for="inputMajor">Phone Number</label>
+        <label for="inputMajor" class="homeH3">Major</label>
         <input type="text" class="form-control" id="inputMajor" value="${major}">
       </div>
     </div>`;
 
-      domString += multiSelect.createMultiSelect(classes);
+      domString += multiSelect.createClassMultiSelect(classes);
 
       domString += `
     <button type="submit" class="btn btn-primary" id="submit-update-student" data-firebase-student-id="${fbStudentId}">Update Student</button>

@@ -71,8 +71,9 @@ const submitUpdateStudentForm = (e) => {
   const inputImageUrl = $('#inputImageUrl').val();
   const inputName = $('#inputName').val();
   const inputMajor = $('#inputMajor').val();
+  const addedClasses = multiSelect.getSelectedMultiSelect();
 
-  console.error('Added Classes: ', multiSelect.getSelectedMultiSelect());
+  console.error(addedClasses);
 
   const newStudentObj = {
     imageUrl: inputImageUrl,

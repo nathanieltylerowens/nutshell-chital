@@ -9,11 +9,11 @@ const getSelectedMultiSelect = () => {
   return addedClasses;
 };
 
-const createMultiSelect = (classes) => {
+const createClassMultiSelect = (classes) => {
   let selectDomString = `
   <div class="row">
       <div class="col mr-2">
-        <p class="text-center">Available Classes</p>
+        <p class="text-center homeH3">Available Classes</p>
         <select name="from" id="undo_redo" class="form-control" size="13" multiple="multiple">`;
 
   classes.forEach((singleClass) => {
@@ -26,7 +26,7 @@ const createMultiSelect = (classes) => {
         </select>
       </div>
       <div class="col-xs-2 mx-2">
-        <p class="text-center">Actions</p>
+        <p class="text-center homeH3">Actions</p>
         <button type="button" id="undo_redo_undo" class="btn btn-primary btn-block">undo</button>
         <button type="button" id="undo_redo_rightAll" class="btn btn-default btn-block btn-secondary"><i class="fas fa-forward"></i></button>
         <button type="button" id="undo_redo_rightSelected" class="btn btn-default btn-block btn-secondary"><i class="fas fa-chevron-right"></i></button>
@@ -35,7 +35,7 @@ const createMultiSelect = (classes) => {
         <button type="button" id="undo_redo_redo" class="btn btn-warning btn-block">redo</button>
       </div>
       <div class="col mr-2">
-        <p class="text-center">Selected Classes</p>
+        <p class="text-center homeH3">Selected Classes</p>
         <select name="to" id="undo_redo_to" class="form-control" size="13" multiple="multiple"></select>
       </div>
     </div>
@@ -44,6 +44,6 @@ const createMultiSelect = (classes) => {
 };
 
 export default {
-  createMultiSelect,
+  createClassMultiSelect,
   getSelectedMultiSelect,
 };
