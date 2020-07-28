@@ -26,7 +26,7 @@ const buildTeacherModule = () => {
         `;
       }
 
-      domString += '<div class="d-flex flex-wrap">';
+      domString += '<div class="d-flex flex-wrap teacherLounge">';
 
       faculty.forEach((teacher) => {
         domString += teacherMaker.TeacherCardMaker(teacher);
