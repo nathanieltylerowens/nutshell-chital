@@ -1,3 +1,14 @@
+const getSelectedMultiSelect = () => {
+  // inputClasses returns a collection of option values
+  // which were selected by the user (added to the right select box)
+  const inputClasses = $('#undo_redo_to').children('option');
+
+  // This pulls the inputClasses values (which are the class id's) and puts them in an array called 'addedClasses'
+  const addedClasses = $.map(inputClasses, (option) => option.value);
+
+  return addedClasses;
+};
+
 const createMultiSelect = (classes) => {
   let selectDomString = `
   <div class="row">
@@ -6,24 +17,10 @@ const createMultiSelect = (classes) => {
         <select name="from" id="undo_redo" class="form-control" size="13" multiple="multiple">`;
 
   classes.forEach((singleClass) => {
-    // console.error(singleClass.name);
     selectDomString += `
     <option value="${singleClass.id}">${singleClass.name}</option>
     `;
   });
-
-  // <option value="1">C++</option>
-  // <option value="3">Haskell</option>
-  // <option value="4">Java</option>
-  // <option value="5">JavaScript</option>
-  // <option value="6">Lisp</option>
-  // <option value="7">Lua</option>
-  // <option value="8">MATLAB</option>
-  // <option value="9">NewLISP</option>
-  // <option value="10">PHP</option>
-  // <option value="11">Perl</option>
-  // <option value="12">SQL</option>
-  // <option value="13">Unix shell</option>
 
   selectDomString += `
         </select>
@@ -48,4 +45,5 @@ const createMultiSelect = (classes) => {
 
 export default {
   createMultiSelect,
+  getSelectedMultiSelect,
 };

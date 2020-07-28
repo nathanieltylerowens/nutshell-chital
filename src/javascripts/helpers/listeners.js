@@ -20,6 +20,7 @@ import buildMajors from '../components/majors/majorList';
 import majorData from './data/major/majorData';
 import editMajor from '../components/majors/editMajorForm';
 import newMajor from '../components/majors/newMajorForm';
+import multiSelect from '../components/multiSelect/multiSelect';
 
 const editStudentEvent = (e) => {
   if (!authData.isAuthenticated()) {
@@ -71,13 +72,7 @@ const submitUpdateStudentForm = (e) => {
   const inputName = $('#inputName').val();
   const inputMajor = $('#inputMajor').val();
 
-  // inputClasses returns a collection of option values
-  // which were selected by the user (added to the right select box)
-  const inputClasses = $('#undo_redo_to').children('option');
-
-  // This pulls the inputClasses values (which are the class id's) and puts them in an array called 'addedClasses'
-  const addedClasses = $.map(inputClasses, (option) => option.value);
-  console.error(addedClasses);
+  console.error('Added Classes: ', multiSelect.getSelectedMultiSelect());
 
   const newStudentObj = {
     imageUrl: inputImageUrl,
