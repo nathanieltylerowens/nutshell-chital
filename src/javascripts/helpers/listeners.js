@@ -73,9 +73,7 @@ const submitUpdateStudentForm = (e) => {
   const inputName = $('#inputName').val();
   const inputMajor = $('#inputMajor').val();
   const addedClasses = multiSelect.getSelectedMultiSelect();
-
-  console.error('StudentId: ', fbStudentId);
-  console.error('Classes Added: ', addedClasses);
+  const availableClasses = multiSelect.getAvailableMultiSelect();
 
   const newStudentObj = {
     imageUrl: inputImageUrl,
@@ -85,7 +83,7 @@ const submitUpdateStudentForm = (e) => {
 
   studentData.updateStudent(fbStudentId, newStudentObj)
     .then(() => {
-      classStudents.modifyClassStudents(fbStudentId, addedClasses);
+      classStudents.modifyClassStudents(fbStudentId, addedClasses, availableClasses);
     })
     .then(() => {
       utils.printToDom('#student-form', '');
