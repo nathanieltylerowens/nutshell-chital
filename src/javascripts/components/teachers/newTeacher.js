@@ -1,8 +1,13 @@
 import utils from '../../helpers/utils';
 
 const buildTeacherForm = () => {
-  $('#teacher-form').removeClass('hide');
+  $('.show-teacher-form').addClass('hide');
+  $('.formDiv').removeClass('hide');
+  utils.addFormGrid();
   const domString = `
+  <div class="closeButton">
+  <i class="fas fa-window-close closeForm mb-1"></i>
+  </div>
   <form id="new-hire-form">
     <div class="form-group">
       <label class="teacher-form" for="teacher-name">Name</label>
@@ -16,7 +21,7 @@ const buildTeacherForm = () => {
   </form>
   `;
 
-  utils.printToDom('#teacher-form', domString);
+  utils.printToDom('.formDiv', domString);
 };
 
 export default { buildTeacherForm };
