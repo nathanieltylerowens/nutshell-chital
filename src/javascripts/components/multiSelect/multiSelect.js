@@ -9,14 +9,14 @@ const getSelectedMultiSelect = () => {
   return addedClasses;
 };
 
-const createClassMultiSelect = (classes) => {
+const createClassMultiSelect = (availableClasses, activeClasses) => {
   let selectDomString = `
   <div class="row">
       <div class="col mr-2">
         <p class="text-center homeH3">Available Classes</p>
         <select name="from" id="undo_redo" class="form-control" size="13" multiple="multiple">`;
 
-  classes.forEach((singleClass) => {
+  availableClasses.forEach((singleClass) => {
     selectDomString += `
     <option value="${singleClass.id}">${singleClass.name}</option>
     `;
@@ -36,7 +36,16 @@ const createClassMultiSelect = (classes) => {
       </div>
       <div class="col mr-2">
         <p class="text-center homeH3">Selected Classes</p>
-        <select name="to" id="undo_redo_to" class="form-control" size="13" multiple="multiple"></select>
+        <select name="to" id="undo_redo_to" class="form-control" size="13" multiple="multiple">`;
+
+  activeClasses.forEach((singleClass) => {
+    selectDomString += `
+    <option value="${singleClass.id}">${singleClass.name}</option>
+    `;
+  });
+
+  selectDomString += `
+        </select>
       </div>
     </div>
     `;
