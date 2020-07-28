@@ -7,6 +7,7 @@ import homescreen from './components/homescreen/homescreen';
 
 import '../stylings/main.scss';
 import 'bootstrap';
+import 'multiselect-two-sides';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseConfig);
