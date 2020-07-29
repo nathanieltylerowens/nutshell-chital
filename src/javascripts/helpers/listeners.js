@@ -22,6 +22,7 @@ import editMajor from '../components/majors/editMajorForm';
 import newMajor from '../components/majors/newMajorForm';
 import multiSelect from '../components/multiSelect/multiSelect';
 import classStudents from '../components/classStudents/classStudents';
+import majorClasses from '../components/majorClasses/majorClasses';
 
 const editStudentEvent = (e) => {
   if (!authData.isAuthenticated()) {
@@ -159,6 +160,8 @@ const showNewMajorForm = () => {
 const submitUpdateMajorForm = (e) => {
   e.preventDefault();
   const fbMajorId = e.target.getAttribute('data-firebase-major-id');
+  const addedClasses = multiSelect.getSelectedMultiSelect();
+  const availableClasses = multiSelect.getAvailableMultiSelect();
 
   const inputName = $('#inputName').val();
 
@@ -167,6 +170,9 @@ const submitUpdateMajorForm = (e) => {
   };
 
   majorData.updateMajor(fbMajorId, newMajorObj)
+    .then(() => {
+      majorClasses.modifyMajorClasses(fbMajorId, addedClasses, availableClasses);
+    })
     .then(() => {
       utils.printToDom('#major-form', '');
       buildMajors.buildMajorList();
