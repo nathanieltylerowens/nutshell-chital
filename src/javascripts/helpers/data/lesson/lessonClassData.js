@@ -3,14 +3,14 @@ import apiKeys from '../../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
-const getLessonbyClass = (classId) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/classLessons.json?orderBy="classesId"&equalTo="${classId}"`)
+const getClassByLesson = (lessonId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/classLessons.json?orderBy="lessonsId"&equalTo="${lessonId}"`)
     .then((response) => {
-      const lessonClass = response.data;
+      const classLessonsObj = response.data;
 
-      console.error(lessonClass);
+      resolve(classLessonsObj);
     })
     .catch((err) => reject(err));
 });
 
-export default { getLessonbyClass };
+export default { getClassByLesson };
