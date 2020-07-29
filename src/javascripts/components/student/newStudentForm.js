@@ -1,8 +1,13 @@
 import utils from '../../helpers/utils';
 
 const newStudentForm = () => {
+  $('.formDiv').removeClass('hide');
+  utils.addFormGrid();
   const domString = `
   <div class="container">
+  <div class="closeButton">
+    <i class="fas fa-window-close closeForm mb-1"></i>
+  </div>
   <h5 class="homeH3">New Student</h5>
   <form class="hide" id="new-student-form">
     <div class="form-group">
@@ -24,7 +29,7 @@ const newStudentForm = () => {
   </div>
   `;
 
-  utils.printToDom('#student-form', domString);
+  utils.printToDom('.formDiv', domString);
 };
 
 export default {
