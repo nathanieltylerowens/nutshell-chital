@@ -32,4 +32,13 @@ const getClassTeachersByTeacherId = (teacherId) => new Promise((resolve, reject)
     .catch((err) => reject(err));
 });
 
-export default { getClassTeachers, getClassTeachersByTeacherId };
+const addClassTeachers = (newClassTeachersObj) => axios.post(`${baseUrl}/classTeachers.json`, newClassTeachersObj);
+
+const deleteClassTeachers = (classTeachersId) => axios.delete(`${baseUrl}/classTeachers/${classTeachersId}.json`);
+
+export default {
+  getClassTeachers,
+  getClassTeachersByTeacherId,
+  addClassTeachers,
+  deleteClassTeachers,
+};
