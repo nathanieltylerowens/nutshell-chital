@@ -2,8 +2,12 @@ import classesData from '../../helpers/data/classesData';
 import classTeachersData from '../../helpers/data/teacher/classTeachersData';
 import multiSelect from '../multiSelect/multiSelect';
 import utils from '../../helpers/utils';
+import authData from '../../helpers/data/authData';
 
-const buildEditForm = (teacherId) => {
+const buildEditForm = (teacherId, {
+  imageUrl,
+  name,
+}) => {
   $('.show-teacher-form').removeClass('hide');
   $('.formDiv').removeClass('hide');
   utils.addFormGrid();
@@ -25,11 +29,11 @@ const buildEditForm = (teacherId) => {
         <form class="teacher-updater" id="${teacherId}">
           <div class="form-group">
             <label class="teacher-form" for="edit-teacher-name">Name</label>
-            <input type="text" class="form-control" id="edit-teacher-name">
+            <input type="text" class="form-control" id="edit-teacher-name" value="${name}">
           </div>
           <div class="form-group">
             <label class="teacher-form" for="edit-teacher-image">Image URL</label>
-            <input type="text" class="form-control" id="edit-teacher-image">
+            <input type="text" class="form-control" id="edit-teacher-image" value="${imageUrl}">
           </div>`;
 
         domString += multiSelect.createClassMultiSelect(availableClasses, enrolledClasses);
@@ -40,6 +44,7 @@ const buildEditForm = (teacherId) => {
         `;
 
         utils.printToDom('.formDiv', domString);
+        authData.checkLoginStatus();
       });
     })
     .catch((err) => console.error(err));
