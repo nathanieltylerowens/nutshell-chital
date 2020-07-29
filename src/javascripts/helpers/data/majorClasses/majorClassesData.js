@@ -21,9 +21,9 @@ const getMajorClasses = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-// getMajorClassesByClassesId
-const getMajorClassesByClassesId = (classesId) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/majorClasses.json?orderBy="classesId"&equalTo="${classesId}"`)
+// getMajorClassesByMajorsId
+const getMajorClassesByMajorsId = (majorsId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/majorClasses.json?orderBy="majorsId"&equalTo="${majorsId}"`)
     .then((response) => {
       const majorClassesObjects = response.data;
       const majorClasses = [];
@@ -34,7 +34,7 @@ const getMajorClassesByClassesId = (classesId) => new Promise((resolve, reject) 
       resolve(majorClasses);
     })
     .catch((err) => reject(err));
-})
+});
 
 // update majorClasses (U)
 
@@ -45,5 +45,5 @@ export default {
   addMajorClasses,
   deleteMajorClasses,
   getMajorClasses,
-  getMajorClassesByClassesId,
+  getMajorClassesByMajorsId,
 };
