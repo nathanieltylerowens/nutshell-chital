@@ -51,9 +51,6 @@ const buildClassModule = () => {
         }
         domString += `
         </div>
-        <div class="card-footer classFooter">
-        <p class="text-center mb-0"><span class="footerBold">Schedule: </span>${singleClass.schedule}</p>
-        </div>
         </div>
         `;
       });
