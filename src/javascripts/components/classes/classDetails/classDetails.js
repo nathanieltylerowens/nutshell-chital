@@ -9,6 +9,7 @@ const showClassInfo = (e) => {
   let domString = '';
   smash.getClassWithDetails(classId)
     .then((singleClass) => {
+      console.error(singleClass);
       domString += `
       <div class="closeButton">
       <i class="fas fa-window-close closeInfo mb-1"></i>
@@ -26,22 +27,17 @@ const showClassInfo = (e) => {
       });
       domString += `
       <div id="class-lessons">
-      <h6 class="detailsHeading">Lessons:</h6>
-      <div id="lesson1" class="card lesson text-dark ml-0 mr-0 mt-0">
-      <div class="lesson-card-body">
-      <h6 class="lesson-card-title">Face creating 101</h6>
-      </div>
-      </div>
-      <div id="lesson2" class="card lesson text-dark ml-0 mr-0">
-      <div class="lesson-card-body">
-      <h6 class="lesson-card-title">Face creating 102</h6>
-      </div>
-      </div>
-      <div id="lesson3" class="card lesson text-dark ml-0 mr-0">
-      <div class="lesson-card-body">
-      <h6 class="lesson-card-title">Face creating 103</h6>
-      </div>
-      </div>
+      <h6 class="detailsHeading">Lessons:</h6>`;
+      singleClass.lessons.forEach((lesson) => {
+        domString += `
+        <div id="lesson1" class="card lesson text-dark ml-0 mr-0 mt-0">
+        <div class="lesson-card-body">
+        <h6 class="lesson-card-header">${lesson.name}</h6>
+        </div>
+        </div>
+        `;
+      });
+      domString += `
       </div>
       <div id="class-students">
       <h6 class="detailsHeading">Students:</h6>

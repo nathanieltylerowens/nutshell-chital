@@ -3,6 +3,7 @@ import studentClassData from './data/classStudents/classStudentsData';
 import studentData from './data/student/studentData';
 import teacherClassData from './data/teacher/classTeachersData';
 import teacherData from './data/teacher/teacherData';
+import lessonData from './data/lessonData';
 
 const getClassWithDetails = (classId) => new Promise((resolve, reject) => {
   classData.getClassByClassId(classId)
@@ -11,6 +12,7 @@ const getClassWithDetails = (classId) => new Promise((resolve, reject) => {
       selectedClass.id = classId;
       selectedClass.students = [];
       selectedClass.teachers = [];
+      selectedClass.lessons = [];
       studentClassData.getClassStudentsByClassId(classId).then((classStudents) => {
         studentData.getStudents().then((allStudents) => {
           classStudents.forEach((classStudent) => {
@@ -23,7 +25,15 @@ const getClassWithDetails = (classId) => new Promise((resolve, reject) => {
                 const teacher = allTeachers.find((t) => t.id === classTeacher.teachersId);
                 selectedClass.teachers.push(teacher);
               });
-              resolve(selectedClass);
+              lessonData.getClassLessonsByClassId(classId).then((classLessons) => {
+                lessonData.getLessonData().then((allLessons) => {
+                  classLessons.forEach((classLesson) => {
+                    const lesson = allLessons.find((l) => l.id === classLesson.lessonsId);
+                    selectedClass.lessons.push(lesson);
+                  });
+                  resolve(selectedClass);
+                });
+              });
             });
           });
         });
