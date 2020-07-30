@@ -5,6 +5,8 @@ import utils from '../../helpers/utils';
 import editForm from './editTeacher';
 
 import './teachers.scss';
+import multiSelect from '../multiSelect/multiSelect';
+import classTeachers from './classTeachers';
 
 const buildTeacherModule = () => {
   utils.clearGridClasses();
@@ -67,12 +69,18 @@ const addTeacher = (e) => {
 
 const showEditTeacherForm = (e) => {
   const teacherId = e.target.closest('.card').id;
-  editForm.buildEditForm(teacherId);
+  teacherData.getTeacherById(teacherId)
+    .then((response) => {
+      const teacherObj = response.data;
+      editForm.buildEditForm(teacherId, teacherObj);
+    });
 };
 
 const editTeacher = (e) => {
   e.preventDefault();
   const teacherId = e.target.closest('.teacher-updater').id;
+  const addedClasses = multiSelect.getSelectedMultiSelect();
+  const availableClasses = multiSelect.getAvailableMultiSelect();
 
   const updateTeacherObj = {
     name: $('#edit-teacher-name').val(),
@@ -80,7 +88,12 @@ const editTeacher = (e) => {
   };
 
   teacherData.updateTeacher(teacherId, updateTeacherObj)
-    .then(() => buildTeacherModule())
+    .then(() => {
+      classTeachers.modifyClassTeachers(teacherId, addedClasses, availableClasses);
+    })
+    .then(() => {
+      buildTeacherModule();
+    })
     .catch((err) => console.error('editTeacher failed', err));
 };
 

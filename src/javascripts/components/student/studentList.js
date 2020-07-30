@@ -33,18 +33,18 @@ const buildStudentList = () => {
     .then((students) => {
       let domString = buildAuthRequiredModal();
       domString += `
+      <div class="formDiv hide"></div>
+      <div class="mainModule">
       <h2 class="text-center homeH3 mt-3">Clown College Students</h2>`;
       if (authData.isAuthenticated()) {
         domString += `
         <div class="text-center">
           <button class="btn btn-primary" id="add-student">Add/Create a Student<i class="fas fa-plus ml-1"></i></button>
         </div>
-        <div id="student-form"></div>
         `;
       } else {
         domString += `
         <div class="text-center"><i class="fas fa-plus-circle fa-2x hide" id="add-student"></i></div>
-        <div id="student-form"></div>
         `;
       }
       domString += '<div class="d-flex flex-wrap mt-2">';
@@ -53,7 +53,10 @@ const buildStudentList = () => {
         domString += studentCardMaker.studentCardMaker(student);
       });
 
-      domString += '</div>';
+      domString += `
+      </div>
+      </div>
+      <div class="infoDiv hide"></div>`;
 
       utils.printToDom('#content', domString);
     })
