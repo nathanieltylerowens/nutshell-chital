@@ -3,6 +3,8 @@ import apiKeys from '../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
+const getClassByClassId = (classId) => axios.get(`${baseUrl}/classes/${classId}.json`);
+
 const getClasses = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/classes.json`)
     .then((response) => {
@@ -30,4 +32,5 @@ export default {
   deleteClass,
   updateClass,
   addNewClass,
+  getClassByClassId,
 };
