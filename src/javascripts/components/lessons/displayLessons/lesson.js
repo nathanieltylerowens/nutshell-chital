@@ -1,7 +1,7 @@
 import '../lessons.scss';
 import authData from '../../../helpers/data/authData';
 import lessonData from '../../../helpers/data/lesson/lessonData';
-import lessonClassData from '../../../helpers/data/lesson/lessonClassData';
+// import lessonClassData from '../../../helpers/data/lesson/lessonClassData';
 import utils from '../../../helpers/utils';
 
 const printLessons = () => {
