@@ -9,7 +9,6 @@ const showClassInfo = (e) => {
   let domString = '';
   smash.getClassWithDetails(classId)
     .then((singleClass) => {
-      console.error(singleClass);
       domString += `
       <div class="closeButton">
       <i class="fas fa-window-close closeInfo mb-1"></i>
