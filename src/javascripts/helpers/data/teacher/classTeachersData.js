@@ -32,6 +32,20 @@ const getClassTeachersByTeacherId = (teacherId) => new Promise((resolve, reject)
     .catch((err) => reject(err));
 });
 
+const getClassTeachersByClassId = (classId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/classTeachers.json?orderBy="classesId"&equalTo="${classId}"`)
+    .then((response) => {
+      const classTeacherObj = response.data;
+      const classTeachers = [];
+      Object.keys(classTeacherObj).forEach((classTeachersId) => {
+        classTeacherObj[classTeachersId].id = classTeachersId;
+        classTeachers.push(classTeacherObj[classTeachersId]);
+      });
+      resolve(classTeachers);
+    })
+    .catch((err) => reject(err));
+});
+
 const addClassTeachers = (newClassTeachersObj) => axios.post(`${baseUrl}/classTeachers.json`, newClassTeachersObj);
 
 const deleteClassTeachers = (classTeachersId) => axios.delete(`${baseUrl}/classTeachers/${classTeachersId}.json`);
@@ -41,4 +55,5 @@ export default {
   getClassTeachersByTeacherId,
   addClassTeachers,
   deleteClassTeachers,
+  getClassTeachersByClassId,
 };

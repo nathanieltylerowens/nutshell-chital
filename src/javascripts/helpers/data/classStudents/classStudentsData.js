@@ -39,6 +39,20 @@ const getClassStudentsByStudentId = (studentId) => new Promise((resolve, reject)
 
 // get classStudentsByClassId (maybe not needed yet?)
 
+const getClassStudentsByClassId = (classId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/classStudents.json?orderBy="classesId"&equalTo="${classId}"`)
+    .then((response) => {
+      const classStudentsObj = response.data;
+      const classStudents = [];
+      Object.keys(classStudentsObj).forEach((classStudentsId) => {
+        classStudentsObj[classStudentsId].id = classStudentsId;
+        classStudents.push(classStudentsObj[classStudentsId]);
+      });
+      resolve(classStudents);
+    })
+    .catch((err) => reject(err));
+});
+
 // update classStudents (U)
 
 // delete classStudents (D)
@@ -49,4 +63,5 @@ export default {
   deleteClassStudents,
   getClassStudents,
   getClassStudentsByStudentId,
+  getClassStudentsByClassId,
 };
