@@ -6,17 +6,22 @@ import auth from '../../../helpers/data/authData';
 
 const showLessonForm = () => {
   if (!auth.isAuthenticated()) return;
+  $('.formDiv').removeClass('hide');
+  utils.addFormGrid();
   const domString = `
+    <div class="closeButton">
+        <i class="fas fa-window-close closeForm mb-1"></i>
+    </div>
     <form>
       <div class="form-group col-sm-8">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="lesson-name-val" placeholder="Name">
       </div>
-      <div class="form-group col-sm-2">
+      <div class="form-group col-sm-6">
         <label for="lesson-hours">Another label</label>
         <input type="text" class="form-control" id="lesson-hours-val" placeholder="How Long?">
       </div>
-      <div class="form-check col-sm-2">
+      <div class="form-check col-sm-6">
         <label >Materials Provided:</label>
         <select class="form-control" id="lesson-materials-val">
           <option>Yes</option>
@@ -26,7 +31,7 @@ const showLessonForm = () => {
     <button class="btn btn-primary" id="addLesson">Submit</button>
     </form>
     `;
-  utils.printToDom('#new-lesson-form', domString);
+  utils.printToDom('.formDiv', domString);
 };
 
 const addLessonEvent = (e) => {
