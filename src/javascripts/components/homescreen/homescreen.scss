@@ -24,6 +24,12 @@
   }
 }
 
+.carocontainer {
+  border: 2px solid white;
+  width: 35%;
+  margin: 15px auto 0px auto;
+}
+
 @media only screen and (max-width: 500px) {
   .homeContainer {
     width:95%;
@@ -33,5 +39,8 @@
 }
   .homeImg{
     width: 90%;
+  }
+  .carocontainer {
+    width: 75%;
   }
 }
