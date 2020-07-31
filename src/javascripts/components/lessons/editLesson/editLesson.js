@@ -3,6 +3,7 @@ import utils from '../../../helpers/utils';
 import lessonData from '../../../helpers/data/lesson/lessonData';
 import classesData from '../../../helpers/data/classesData';
 import lessonClassData from '../../../helpers/data/lesson/lessonClassData';
+import multiSelect from '../../multiSelect/multiSelect';
 import auth from '../../../helpers/data/authData';
 import buildLessons from '../displayLessons/lesson';
 
@@ -16,12 +17,28 @@ const makeMaterialSelectForm = (lesson) => {
   return domString;
 };
 
+const makeMultiSelectLessons = (lessonId) => {
+  classesData.getClasses()
+    .then((classes) => {
+      let availableClasses = classes;
+      const enrolledClasses = [];
+      lessonClassData.getClassByLesson(lessonId).then((currentClasses) => {
+        currentClasses.forEach((currClass) => {
+          enrolledClasses.push(classes.filter((obj) => obj.id === currClass.classesId)[0]);
+          availableClasses = classes.filter((obj) => obj.id !== currClass.classesId);
+        });
+        const domString = multiSelect.createClassMultiSelect(availableClasses, enrolledClasses);
+        utils.printToDom('.lesson-multi', domString);
+      });
+    })
+    .catch((err) => console.error('lesson multi broke', err));
+};
+
 const updateLessonForm = (lessonId) => {
   if (!auth.isAuthenticated()) return;
   lessonData.getLessonById(lessonId)
     .then((response) => {
       const lesson = response.data;
-
       let domString = `
       <form class="formUpdate" id="${lessonId}">
         <div class="form-group col-sm-8">
@@ -35,9 +52,9 @@ const updateLessonForm = (lessonId) => {
       <div class="form-check col-sm-2">
         <label >Materials Provided:</label>`;
       domString += makeMaterialSelectForm(lesson);
-      domString += `
-          </div>
-        <button class="btn btn-primary updateButton" id="lessonUpdate" value="${lesson.id}">Submit</button>
+      domString += '</div>';
+      domString += '<div class="lesson-multi"></div>';
+      domString += `<button class="btn btn-primary updateButton" id="lessonUpdate" value="${lesson.id}">Submit</button>
       </form>
       `;
       utils.printToDom('#new-lesson-form', domString);
@@ -48,6 +65,7 @@ const updateLessonForm = (lessonId) => {
 const updateLessonEvent = (e) => {
   if (!auth.isAuthenticated()) return;
   updateLessonForm(e.target.closest('.card').id);
+  makeMultiSelectLessons(e.target.closest('.card').id);
 };
 
 const updateLesson = (e) => {
@@ -59,7 +77,6 @@ const updateLesson = (e) => {
     hours: $('#edit-lesson-hours-val').val(),
     materialsProvided: $('#edit-lesson-material-val').val(),
   };
-  console.error(updateLessonId, editedLesson);
   lessonData.updateLessonsData(updateLessonId, editedLesson)
     .then(() => {
       buildLessons.printLessons();
@@ -72,4 +89,5 @@ export default {
   updateLesson,
   updateLessonForm,
   updateLessonEvent,
+  makeMultiSelectLessons,
 };
