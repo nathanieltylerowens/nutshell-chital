@@ -1,6 +1,7 @@
 import '../lessons.scss';
 import authData from '../../../helpers/data/authData';
-import lessonData from '../../../helpers/data/lessonData';
+import lessonData from '../../../helpers/data/lesson/lessonData';
+// import lessonClassData from '../../../helpers/data/lesson/lessonClassData';
 import utils from '../../../helpers/utils';
 
 const printLessons = () => {
@@ -8,8 +9,9 @@ const printLessons = () => {
   lessonData.getLessonData()
     .then((lessons) => {
       let domString = `
+      <div class="formDiv" id="new-lesson-form"></div>
       <div id="lesson-div">
-        <h2 class="text-center homeH3">Lessons<h2>`;
+        <h2 class="text-center homeH3">Lessons</h2>`;
 
       if (authData.isAuthenticated()) {
         domString += `
@@ -25,7 +27,6 @@ const printLessons = () => {
           `;
       }
       domString += `
-          <div id="new-lesson-form"></div>
           <div class="d-flex flex-wrap lesson-container">
           `;
       lessons.forEach((lesson) => {
