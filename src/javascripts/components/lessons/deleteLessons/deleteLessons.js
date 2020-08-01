@@ -1,5 +1,5 @@
 import lesson from '../displayLessons/lesson';
-import lessonData from '../../../helpers/data/lessonData';
+import lessonData from '../../../helpers/data/lesson/lessonData';
 import auth from '../../../helpers/data/authData';
 
 const deleteLesson = (e) => {
