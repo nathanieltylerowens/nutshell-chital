@@ -30,7 +30,6 @@ const modifyMajorClasses = (majorId, activeClasses, availableClasses) => {
     majorClassesData.getMajorClassesByMajorsId(majorId)
       .then((majorClasses) => {
         availableClasses.forEach((availableClass) => {
-          console.error('AvailableClass: ', availableClass);
           const searchMajorClasses = majorClasses.find(((mc) => mc.classesId === availableClass));
           if (searchMajorClasses) {
             majorClassesData.deleteMajorClasses(searchMajorClasses.id);
