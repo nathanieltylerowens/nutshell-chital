@@ -3,7 +3,7 @@ import studentClassData from './data/classStudents/classStudentsData';
 import studentData from './data/student/studentData';
 import teacherClassData from './data/teacher/classTeachersData';
 import teacherData from './data/teacher/teacherData';
-import lessonData from './data/lessonData';
+import lessonData from './data/lesson/lessonData';
 
 const getClassWithDetails = (classId) => new Promise((resolve, reject) => {
   classData.getClassByClassId(classId)
