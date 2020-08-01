@@ -14,32 +14,30 @@ const getMajorWithClassLessonsDetails = (majorId) => new Promise((resolve, rejec
       selectedMajor.id = majorId;
       selectedMajor.classes = [];
 
-      majorClassesData.getMajorClassesByMajorsId(majorId)
-        .then((majorClasses) => {
-          classData.getClasses()
-            .then((allClasses) => {
-              majorClasses.forEach((majorClass) => {
-                const majClass = allClasses.find((m) => m.id === majorClass.classesId);
-                selectedMajor.classes.push(majClass);
-              });
-              console.error('slectedMajor: ', selectedMajor);
-              //   lessonData.getClassLessonsByClassId(majClass.id)
-              //     .then((classLessons) => {
-              //       // majClass.lessons = classLessons;
-              //       // console.error('majClass: ', JSON.stringify(majClass), 'classLessons: ', JSON.stringify(classLessons));
-              //       // selectedMajor.classes.push(majClass);
-              //       // console.error(selectedMajor.classes.find((cl) => cl.id === classLessons.id));
-              //       resolve(selectedMajor);
-              //     });
-              // });
-              resolve(selectedMajor);
-            });
+      majorClassesData.getMajorClassesByMajorsId(majorId).then((majorClasses) => {
+        classData.getClasses().then((allClasses) => {
+          majorClasses.forEach((majorClass) => {
+            const majClass = allClasses.find((m) => m.id === majorClass.classesId);
+            selectedMajor.classes.push(majClass);
+          });
+          console.error('slectedMajor: ', selectedMajor);
+          //   lessonData.getClassLessonsByClassId(majClass.id)
+          //     .then((classLessons) => {
+          //       // majClass.lessons = classLessons;
+          //       // console.error('majClass: ', JSON.stringify(majClass), 'classLessons: ', JSON.stringify(classLessons));
+          //       // selectedMajor.classes.push(majClass);
+          //       // console.error(selectedMajor.classes.find((cl) => cl.id === classLessons.id));
+          //       resolve(selectedMajor);
+          //     });
+          // });
+          resolve(selectedMajor);
         });
+      });
     })
     .catch((err) => reject(err));
 });
 
-// const test2 = {
+// const major1 = {
 //   name: 'majorName',
 //   id: 'majorId',
 //   classes: [{
