@@ -23,6 +23,7 @@ import newMajor from '../components/majors/newMajorForm';
 import multiSelect from '../components/multiSelect/multiSelect';
 import classStudents from '../components/classStudents/classStudents';
 import majorClasses from '../components/majorClasses/majorClasses';
+import majorDetails from '../components/majors/majorDetails';
 
 const editStudentEvent = (e) => {
   if (!authData.isAuthenticated()) {
@@ -235,6 +236,7 @@ const createListeners = () => {
   $('body').on('click', '#submit-update-major', submitUpdateMajorForm);
   $('body').on('click', '.studentName', classInfo.showGradeForm);
   $('body').on('click', '.gradeSubmitbtn', classInfo.assignGrade);
+  $('body').on('click', '.info-major', majorDetails.showMajorInfo);
 };
 
 export default {

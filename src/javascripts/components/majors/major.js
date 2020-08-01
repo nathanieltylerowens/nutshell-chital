@@ -8,13 +8,12 @@ const majorCardMaker = (major) => {
       <div class="card-header text-center">${major.name}</div>
       <div class="card-body text-center">`;
   if (authData.isAuthenticated()) {
+    domString += '<button class="btn btn-primary info-major">Info</button>';
     domString += '<button class="btn btn-warning edit-major mx-1">Edit</button>';
-  } else {
-    domString += '<button class="btn btn-warning edit-major hide mx-1">Edit</button>';
-  }
-  if (authData.isAuthenticated()) {
     domString += '<button class="btn btn-danger delete-major mx-1">Delete</button>';
   } else {
+    domString += '<button class="btn btn-primary info-major hide">Info</button>';
+    domString += '<button class="btn btn-warning edit-major hide mx-1">Edit</button>';
     domString += '<button class="btn btn-danger delete-major hide mx0">Delete</button>';
   }
 
