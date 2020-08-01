@@ -39,7 +39,7 @@ const buildEditForm = (teacherId, {
         domString += multiSelect.createClassMultiSelect(availableClasses, enrolledClasses);
 
         domString += `
-        <button type="submit" class="btn btn-primary" id="update-teacher">Submit</button>
+        <button type="submit" class="btn btn-primary mt-3" id="update-teacher">Submit</button>
         </form>
         `;
 
