@@ -33,12 +33,12 @@ const createClassMultiSelect = (availableClasses, activeClasses) => {
       </div>
       <div class="col-xs-2 mx-2">
         <p class="text-center homeH3">Actions</p>
-        <button type="button" id="undo_redo_undo" class="btn btn-primary btn-block">undo</button>
-        <button type="button" id="undo_redo_rightAll" class="btn btn-default btn-block btn-secondary"><i class="fas fa-forward"></i></button>
-        <button type="button" id="undo_redo_rightSelected" class="btn btn-default btn-block btn-secondary"><i class="fas fa-chevron-right"></i></button>
-        <button type="button" id="undo_redo_leftSelected" class="btn btn-default btn-block btn-secondary"><i class="fas fa-chevron-left"></i></button>
-        <button type="button" id="undo_redo_leftAll" class="btn btn-default btn-block btn-secondary"><i class="fas fa-backward"></i></button>
-        <button type="button" id="undo_redo_redo" class="btn btn-warning btn-block">redo</button>
+        <button type="button" id="undo_redo_undo" class="btn btn-primary btn-block drop-shadow-1">undo</button>
+        <button type="button" id="undo_redo_rightAll" class="btn btn-default btn-block btn-secondary drop-shadow-1"><i class="fas fa-forward"></i></button>
+        <button type="button" id="undo_redo_rightSelected" class="btn btn-default btn-block btn-secondary drop-shadow-1"><i class="fas fa-chevron-right"></i></button>
+        <button type="button" id="undo_redo_leftSelected" class="btn btn-default btn-block btn-secondary drop-shadow-1"><i class="fas fa-chevron-left"></i></button>
+        <button type="button" id="undo_redo_leftAll" class="btn btn-default btn-block btn-secondary drop-shadow-1"><i class="fas fa-backward"></i></button>
+        <button type="button" id="undo_redo_redo" class="btn btn-warning btn-block drop-shadow-1">redo</button>
       </div>
       <div class="col mr-2">
         <p class="text-center homeH3">Selected Classes</p>
