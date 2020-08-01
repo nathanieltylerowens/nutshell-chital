@@ -49,7 +49,7 @@ const showEditStudentForm = (fbStudentId, {
         domString += multiSelect.createClassMultiSelect(availableClasses, enrolledClasses);
 
         domString += `
-            <button type="submit" class="btn btn-primary" id="submit-update-student" data-firebase-student-id="${fbStudentId}">Update Student</button>
+            <button type="submit" class="btn btn-primary drop-shadow-1" id="submit-update-student" data-firebase-student-id="${fbStudentId}">Update Student</button>
           </form> 
           </div>
         `;

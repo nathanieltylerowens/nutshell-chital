@@ -25,8 +25,8 @@ const showMajorInfo = (e) => {
         domString += `
         <div class="col-12 col-xl-6 bg-major-class">
           <div id="${majClass.id}" class="card lesson bg-success text-light ml-1 mr-1 mt-3">
-            <div class="lesson-card-body">
-              <h6 class="lesson-card-header text-center">${majClass.name}</h6>
+            <div class="">
+              <h6 class="text-center text-shadow-2 m-auto">${majClass.name}</h6>
             </div>
           </div>
           <div class="d-flex flex-wrap">
@@ -36,7 +36,7 @@ const showMajorInfo = (e) => {
           domString += `
             <div class="col col-xs-12 col-xl-12">
               <div class="card border-0 rounded-0 bg-info text-light mb-3">
-                <div class="card-header text-center">${lesson.name}</div>
+                <div class="card-header text-center text-shadow-1">${lesson.name}</div>
               </div>
             </div>
           `;
