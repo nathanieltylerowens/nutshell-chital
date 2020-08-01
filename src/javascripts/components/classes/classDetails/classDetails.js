@@ -1,16 +1,14 @@
 import utils from '../../../helpers/utils';
 import smash from '../../../helpers/smash';
 import classStudentData from '../../../helpers/data/classStudents/classStudentsData';
-import buildClass from '../buildClasses/buildClasses';
 
 import './classDetails.scss';
 
-const showClassInfo = (e) => {
-  const classId = e.target.closest('.card').id;
+const showClassInfo = (selectedClass) => {
   $('.infoDiv').removeClass('hide');
   utils.addInfoGrid();
   let domString = '';
-  smash.getClassWithDetails(classId)
+  smash.getClassWithDetails(selectedClass)
     .then((singleClass) => {
       domString += `
       <div class="closeButton">
@@ -46,14 +44,43 @@ const showClassInfo = (e) => {
       <div class="d-flex flex-wrap">
       `;
       singleClass.students.forEach((student) => {
-        domString += `
-        <div class="col-4 studentContainer">
-        <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName">
-        <div class="card-header text-center"  id="${student.id}" data-className="${singleClass.id}">${student.studentName}</div>
-        <div class="card-footer">Grade: ${student.grade}</div>
-        </div>
-        </div>
-        `;
+        if (student.grade === 'A' || student.grade === 'B') {
+          domString += `
+          <div class="col-4 studentContainer">
+          <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
+          <div class="card-header text-center gradehead goodGrade">${student.studentName}</div>
+          <div class="card-footer gradefoot">Grade: ${student.grade}</div>
+          </div>
+          </div>
+          `;
+        } else if (student.grade === 'C' || student.grade === 'D') {
+          domString += `
+          <div class="col-4 studentContainer">
+          <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
+          <div class="card-header text-center gradehead mehGrade">${student.studentName}</div>
+          <div class="card-footer gradefoot">Grade: ${student.grade}</div>
+          </div>
+          </div>
+          `;
+        } else if (student.grade === 'F') {
+          domString += `
+          <div class="col-4 studentContainer">
+          <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
+          <div class="card-header text-center gradehead badGrade">${student.studentName}</div>
+          <div class="card-footer gradefoot">Grade: ${student.grade}</div>
+          </div>
+          </div>
+          `;
+        } else {
+          domString += `
+          <div class="col-4 studentContainer">
+          <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
+          <div class="card-header text-center gradehead">${student.studentName}</div>
+          <div class="card-footer gradefoot">Grade: ${student.grade}</div>
+          </div>
+          </div>
+          `;
+        }
       });
       domString += `
       </div>
@@ -70,11 +97,15 @@ const showGradeForm = (e) => {
   e.preventDefault();
   const studentId = e.target.id;
   const classId = e.target.dataset.classname;
+  const studentName = e.target.dataset.studentname;
   const domString = `
   <div class="gradeFormCont">
+  <div class="closeButton">
+  <i class="fas fa-window-close closeGrade mb-1"></i>
+  </div>
   <form>
   <div class="form-group gradeFormText">
-    <label for="gradeInput">Grade:</label>
+    <label for="gradeInput">${studentName}'s Grade:</label>
     <input type="text" class="form-control" id="gradeInput" aria-describedby="emailHelp" placeholder="Grade">
   </div>
   <button class="btn btn-primary gradeSubmitbtn" data-studentid="${studentId}" data-classid="${classId}">Submit</button>
@@ -85,6 +116,7 @@ const showGradeForm = (e) => {
 };
 
 const assignGrade = (e) => {
+  e.preventDefault();
   const studentId = e.target.dataset.studentid;
   const classId = e.target.dataset.classid;
   classStudentData.getClassStudentsByStudentId(studentId)
@@ -98,14 +130,20 @@ const assignGrade = (e) => {
       const studentClassId = classs.id;
       classStudentData.updateClassStudent(studentClassId, newClassStudentObj)
         .then(() => {
-          buildClass.buildClassModule();
+          showClassInfo(classId);
         });
     })
     .catch((err) => console.error(err));
+};
+
+const showClassEvent = (e) => {
+  const selectedClass = e.target.closest('.card').id;
+  showClassInfo(selectedClass);
 };
 
 export default {
   showClassInfo,
   assignGrade,
   showGradeForm,
+  showClassEvent,
 };
