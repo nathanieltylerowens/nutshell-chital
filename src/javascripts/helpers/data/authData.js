@@ -36,9 +36,11 @@ const checkLoginStatus = () => {
       $('#add-vis-form').removeClass('hide');
       $('.edit-teacher').removeClass('hide');
       $(document).ready($('#undo_redo').multiselect());
+      $('.info-major').removeClass('hide');
     } else {
       logoutButton.addClass('hide');
       authDiv.removeClass('hide');
+      $('.info-major').addClass('hide');
       $('.delete-student').addClass('hide');
       $('.edit-student').addClass('hide');
       $('.delete-major').addClass('hide');
