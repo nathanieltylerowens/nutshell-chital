@@ -10,14 +10,14 @@ const studentCardMaker = (student) => {
       <div class="card-body text-center">
         <h5 class="card-title">${student.major}</h5>`;
   if (authData.isAuthenticated()) {
-    domString += '<button class="btn btn-warning edit-student mx-1">Edit</button>';
+    domString += '<button class="btn btn-warning edit-student mx-1 drop-shadow-1">Edit</button>';
   } else {
-    domString += '<button class="btn btn-warning edit-student hide mx-1">Edit</button>';
+    domString += '<button class="btn btn-warning edit-student hide mx-1 drop-shadow-1">Edit</button>';
   }
   if (authData.isAuthenticated()) {
-    domString += '<button class="btn btn-danger delete-student mx-1">Delete</button>';
+    domString += '<button class="btn btn-danger delete-student mx-1 drop-shadow-1">Delete</button>';
   } else {
-    domString += '<button class="btn btn-danger delete-student hide mx-1">Delete</button>';
+    domString += '<button class="btn btn-danger delete-student hide mx-1 drop-shadow-1">Delete</button>';
   }
 
   domString += `

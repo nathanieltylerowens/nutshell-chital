@@ -29,7 +29,7 @@ const showEditMajorForm = (fbMajorId, {
       <form class="hide" id="edit-major-form">
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputName">Name</label>
+            <label for="inputName" class="homeH3">Name</label>
             <input type="text" class="form-control" id="inputName" value="${name}">
           </div>
         </div>`;
@@ -37,7 +37,7 @@ const showEditMajorForm = (fbMajorId, {
         domString += multiSelect.createClassMultiSelect(availableClasses, selectedClasses);
 
         domString += `
-        <button type="submit" class="btn btn-primary" id="submit-update-major" data-firebase-major-id="${fbMajorId}">Update Major</button>
+        <button type="submit" class="btn btn-primary drop-shadow-1" id="submit-update-major" data-firebase-major-id="${fbMajorId}">Update Major</button>
       </form> 
       </div>
       `;
