@@ -50,13 +50,14 @@ const showClassInfo = (e) => {
         <div class="col-4 studentContainer">
         <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName">
         <div class="card-header text-center"  id="${student.id}" data-className="${singleClass.id}">${student.studentName}</div>
+        <div class="card-footer">Grade: ${student.grade}</div>
         </div>
         </div>
         `;
       });
       domString += `
-      <div class="gradeDiv"></div>
       </div>
+      <div class="gradeDiv"></div>
       </div>
       </div>
       `;
@@ -70,6 +71,7 @@ const showGradeForm = (e) => {
   const studentId = e.target.id;
   const classId = e.target.dataset.classname;
   const domString = `
+  <div class="gradeFormCont">
   <form>
   <div class="form-group gradeFormText">
     <label for="gradeInput">Grade:</label>
@@ -77,12 +79,12 @@ const showGradeForm = (e) => {
   </div>
   <button class="btn btn-primary gradeSubmitbtn" data-studentid="${studentId}" data-classid="${classId}">Submit</button>
 </form>
+</div>
   `;
   utils.printToDom('.gradeDiv', domString);
 };
 
 const assignGrade = (e) => {
-  console.error(e.target);
   const studentId = e.target.dataset.studentid;
   const classId = e.target.dataset.classid;
   classStudentData.getClassStudentsByStudentId(studentId)
