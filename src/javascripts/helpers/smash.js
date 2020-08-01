@@ -8,50 +8,38 @@ import majorData from './data/major/majorData';
 import majorClassesData from './data/majorClasses/majorClassesData';
 
 const getMajorWithClassLessonsDetails = (majorId) => new Promise((resolve, reject) => {
+  let selectedMajor = {};
   majorData.getMajorById(majorId)
     .then((response) => {
-      const selectedMajor = response.data;
+      selectedMajor = response.data;
       selectedMajor.id = majorId;
-      selectedMajor.classes = [];
 
-      majorClassesData.getMajorClassesByMajorsId(majorId).then((majorClasses) => {
-        classData.getClasses().then((allClasses) => {
-          majorClasses.forEach((majorClass) => {
-            const majClass = allClasses.find((m) => m.id === majorClass.classesId);
-            selectedMajor.classes.push(majClass);
-          });
-          console.error('slectedMajor: ', selectedMajor);
-          //   lessonData.getClassLessonsByClassId(majClass.id)
-          //     .then((classLessons) => {
-          //       // majClass.lessons = classLessons;
-          //       // console.error('majClass: ', JSON.stringify(majClass), 'classLessons: ', JSON.stringify(classLessons));
-          //       // selectedMajor.classes.push(majClass);
-          //       // console.error(selectedMajor.classes.find((cl) => cl.id === classLessons.id));
-          //       resolve(selectedMajor);
-          //     });
-          // });
-          resolve(selectedMajor);
+      // The result returned from getting the class datails for the major
+      return majorClassesData.getMajorClassesByMajorsId(majorId).then((majorClasses) => {
+        const classDetailsPromises = [];
+        majorClasses.forEach((majorClass) => {
+          // Push promises onto array
+          // eslint-disable-next-line no-use-before-define
+          classDetailsPromises.push(getClassWithDetails(majorClass.classesId));
         });
+
+        // Call 'Promise.all()' with the promises array which "resolves to an array of the results of the input promises"
+        //   --only-- when all of the input's promises have resolved (or no promises).
+        //
+        // Then return those results back to the original promise (getMajorClassesByMajorsId)
+        return Promise.all(classDetailsPromises);
       });
+    })
+
+    // This chains off the getMajorById first '.then' call, which is the list of class details
+    // we then add those class details to the selectedMajor object and resolve now that we have all class
+    // details in the major object
+    .then((majorClassDetails) => {
+      selectedMajor.classes = majorClassDetails;
+      resolve(selectedMajor);
     })
     .catch((err) => reject(err));
 });
-
-// const major1 = {
-//   name: 'majorName',
-//   id: 'majorId',
-//   classes: [{
-//     name: 'className1',
-//     schedule: 'schedule',
-//     lessons: [{
-//       name: 'lessonName',
-//       hours: 6,
-//     }, {
-//       name: 'lessonName2',
-//       hours: 7,
-//     }],
-//   }],
-// };
 
 const getClassWithDetails = (classId) => new Promise((resolve, reject) => {
   classData.getClassByClassId(classId)
