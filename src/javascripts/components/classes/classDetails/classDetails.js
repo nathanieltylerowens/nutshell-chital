@@ -1,5 +1,8 @@
 import utils from '../../../helpers/utils';
 import smash from '../../../helpers/smash';
+import classStudentData from '../../../helpers/data/classStudents/classStudentsData';
+import buildClass from '../buildClasses/buildClasses';
+
 import './classDetails.scss';
 
 const showClassInfo = (e) => {
@@ -45,13 +48,14 @@ const showClassInfo = (e) => {
       singleClass.students.forEach((student) => {
         domString += `
         <div class="col-4 studentContainer">
-        <div class="card border-0 rounded-0 bg-light text-dark mb-3" id="student1">
-        <div class="card-header text-center">${student.studentName}</div>
+        <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName">
+        <div class="card-header text-center"  id="${student.id}" data-className="${singleClass.id}">${student.studentName}</div>
         </div>
         </div>
         `;
       });
       domString += `
+      <div class="gradeDiv"></div>
       </div>
       </div>
       </div>
@@ -61,6 +65,45 @@ const showClassInfo = (e) => {
     .catch((err) => console.error(err));
 };
 
+const showGradeForm = (e) => {
+  e.preventDefault();
+  const studentId = e.target.id;
+  const classId = e.target.dataset.classname;
+  const domString = `
+  <form>
+  <div class="form-group gradeFormText">
+    <label for="gradeInput">Grade:</label>
+    <input type="text" class="form-control" id="gradeInput" aria-describedby="emailHelp" placeholder="Grade">
+  </div>
+  <button class="btn btn-primary gradeSubmitbtn" data-studentid="${studentId}" data-classid="${classId}">Submit</button>
+</form>
+  `;
+  utils.printToDom('.gradeDiv', domString);
+};
+
+const assignGrade = (e) => {
+  console.error(e.target);
+  const studentId = e.target.dataset.studentid;
+  const classId = e.target.dataset.classid;
+  classStudentData.getClassStudentsByStudentId(studentId)
+    .then((classStudent) => {
+      const classs = classStudent.find((c) => c.classesId === classId);
+      const newClassStudentObj = {
+        classesId: classs.classesId,
+        studentsId: classs.studentsId,
+        studentGrade: $('#gradeInput').val(),
+      };
+      const studentClassId = classs.id;
+      classStudentData.updateClassStudent(studentClassId, newClassStudentObj)
+        .then(() => {
+          buildClass.buildClassModule();
+        });
+    })
+    .catch((err) => console.error(err));
+};
+
 export default {
   showClassInfo,
+  assignGrade,
+  showGradeForm,
 };

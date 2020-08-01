@@ -233,6 +233,8 @@ const createListeners = () => {
   $('body').on('click', '.edit-major', editMajorEvent);
   $('body').on('click', '#submit-new-major', submitNewMajorForm);
   $('body').on('click', '#submit-update-major', submitUpdateMajorForm);
+  $('body').on('click', '.studentName', classInfo.showGradeForm);
+  $('body').on('click', '.gradeSubmitbtn', classInfo.assignGrade);
 };
 
 export default {
