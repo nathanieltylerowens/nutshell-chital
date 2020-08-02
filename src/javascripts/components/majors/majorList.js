@@ -39,7 +39,7 @@ const buildMajorList = () => {
       if (authData.isAuthenticated()) {
         domString += `
         <div class="text-center">
-          <button class="btn btn-primary" id="add-major">Add/Create a Major<i class="fas fa-plus ml-1"></i></button>
+          <button class="btn btn-primary drop-shadow-1" id="add-major">Add/Create a Major<i class="fas fa-plus ml-1"></i></button>
         </div>
         `;
       } else {

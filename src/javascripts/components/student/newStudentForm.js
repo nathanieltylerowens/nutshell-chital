@@ -24,7 +24,7 @@ const newStudentForm = () => {
         <input type="text" class="form-control" id="inputMajor">
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" id="submit-new-student">Submit New Student</button>
+    <button type="submit" class="btn btn-primary drop-shadow-1" id="submit-new-student">Submit New Student</button>
   </form> 
   </div>
   `;
