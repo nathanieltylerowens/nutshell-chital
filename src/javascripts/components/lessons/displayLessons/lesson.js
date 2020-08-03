@@ -35,7 +35,7 @@ const printLessons = () => {
             <div class="lesson-card-body">
               <h4 class="lesson-card-title">${lesson.name}</h4>
               <p class="hours">Length: ${lesson.hours}</p>
-              <p class="materials">Materials Provided: "${lesson.materialsProvided}"</p>`;
+              <p class="materials">Materials Provided: ${lesson.materialsProvided}</p>`;
         if (authData.isAuthenticated()) {
           domString += `
             <div class="lesson-card-buttons">
