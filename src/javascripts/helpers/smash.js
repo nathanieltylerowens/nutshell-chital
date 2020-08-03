@@ -84,7 +84,36 @@ const getClassWithDetails = (classId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const destroyClass = (classId) => new Promise((resolve, reject) => {
+  classData.deleteClass(classId)
+    .then(() => {
+      studentClassData.getClassStudentsByClassId(classId).then((classStudents) => {
+        classStudents.forEach((student) => {
+          studentClassData.deleteClassStudents(student.id);
+        });
+        majorClassesData.getMajorClassesByClassId(classId).then((classMajors) => {
+          classMajors.forEach((major) => {
+            majorClassesData.deleteMajorClasses(major.id);
+          });
+          teacherClassData.getClassTeachersByClassId(classId).then((classTeachers) => {
+            classTeachers.forEach((teacher) => {
+              teacherClassData.deleteClassTeachers(teacher.id);
+            });
+            lessonData.getClassLessonsByClassId(classId).then((classLessons) => {
+              classLessons.forEach((lesson) => {
+                lessonData.deleteClassLessons(lesson.id);
+              });
+              resolve();
+            });
+          });
+        });
+      });
+    })
+    .catch((err) => reject(err));
+});
+
 export default {
   getClassWithDetails,
   getMajorWithClassLessonsDetails,
+  destroyClass,
 };

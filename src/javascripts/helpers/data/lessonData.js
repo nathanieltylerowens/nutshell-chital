@@ -41,6 +41,8 @@ const getLessonById = (lessonId) => axios.get(`${baseUrl}/lessons/${lessonId}.js
 
 const updateLessonsData = (lessonId, editedLesson) => axios.put(`${baseUrl}/lessons/${lessonId}.json`, editedLesson);
 
+const deleteClassLessons = (classLessonsId) => axios.delete(`${baseUrl}/classLessons/${classLessonsId}.json`);
+
 export default {
   getLessonData,
   deleteLesson,
@@ -48,4 +50,5 @@ export default {
   getLessonById,
   updateLessonsData,
   getClassLessonsByClassId,
+  deleteClassLessons,
 };
