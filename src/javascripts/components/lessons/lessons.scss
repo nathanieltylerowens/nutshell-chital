@@ -1,6 +1,7 @@
 .lesson {
   margin: 15px;
   padding: 10px;
+  box-shadow: 3px 3px black;
 }
 
 .lesson p {
@@ -22,16 +23,33 @@
   margin: 0;
 }
 
+#add-lesson-form{
+  box-shadow: 1px 1px black;
+}
+
 .lesson-card-buttons {
   display: flex;
   justify-content: center;
 }
 .lesson-card-buttons a {
   margin: 2px;
+  box-shadow: 1px 1px black;
 }
 
 #lesson-heading {
   font-family: 'Rye', cursive;
   color: #f2efe8;
 margin-top: 5px;
+}
+
+#addLesson {
+  margin: 10px 10px 10px 20px;
+}
+
+#lessonUpdate{
+  margin: 0px 10px 10px 20px;
+}
+
+.lesson-multi{
+  margin: 10px 10px 10px 20px;
 }
