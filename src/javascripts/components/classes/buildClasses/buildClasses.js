@@ -15,9 +15,9 @@ const buildClassModule = () => {
       <div class=classCreate>
       `;
       if (authData.isAuthenticated()) {
-        domString += '<button class="btn btn-primary createClassBtn">Create A Class<i class="fas fa-plus ml-1"></i></button>';
+        domString += '<button class="btn btn-primary createClassBtn drop-shadow-1">Create A Class<i class="fas fa-plus ml-1"></i></button>';
       } else {
-        domString += '<button class="btn btn-primary createClassBtn hide">Create A Class<i class="fas fa-plus ml-1"></i></button>';
+        domString += '<button class="btn btn-primary createClassBtn hide drop-shadow-1">Create A Class<i class="fas fa-plus ml-1"></i></button>';
       }
       domString += `
       </div>
@@ -33,21 +33,21 @@ const buildClassModule = () => {
         <div class ="card-body text-center">
         `;
         if (authData.isAuthenticated()) {
-          domString += '<button class="btn btn-primary classInfoBtn mr-1">Info</button>';
+          domString += '<button class="btn btn-primary classInfoBtn mr-1 drop-shadow-1">Info</button>';
         } else {
-          domString += '<button class="btn btn-primary classInfoBtn mr-1 hide">Info</button>';
+          domString += '<button class="btn btn-primary classInfoBtn mr-1 drop-shadow-1 hide">Info</button>';
         }
         if (authData.isAuthenticated()) {
-          domString += '<button class="btn btn-warning classEditBtn">Edit</button>';
+          domString += '<button class="btn btn-warning classEditBtn drop-shadow-1">Edit</button>';
         } else {
-          domString += '<button class="btn btn-warning classEditBtn hide">Edit</button>';
+          domString += '<button class="btn btn-warning classEditBtn hide drop-shadow-1">Edit</button>';
         }
         domString += `
         `;
         if (authData.isAuthenticated()) {
-          domString += '<button class="btn btn-danger deleteClassIcon">Delete</button>';
+          domString += '<button class="btn btn-danger deleteClassIcon drop-shadow-1">Delete</button>';
         } else {
-          domString += '<button class="btn btn-danger deleteClassIcon hide">Delete</button>';
+          domString += '<button class="btn btn-danger deleteClassIcon hide drop-shadow-1">Delete</button>';
         }
         domString += `
         </div>

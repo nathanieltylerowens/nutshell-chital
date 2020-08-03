@@ -226,7 +226,7 @@ const createListeners = () => {
   $('body').on('click', '.closeForm', utils.clearFormDiv);
   $('body').on('click', '.createClassBtn', addClass.showClassForm);
   $('body').on('change', '#class-image', addClass.imageInputWatcher);
-  $('body').on('click', '.classInfoBtn', classInfo.showClassInfo);
+  $('body').on('click', '.classInfoBtn', classInfo.showClassEvent);
   $('body').on('click', '.closeInfo', utils.clearInfoDiv);
   $('body').on('click', '#navbar-majors', buildMajors.buildMajorList);
   $('body').on('click', '#add-major', showNewMajorForm);
@@ -234,6 +234,7 @@ const createListeners = () => {
   $('body').on('click', '.edit-major', editMajorEvent);
   $('body').on('click', '#submit-new-major', submitNewMajorForm);
   $('body').on('click', '#submit-update-major', submitUpdateMajorForm);
+  $('body').on('change', '.ddrp1', classInfo.assignStudentGrade);
   $('body').on('click', '.info-major', majorDetails.showMajorInfo);
 };
 
