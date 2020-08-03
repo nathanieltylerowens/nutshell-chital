@@ -15,8 +15,9 @@ const getSchedule = () => {
   return schedString;
 };
 
-const addAClass = () => {
+const addAClass = (e) => {
   if (!auth.isAuthenticated()) return;
+  e.preventDefault();
   const file = $('#class-image')[0].files[0];
   const image = file.name;
   const ref = firebase.storage().ref(`classes/${image}`);
