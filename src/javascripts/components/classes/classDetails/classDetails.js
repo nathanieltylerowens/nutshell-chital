@@ -44,47 +44,23 @@ const showClassInfo = (selectedClass) => {
       <div class="d-flex flex-wrap">
       `;
       singleClass.students.forEach((student) => {
+        domString += `
+        <div class="col-4 studentContainer">
+        <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName major-card-shadow"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
+        `;
         if (student.grade === 'A' || student.grade === 'B') {
-          domString += `
-          <div class="col-4 studentContainer">
-          <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName major-card-shadow"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
-          <div class="card-header text-center gradehead goodGrade">${student.studentName}</div>
-          <div class="card-footer gradefoot"><div class="dropdown">
-          <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
-          <option value="${student.grade}">Grade: ${student.grade}</option>
-
-          `;
+          domString += `<div class="card-header text-center gradehead goodGrade">${student.studentName}</div>`;
         } else if (student.grade === 'C' || student.grade === 'D') {
-          domString += `
-          <div class="col-4 studentContainer">
-          <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName major-card-shadow"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
-          <div class="card-header text-center gradehead mehGrade">${student.studentName}</div>
-          <div class="card-footer gradefoot"><div class="dropdown">
-          <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
-          <option value="${student.grade}">Grade: ${student.grade}</option>
-
-          `;
+          domString += `<div class="card-header text-center gradehead mehGrade">${student.studentName}</div>`;
         } else if (student.grade === 'F') {
-          domString += `
-          <div class="col-4 studentContainer">
-          <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName major-card-shadow"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
-          <div class="card-header text-center gradehead badGrade">${student.studentName}</div>
-          <div class="card-footer gradefoot"><div class="dropdown">
-          <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
-          <option value="${student.grade}">Grade: ${student.grade}</option>
-
-          `;
+          domString += `<div class="card-header text-center gradehead badGrade">${student.studentName}</div>`;
         } else {
-          domString += `
-          <div class="col-4 studentContainer">
-          <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName major-card-shadow"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
-          <div class="card-header text-center gradehead">${student.studentName}</div>
-          <div class="card-footer gradefoot"><div class="dropdown">
-          <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
-          <option value="${student.grade}">Grade: ${student.grade}</option>
-          `;
+          domString += `<div class="card-header text-center gradehead">${student.studentName}</div>`;
         }
         domString += `
+        <div class="card-footer gradefoot"><div class="dropdown">
+        <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
+        <option value="${student.grade}">Grade: ${student.grade}</option>
         <option value="A">A</option>
         <option value="B">B</option>
         <option value="C">C</option>
@@ -108,7 +84,7 @@ const showClassInfo = (selectedClass) => {
     .catch((err) => console.error(err));
 };
 
-const showGradeForm = (e) => {
+const assignStudentGrade = (e) => {
   e.preventDefault();
   const studentId = e.target.id;
   const classId = e.target.dataset.classname;
@@ -136,6 +112,6 @@ const showClassEvent = (e) => {
 
 export default {
   showClassInfo,
-  showGradeForm,
+  assignStudentGrade,
   showClassEvent,
 };
