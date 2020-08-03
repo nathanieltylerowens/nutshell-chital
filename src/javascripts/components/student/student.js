@@ -3,10 +3,10 @@ import './student.scss';
 
 const studentCardMaker = (student) => {
   let domString = `
-  <div class="col-3">
-    <div class="card border-0 rounded-0 bg-light text-dark mb-3" id=${student.id}>
-      <div class="card-header text-center">${student.studentName}</div>
+  <div class="">
+    <div class="card border-0 rounded-0 bg-light text-dark mb-3 student-card" id=${student.id}>
       <img class="card-img-top student-card-image m-auto" src="${student.imageUrl}" alt="Student Image">
+      <div class="card-header text-center">${student.studentName}</div>
       <div class="card-body text-center">
         <h5 class="card-title">${student.major}</h5>`;
   if (authData.isAuthenticated()) {

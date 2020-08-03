@@ -3,6 +3,8 @@ import studentData from '../../helpers/data/student/studentData';
 import studentCardMaker from './student';
 import utils from '../../helpers/utils';
 
+import './studentList.scss';
+
 const buildAuthRequiredModal = () => {
   const alertModal = `
   <div class="modal" tabindex="-1" role="dialog" id="myModal">
@@ -47,7 +49,7 @@ const buildStudentList = () => {
         <div class="text-center"><i class="fas fa-plus-circle fa-2x hide" id="add-student"></i></div>
         `;
       }
-      domString += '<div class="d-flex flex-wrap mt-2">';
+      domString += '<div class="d-flex flex-wrap mt-2 studentLounge">';
 
       students.forEach((student) => {
         domString += studentCardMaker.studentCardMaker(student);
