@@ -54,7 +54,7 @@ const getClassStudentsByClassId = (classId) => new Promise((resolve, reject) => 
 });
 
 // update classStudents (U)
-
+const updateClassStudent = (classStudentsId, updatedClassStudent) => axios.put(`${baseUrl}/classStudents/${classStudentsId}.json`, updatedClassStudent);
 // delete classStudents (D)
 const deleteClassStudents = (classStudentsId) => axios.delete(`${baseUrl}/classStudents/${classStudentsId}.json`);
 
@@ -64,4 +64,5 @@ export default {
   getClassStudents,
   getClassStudentsByStudentId,
   getClassStudentsByClassId,
+  updateClassStudent,
 };

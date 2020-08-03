@@ -1,22 +1,27 @@
 {
   "classStudents1": {
     "studentsId": "student1",
-    "classesId": "class1"
+    "classesId": "class1",
+    "studentGrade": "A"
   },
   "classStudents2": {
     "studentsId": "student2",
-    "classesId": "class2"
+    "classesId": "class2",
+    "studentGrade": "B"
   },
   "classStudents3": {
     "studentsId": "student3",
-    "classesId": "class1"
+    "classesId": "class1",
+    "studentGrade": "C"
   },
   "classStudents4": {
     "studentsId": "student4",
-    "classesId": "class4"
+    "classesId": "class4",
+    "studentGrade": "D"
   },
   "classStudents5": {
     "studentsId": "student5",
-    "classesId": "class5"
+    "classesId": "class5",
+    "studentGrade": "F"
   }
 }

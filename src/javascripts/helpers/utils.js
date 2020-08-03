@@ -52,6 +52,11 @@ const clearFormDiv = () => {
 
 const clearGridClasses = () => $('#content').removeClass();
 
+const clearGradeForm = () => {
+  const domString = '';
+  printToDom('.gradeDiv', domString);
+};
+
 export default {
   printToDom,
   addFormGrid,
@@ -59,4 +64,5 @@ export default {
   clearInfoDiv,
   clearFormDiv,
   clearGridClasses,
+  clearGradeForm,
 };

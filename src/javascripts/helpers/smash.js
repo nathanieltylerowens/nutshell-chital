@@ -52,7 +52,13 @@ const getClassWithDetails = (classId) => new Promise((resolve, reject) => {
       studentClassData.getClassStudentsByClassId(classId).then((classStudents) => {
         studentData.getStudents().then((allStudents) => {
           classStudents.forEach((classStudent) => {
+            const grade = classStudent.studentGrade;
             const student = allStudents.find((s) => s.id === classStudent.studentsId);
+            if (grade) {
+              student.grade = grade;
+            } else {
+              student.grade = 'No Grade';
+            }
             selectedClass.students.push(student);
           });
           teacherClassData.getClassTeachersByClassId(classId).then((classTeachers) => {
