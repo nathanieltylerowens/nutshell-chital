@@ -21,7 +21,7 @@ const showClassInfo = (selectedClass) => {
       singleClass.teachers.forEach((teacher) => {
         domString += `
         <div class="card border-0 rounded-0 bg-light text-dark mb-3 major-card-shadow" id="student1">
-        <div class="card-header text-center">${teacher.name}</div>
+        <div class="card-header text-center"><h6>${teacher.name}</h6></div>
         </div>
         `;
       });
@@ -49,7 +49,17 @@ const showClassInfo = (selectedClass) => {
           <div class="col-4 studentContainer">
           <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName major-card-shadow"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
           <div class="card-header text-center gradehead goodGrade">${student.studentName}</div>
-          <div class="card-footer gradefoot">Grade: ${student.grade}</div>
+          <div class="card-footer gradefoot"><div class="dropdown">
+          <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
+          <option value="${student.grade}">Grade: ${student.grade}</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="F">F</option>
+          </select>
+          </div>
+          </div>
           </div>
           </div>
           `;
@@ -58,7 +68,17 @@ const showClassInfo = (selectedClass) => {
           <div class="col-4 studentContainer">
           <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName major-card-shadow"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
           <div class="card-header text-center gradehead mehGrade">${student.studentName}</div>
-          <div class="card-footer gradefoot">Grade: ${student.grade}</div>
+          <div class="card-footer gradefoot"><div class="dropdown">
+          <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
+          <option value="${student.grade}">Grade: ${student.grade}</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="F">F</option>
+          </select>
+          </div>
+          </div>
           </div>
           </div>
           `;
@@ -67,7 +87,17 @@ const showClassInfo = (selectedClass) => {
           <div class="col-4 studentContainer">
           <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName major-card-shadow"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
           <div class="card-header text-center gradehead badGrade">${student.studentName}</div>
-          <div class="card-footer gradefoot">Grade: ${student.grade}</div>
+          <div class="card-footer gradefoot"><div class="dropdown">
+          <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
+          <option value="${student.grade}">Grade: ${student.grade}</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="F">F</option>
+          </select>
+          </div>
+          </div>
           </div>
           </div>
           `;
@@ -76,7 +106,17 @@ const showClassInfo = (selectedClass) => {
           <div class="col-4 studentContainer">
           <div class="card border-0 rounded-0 bg-light text-dark mb-3 studentName major-card-shadow"  id="${student.id}" data-className="${singleClass.id}" data-studentname="${student.studentName}">
           <div class="card-header text-center gradehead">${student.studentName}</div>
-          <div class="card-footer gradefoot">Grade: ${student.grade}</div>
+          <div class="card-footer gradefoot"><div class="dropdown">
+          <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
+          <option value="${student.grade}">Grade: ${student.grade}</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="F">F</option>
+          </select>
+          </div>
+          </div>
           </div>
           </div>
           `;
@@ -97,35 +137,13 @@ const showGradeForm = (e) => {
   e.preventDefault();
   const studentId = e.target.id;
   const classId = e.target.dataset.classname;
-  const studentName = e.target.dataset.studentname;
-  const domString = `
-  <div class="gradeFormCont major-card-shadow">
-  <div class="closeButton">
-  <i class="fas fa-window-close closeGrade mb-1"></i>
-  </div>
-  <form>
-  <div class="form-group gradeFormText">
-    <label for="gradeInput">${studentName}'s Grade:</label>
-    <input type="text" class="form-control" id="gradeInput" aria-describedby="emailHelp" placeholder="Grade">
-  </div>
-  <button class="btn btn-primary gradeSubmitbtn" data-studentid="${studentId}" data-classid="${classId}">Submit</button>
-</form>
-</div>
-  `;
-  utils.printToDom('.gradeDiv', domString);
-};
-
-const assignGrade = (e) => {
-  e.preventDefault();
-  const studentId = e.target.dataset.studentid;
-  const classId = e.target.dataset.classid;
   classStudentData.getClassStudentsByStudentId(studentId)
     .then((classStudent) => {
       const classs = classStudent.find((c) => c.classesId === classId);
       const newClassStudentObj = {
         classesId: classs.classesId,
         studentsId: classs.studentsId,
-        studentGrade: $('#gradeInput').val(),
+        studentGrade: $(`.${studentId}2`).val(),
       };
       const studentClassId = classs.id;
       classStudentData.updateClassStudent(studentClassId, newClassStudentObj)
@@ -143,7 +161,6 @@ const showClassEvent = (e) => {
 
 export default {
   showClassInfo,
-  assignGrade,
   showGradeForm,
   showClassEvent,
 };

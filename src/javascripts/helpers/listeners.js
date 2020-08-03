@@ -234,8 +234,7 @@ const createListeners = () => {
   $('body').on('click', '.edit-major', editMajorEvent);
   $('body').on('click', '#submit-new-major', submitNewMajorForm);
   $('body').on('click', '#submit-update-major', submitUpdateMajorForm);
-  $('body').on('click', '.studentName', classInfo.showGradeForm);
-  $('body').on('click', '.gradeSubmitbtn', classInfo.assignGrade);
+  $('body').on('change', '.ddrp1', classInfo.showGradeForm);
   $('body').on('click', '.info-major', majorDetails.showMajorInfo);
   $('body').on('click', '.closeGrade', utils.clearGradeForm);
 };

@@ -19,22 +19,6 @@
   color: white;
 }
 
-.gradeFormCont {
-  width: 30%;
-  margin: 0px auto;
-  border: 2px solid white;
-  border-radius: 5px;
-  padding: 0px 8px 8px 8px;
-}
-
-#gradeInput {
-  width: 55%;
-}
-
-.gradefoot, .gradehead {
-  pointer-events: none;
-}
-
 .goodGrade {
   background-color: #9fff85 !important;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 100 100'%3E%3Cg stroke='%23CCC' stroke-width='0' %3E%3Crect fill='%23F5F5F5' x='-60' y='-60' width='115' height='240'/%3E%3C/g%3E%3C/svg%3E") !important;
@@ -50,4 +34,9 @@
 }
 .gradehead {
   font-weight: bolder !important;
+}
+
+.gradefoot {
+  margin: 0 auto;
+  padding: 4px 0px 4px 4px !important;
 }
