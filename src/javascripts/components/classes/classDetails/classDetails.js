@@ -52,16 +52,7 @@ const showClassInfo = (selectedClass) => {
           <div class="card-footer gradefoot"><div class="dropdown">
           <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
           <option value="${student.grade}">Grade: ${student.grade}</option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-          <option value="D">D</option>
-          <option value="F">F</option>
-          </select>
-          </div>
-          </div>
-          </div>
-          </div>
+
           `;
         } else if (student.grade === 'C' || student.grade === 'D') {
           domString += `
@@ -71,16 +62,7 @@ const showClassInfo = (selectedClass) => {
           <div class="card-footer gradefoot"><div class="dropdown">
           <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
           <option value="${student.grade}">Grade: ${student.grade}</option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-          <option value="D">D</option>
-          <option value="F">F</option>
-          </select>
-          </div>
-          </div>
-          </div>
-          </div>
+
           `;
         } else if (student.grade === 'F') {
           domString += `
@@ -90,16 +72,7 @@ const showClassInfo = (selectedClass) => {
           <div class="card-footer gradefoot"><div class="dropdown">
           <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
           <option value="${student.grade}">Grade: ${student.grade}</option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-          <option value="D">D</option>
-          <option value="F">F</option>
-          </select>
-          </div>
-          </div>
-          </div>
-          </div>
+
           `;
         } else {
           domString += `
@@ -109,18 +82,20 @@ const showClassInfo = (selectedClass) => {
           <div class="card-footer gradefoot"><div class="dropdown">
           <select id="${student.id}" class="ddrp1 ${student.id}2" data-className="${singleClass.id}">
           <option value="${student.grade}">Grade: ${student.grade}</option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-          <option value="D">D</option>
-          <option value="F">F</option>
-          </select>
-          </div>
-          </div>
-          </div>
-          </div>
           `;
         }
+        domString += `
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="F">F</option>
+        </select>
+        </div>
+        </div>
+        </div>
+        </div>
+        `;
       });
       domString += `
       </div>
