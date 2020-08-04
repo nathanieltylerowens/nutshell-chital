@@ -8,10 +8,13 @@ const getTeachers = () => new Promise((resolve, reject) => {
     .then((response) => {
       const teacherObjects = response.data;
       const teachers = [];
-      Object.keys(teacherObjects).forEach((teacherId) => {
-        teacherObjects[teacherId].id = teacherId;
-        teachers.push(teacherObjects[teacherId]);
-      });
+      if (teacherObjects) {
+        Object.keys(teacherObjects).forEach((teacherId) => {
+          teacherObjects[teacherId].id = teacherId;
+          teachers.push(teacherObjects[teacherId]);
+        });
+      }
+
       resolve(teachers);
     })
     .catch((err) => reject(err));
