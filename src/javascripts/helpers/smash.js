@@ -6,6 +6,7 @@ import teacherData from './data/teacher/teacherData';
 import lessonData from './data/lesson/lessonData';
 import majorData from './data/major/majorData';
 import majorClassesData from './data/majorClasses/majorClassesData';
+import classLessonsData from './data/lesson/lessonClassData';
 
 const getMajorWithClassLessonsDetails = (majorId) => new Promise((resolve, reject) => {
   let selectedMajor = {};
@@ -101,7 +102,7 @@ const destroyClass = (classId) => new Promise((resolve, reject) => {
             });
             lessonData.getClassLessonsByClassId(classId).then((classLessons) => {
               classLessons.forEach((lesson) => {
-                lessonData.deleteClassLessons(lesson.id);
+                classLessonsData.deleteClassLessons(lesson.id);
               });
               resolve();
             });
