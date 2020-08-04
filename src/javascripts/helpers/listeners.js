@@ -23,6 +23,7 @@ import newMajor from '../components/majors/newMajorForm';
 import multiSelect from '../components/multiSelect/multiSelect';
 import classStudents from '../components/classStudents/classStudents';
 import majorClasses from '../components/majorClasses/majorClasses';
+import majorClassesData from './data/majorClasses/majorClassesData';
 import majorDetails from '../components/majors/majorDetails';
 
 const editStudentEvent = (e) => {
@@ -144,6 +145,12 @@ const deleteMajorEvent = (e) => {
   const majorId = e.target.closest('.card').id;
   majorData.deleteMajor(majorId)
     .then(() => {
+      majorClassesData.getMajorClassesByMajorsId(majorId)
+        .then((majClasses) => {
+          majClasses.forEach((majClass) => {
+            majorClassesData.deleteMajorClasses(majClass.id);
+          });
+        });
       buildMajors.buildMajorList();
     })
     .catch((err) => console.error('Could not delete major', err));
