@@ -6,6 +6,7 @@ import teacherData from './data/teacher/teacherData';
 import lessonData from './data/lesson/lessonData';
 import majorData from './data/major/majorData';
 import majorClassesData from './data/majorClasses/majorClassesData';
+import classLessonsData from './data/lesson/lessonClassData';
 
 const getMajorWithClassLessonsDetails = (majorId) => new Promise((resolve, reject) => {
   let selectedMajor = {};
@@ -84,7 +85,36 @@ const getClassWithDetails = (classId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const destroyClass = (classId) => new Promise((resolve, reject) => {
+  classData.deleteClass(classId)
+    .then(() => {
+      studentClassData.getClassStudentsByClassId(classId).then((classStudents) => {
+        classStudents.forEach((student) => {
+          studentClassData.deleteClassStudents(student.id);
+        });
+        majorClassesData.getMajorClassesByClassId(classId).then((classMajors) => {
+          classMajors.forEach((major) => {
+            majorClassesData.deleteMajorClasses(major.id);
+          });
+          teacherClassData.getClassTeachersByClassId(classId).then((classTeachers) => {
+            classTeachers.forEach((teacher) => {
+              teacherClassData.deleteClassTeachers(teacher.id);
+            });
+            lessonData.getClassLessonsByClassId(classId).then((classLessons) => {
+              classLessons.forEach((lesson) => {
+                classLessonsData.deleteClassLessons(lesson.id);
+              });
+              resolve();
+            });
+          });
+        });
+      });
+    })
+    .catch((err) => reject(err));
+});
+
 export default {
   getClassWithDetails,
   getMajorWithClassLessonsDetails,
+  destroyClass,
 };
